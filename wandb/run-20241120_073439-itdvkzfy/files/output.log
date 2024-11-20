@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v6/a2c_Rms_huber.py", line 473, in <module>
+    p.join()
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/multiprocessing/process.py", line 149, in join
+    res = self._popen.wait(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/multiprocessing/popen_fork.py", line 43, in wait
+    return self.poll(os.WNOHANG if timeout == 0.0 else 0)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/multiprocessing/popen_fork.py", line 27, in poll
+    pid, sts = os.waitpid(self.pid, flag)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

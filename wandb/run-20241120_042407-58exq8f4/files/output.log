@@ -1,0 +1,35 @@
+Episode 0, Avg Reward: 186.30, Best Reward: 186.30, remain_bees: 46, step: 1200
+Episode 10, Avg Reward: 247.91, Best Reward: 616.50, remain_bees: 45, step: 1200
+Episode 20, Avg Reward: 219.64, Best Reward: 616.50, remain_bees: 46, step: 1200
+Episode 30, Avg Reward: 231.07, Best Reward: 925.40, remain_bees: 42, step: 1200
+Episode 40, Avg Reward: 140.47, Best Reward: 925.40, remain_bees: 47, step: 1200
+Episode 50, Avg Reward: 227.98, Best Reward: 925.40, remain_bees: 44, step: 1200
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v4/a2c_huber.py", line 524, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v4/a2c_huber.py", line 468, in train
+    next_state, reward, done, _ , _= env.step(action)
+                                     ^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/gymnasium/core.py", line 550, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/gymnasium/core.py", line 550, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/knu_rl_env/grid_survivor/env.py", line 246, in step
+    obs, reward, terminated, truncated, info = super().step(action)
+                                               ^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/minigrid/minigrid_env.py", line 584, in step
+    obs = self.gen_obs()
+          ^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/minigrid/minigrid_env.py", line 633, in gen_obs
+    image = grid.encode(vis_mask)
+            ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/minigrid/core/grid.py", line 258, in encode
+    v = self.get(i, j)
+        ^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/minigrid/core/grid.py", line 74, in get
+    def get(self, i: int, j: int) -> WorldObj | None:
+
+KeyboardInterrupt

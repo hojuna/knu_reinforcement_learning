@@ -1,0 +1,16 @@
+{"time":"2024-11-20T04:32:51.166767927Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-20T04:32:51.166799798Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241120_043251-aeekaw15/logs/debug-core.log"}
+{"time":"2024-11-20T04:32:51.273021465Z","level":"INFO","msg":"created new stream","id":"aeekaw15"}
+{"time":"2024-11-20T04:32:51.273073276Z","level":"INFO","msg":"stream: started","id":"aeekaw15"}
+{"time":"2024-11-20T04:32:51.273110407Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"aeekaw15"}}
+{"time":"2024-11-20T04:32:51.273158038Z","level":"INFO","msg":"handler: started","stream_id":{"value":"aeekaw15"}}
+{"time":"2024-11-20T04:32:51.273245011Z","level":"INFO","msg":"sender: started","stream_id":"aeekaw15"}
+{"time":"2024-11-20T04:32:51.624209085Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-20T04:43:18.098115644Z","level":"INFO","msg":"stream: closing","id":"aeekaw15"}
+{"time":"2024-11-20T04:43:18.098160786Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-20T04:43:18.09885529Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-20T04:43:19.204081343Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-20T04:43:19.451958372Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"aeekaw15"}}
+{"time":"2024-11-20T04:43:19.451998254Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"aeekaw15"}}
+{"time":"2024-11-20T04:43:19.452023835Z","level":"INFO","msg":"sender: closed","stream_id":"aeekaw15"}
+{"time":"2024-11-20T04:43:19.452101127Z","level":"INFO","msg":"stream: closed","id":"aeekaw15"}

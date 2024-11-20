@@ -1,0 +1,49 @@
+{
+  "os": "Linux-5.15.0-124-generic-x86_64-with-glibc2.35",
+  "python": "3.11.10",
+  "startedAt": "2024-11-20T04:44:23.064849Z",
+  "program": "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py",
+  "codePath": "project2/A2C/A2C_v2/a2c_test.py",
+  "git": {
+    "remote": "https://github.com/hojuna/knu_reinforcement_learning.git",
+    "commit": "948032312197e2750ee7acce0b6c3107b5c2661e"
+  },
+  "email": "hojuna123@gmail.com",
+  "root": "/home/comoz/main_project/knu_reinforcement_learning",
+  "host": "aigpu1023",
+  "username": "comoz",
+  "executable": "/home/comoz/miniconda3/envs/KNU_RL/bin/python",
+  "codePathLocal": "project2/A2C/A2C_v2/a2c_test.py",
+  "cpu_count": 32,
+  "cpu_count_logical": 64,
+  "gpu": "NVIDIA RTX A6000",
+  "gpu_count": 2,
+  "disk": {
+    "/": {
+      "total": "3853819584512",
+      "used": "214681206784"
+    }
+  },
+  "memory": {
+    "total": "270085070848"
+  },
+  "cpu": {
+    "count": 32,
+    "countLogical": 64
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "51527024640",
+      "cudaCores": 10752,
+      "architecture": "Ampere"
+    },
+    {
+      "name": "NVIDIA RTX A6000",
+      "memoryTotal": "51527024640",
+      "cudaCores": 10752,
+      "architecture": "Ampere"
+    }
+  ],
+  "cudaVersion": "12.4"
+}

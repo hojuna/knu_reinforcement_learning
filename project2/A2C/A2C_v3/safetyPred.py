@@ -212,7 +212,7 @@ class SafetyPredictor:
     
     def load(self, path):
         """모델 로드"""
-        checkpoint = torch.load(path)
+        checkpoint = torch.load(path, weights_only=True)
         self.model.load_state_dict(checkpoint['model_state'])
         self.optimizer.load_state_dict(checkpoint['optimizer_state'])
 

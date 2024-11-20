@@ -27,3 +27,4 @@ config: {}
 2024-11-19 16:06:40,500 INFO    MainThread:1226274 [wandb_run.py:_config_callback():1389] config_cb num_episodes 20000 None
 2024-11-19 16:06:40,500 INFO    MainThread:1226274 [wandb_config.py:__setitem__():154] config set save_interval = 1000 - <bound method Run._config_callback of <wandb.sdk.wandb_run.Run object at 0x7fc29681ee10>>
 2024-11-19 16:06:40,500 INFO    MainThread:1226274 [wandb_run.py:_config_callback():1389] config_cb save_interval 1000 None
+2024-11-20 08:17:21,752 WARNING MsgRouterThr:1226274 [router.py:message_loop():75] message_loop has been closed

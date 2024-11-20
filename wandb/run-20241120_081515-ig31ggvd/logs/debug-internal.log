@@ -1,0 +1,17 @@
+{"time":"2024-11-20T08:15:15.175493939Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-20T08:15:15.17550659Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241120_081515-ig31ggvd/logs/debug-core.log"}
+{"time":"2024-11-20T08:15:15.282622497Z","level":"INFO","msg":"created new stream","id":"ig31ggvd"}
+{"time":"2024-11-20T08:15:15.282667678Z","level":"INFO","msg":"stream: started","id":"ig31ggvd"}
+{"time":"2024-11-20T08:15:15.282882695Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"ig31ggvd"}}
+{"time":"2024-11-20T08:15:15.283108702Z","level":"INFO","msg":"sender: started","stream_id":"ig31ggvd"}
+{"time":"2024-11-20T08:15:15.283170734Z","level":"INFO","msg":"handler: started","stream_id":{"value":"ig31ggvd"}}
+{"time":"2024-11-20T08:15:15.622538798Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-20T11:02:06.366926398Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-20T11:02:06.367497398Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-20T11:02:07.367265677Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.542679451},{"desc":"uploading config.yaml","runtime_seconds":0.291705015,"progress":"462B/462B"}],"total_operations":2}}
+{"time":"2024-11-20T11:02:09.65632945Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-20T11:02:11.278711683Z","level":"INFO","msg":"stream: closing","id":"ig31ggvd"}
+{"time":"2024-11-20T11:02:11.278731184Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"ig31ggvd"}}
+{"time":"2024-11-20T11:02:11.278752505Z","level":"INFO","msg":"sender: closed","stream_id":"ig31ggvd"}
+{"time":"2024-11-20T11:02:11.278748725Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"ig31ggvd"}}
+{"time":"2024-11-20T11:02:11.278936531Z","level":"INFO","msg":"stream: closed","id":"ig31ggvd"}

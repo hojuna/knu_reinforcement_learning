@@ -1,0 +1,8 @@
+{"time":"2024-11-20T04:44:23.068020538Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-20T04:44:23.068038279Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241120_044423-e8fq2i6f/logs/debug-core.log"}
+{"time":"2024-11-20T04:44:23.174610737Z","level":"INFO","msg":"created new stream","id":"e8fq2i6f"}
+{"time":"2024-11-20T04:44:23.174653658Z","level":"INFO","msg":"stream: started","id":"e8fq2i6f"}
+{"time":"2024-11-20T04:44:23.17470904Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"e8fq2i6f"}}
+{"time":"2024-11-20T04:44:23.174773172Z","level":"INFO","msg":"sender: started","stream_id":"e8fq2i6f"}
+{"time":"2024-11-20T04:44:23.174914157Z","level":"INFO","msg":"handler: started","stream_id":{"value":"e8fq2i6f"}}
+{"time":"2024-11-20T04:44:23.507552372Z","level":"INFO","msg":"Starting system monitor"}

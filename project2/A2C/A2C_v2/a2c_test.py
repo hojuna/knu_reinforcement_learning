@@ -9,61 +9,67 @@ import random
 from knu_rl_env.grid_survivor import GridSurvivorAgent, make_grid_survivor
 import wandb
 # A2C 네트워크 정의
+# # A2C 네트워크 정의
+# class A2CNetwork(nn.Module):
+
+#     def __init__(self, input_size, hidden_size, num_actions):
+#         super(A2CNetwork, self).__init__()
+
+#         # 특징 추출을 위한 공통 레이어
+#         self.shared = nn.Sequential(
+#             nn.Linear(input_size, hidden_size),
+#             nn.ReLU(),
+#             nn.Linear(hidden_size, hidden_size),
+#             nn.ReLU()
+#         )
+
+#         # Actor: 정책 (행동 확률 출력)
+#         self.policy = nn.Sequential(
+#             nn.Linear(hidden_size, num_actions),
+#             nn.Softmax(dim=-1)
+#         )
+
+#         # Critic: 가치 함수 (상태 가치 출력)
+#         self.value = nn.Linear(hidden_size, 1)
+
+#     def forward(self, x):
+#         shared_features = self.shared(x)
+#         action_probs = self.policy(shared_features)
+#         state_value = self.value(shared_features)
+#         return action_probs, state_value
+   
+
 class A2CNetwork(nn.Module):
    def __init__(self, input_size, hidden_size, num_actions):
        super(A2CNetwork, self).__init__()
        
-       # 더 깊은 특징 추출 레이어
+       # 특징 추출을 위한 공통 레이어 (살짝 더 깊게)
        self.shared = nn.Sequential(
-           # 입력 처리 블록
            nn.Linear(input_size, hidden_size),
            nn.ReLU(),
-           nn.LayerNorm(hidden_size),
-           nn.Dropout(0.1),
+           nn.LayerNorm(hidden_size),  # 학습 안정화
            
-           # 첫 번째 처리 블록
-           nn.Linear(hidden_size, hidden_size),
-           nn.ReLU(), 
-           nn.LayerNorm(hidden_size),
-           nn.Dropout(0.1),
-           
-           # 두 번째 처리 블록
            nn.Linear(hidden_size, hidden_size),
            nn.ReLU(),
            nn.LayerNorm(hidden_size),
-           nn.Dropout(0.1),
            
-           # 마지막 특징 추출 블록
            nn.Linear(hidden_size, hidden_size),
-           nn.ReLU(),
-           nn.LayerNorm(hidden_size)
+           nn.ReLU()
        )
        
-       # Actor: 정책 네트워크
+       # Actor: 정책 (행동 확률 출력)
        self.policy = nn.Sequential(
            nn.Linear(hidden_size, hidden_size // 2),
            nn.ReLU(),
-           nn.LayerNorm(hidden_size // 2),
-           
-           nn.Linear(hidden_size // 2, hidden_size // 4),
-           nn.ReLU(),
-           nn.LayerNorm(hidden_size // 4),
-           
-           nn.Linear(hidden_size // 4, num_actions),
+           nn.Linear(hidden_size // 2, num_actions),
            nn.Softmax(dim=-1)
        )
        
-       # Critic: 가치 네트워크
+       # Critic: 가치 함수 (상태 가치 출력)
        self.value = nn.Sequential(
            nn.Linear(hidden_size, hidden_size // 2),
            nn.ReLU(),
-           nn.LayerNorm(hidden_size // 2),
-           
-           nn.Linear(hidden_size // 2, hidden_size // 4),
-           nn.ReLU(),
-           nn.LayerNorm(hidden_size // 4),
-           
-           nn.Linear(hidden_size // 4, 1)
+           nn.Linear(hidden_size // 2, 1)
        )
    
    def forward(self, x):
@@ -73,9 +79,10 @@ class A2CNetwork(nn.Module):
        return action_probs, state_value
 
 
+
 # A2C 에이전트 정의
 class A2CAgent(): # GridSurvivorAgent 상속 제거
-    def __init__(self, state_size, save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2"):
+    def __init__(self, state_size, save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/save_model"):
         super().__init__()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.network = A2CNetwork(state_size, 128, 3).to(self.device)
@@ -159,10 +166,10 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         
         # 방향별 탐색할 상대적 셀 좌표 정의
         direction_offsets = {
-            'UP': [(-2, 0), (-1, -1), (-1, 1)],
-            'DOWN': [(2, 0), (1, -1), (1, 1)],
-            'RIGHT': [(0, 2), (-1, 1), (1, 1)],
-            'LEFT': [(0, -2), (-1, -1), (1, -1)]
+            'UP': [(-2, 0), (-1, -1), (-1, 1),(-1,0)],
+            'DOWN': [(2, 0), (1, -1), (1, 1),(1,0)],
+            'RIGHT': [(0, 2), (-1, 1), (1, 1),(0,1)],
+            'LEFT': [(0, -2), (-1, -1), (1, -1),(0,-1)]
         }
         
         # 현재 방향에 따른 탐색할 셀 좌표 가져오기
@@ -219,6 +226,8 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         next_pos = self._get_next_position(position, direction)
         if not self._is_valid_move(next_pos, grid):
             valid_actions[2] = 0  # FORWARD 불가능
+        elif self.find_forward_obj(grid) == 'B':
+            valid_actions[2] += 1  # FORWARD 가능
         
         return valid_actions
     
@@ -360,8 +369,11 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         self.dones.append(done)
         
         if done:
-            self.learn()
+            loss = self.learn()
             self.reset_episode()
+            return loss
+
+        return 0
     
     def learn(self):
         """A2C 학습"""
@@ -408,6 +420,8 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         self.optimizer.zero_grad()
         total_loss.backward()
         self.optimizer.step()
+
+        # print(f"loss: {total_loss.item()}")
         
         return total_loss.item()
     
@@ -440,7 +454,7 @@ def train(env, agent, num_episodes, save_interval=100):
     best_reward = float('-inf')
     reward_history = []
 
-    wandb.init(project="a2c_v1", name="a2c_v2")
+    wandb.init(project="a2c_v1", name="a2c_v2_20000")
     config = wandb.config
     config.num_episodes = num_episodes
     config.save_interval = save_interval
@@ -452,7 +466,7 @@ def train(env, agent, num_episodes, save_interval=100):
         step=0
         max_step = 1200
 
-        while not done and step<max_step:
+        while not done:
             # 행동 선택 및 환경과 상호작용
             action = agent.act(state)
             next_state, reward, done, _ , _= env.step(action)
@@ -462,7 +476,10 @@ def train(env, agent, num_episodes, save_interval=100):
             reward = agent.calculate_reward(state, next_state, done,step)
             episode_reward += reward
             
-            agent.update(reward, done)
+            if step >= max_step:
+                done=True
+
+            loss = agent.update(reward, done)
             state = next_state
         
         # 성과 기록
@@ -478,8 +495,9 @@ def train(env, agent, num_episodes, save_interval=100):
             agent.save('best')
 
         remain_bees = np.sum(next_state['grid'] == 'B')
+        
 
-        wandb.log({"episode_reward": episode_reward, "best_reward": best_reward,"step":step,"episode":episode,"remain_bees":remain_bees})
+        wandb.log({"episode_reward": episode_reward, "best_reward": best_reward,"step":step,"episode":episode,"remain_bees":remain_bees,"loss":loss})
         
         # 진행상황 출력
         if episode % 10 == 0:
@@ -508,7 +526,7 @@ if __name__ == "__main__":
     
     # 학습 설정
     num_episodes = 20000
-    save_interval = 1000
+    save_interval = 10000
     
     # 학습 실행
     reward_history = train(env, agent, num_episodes, save_interval)

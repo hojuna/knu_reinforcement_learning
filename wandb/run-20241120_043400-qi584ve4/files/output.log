@@ -1,0 +1,17 @@
+Episode 0, Avg Reward: 565.20, Best Reward: 565.20, remain_bees: 44, step: 267
+Episode 10, Avg Reward: 237.35, Best Reward: 565.20, remain_bees: 47, step: 1200
+Episode 20, Avg Reward: 216.49, Best Reward: 645.60, remain_bees: 46, step: 1200
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v4/a2c_huber.py", line 526, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v4/a2c_huber.py", line 469, in train
+    action = agent.act(state)
+             ^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v4/a2c_huber.py", line 339, in act
+    state_tensor = self.preprocess_state(state)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v4/a2c_huber.py", line 131, in preprocess_state
+    grid_tensor[i, j, cell_types[cell]] = 1
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

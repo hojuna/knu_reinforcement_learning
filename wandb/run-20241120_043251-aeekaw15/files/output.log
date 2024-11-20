@@ -1,0 +1,20 @@
+Episode 0, Avg Reward: 195.50, Best Reward: 195.50, remain_bees: 46, step: 1200
+Episode 10, Avg Reward: 261.42, Best Reward: 518.90, remain_bees: 43, step: 1200
+Episode 20, Avg Reward: 260.98, Best Reward: 518.90, remain_bees: 44, step: 1200
+Episode 30, Avg Reward: 310.78, Best Reward: 779.40, remain_bees: 45, step: 1200
+Episode 40, Avg Reward: 287.20, Best Reward: 779.40, remain_bees: 41, step: 1200
+Episode 50, Avg Reward: 341.63, Best Reward: 906.70, remain_bees: 45, step: 1200
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 527, in <module>
+    # 학습 설정
+
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 469, in train
+    while not done:
+                 ^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 339, in act
+    state_tensor = self.preprocess_state(state)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 131, in preprocess_state
+    grid_tensor[i, j, cell_types[cell]] = 1
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

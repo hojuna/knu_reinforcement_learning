@@ -1,0 +1,16 @@
+{"time":"2024-11-20T07:27:29.705257888Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-20T07:27:29.705270498Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241120_072729-3tc541eg/logs/debug-core.log"}
+{"time":"2024-11-20T07:27:29.811865987Z","level":"INFO","msg":"created new stream","id":"3tc541eg"}
+{"time":"2024-11-20T07:27:29.811904608Z","level":"INFO","msg":"stream: started","id":"3tc541eg"}
+{"time":"2024-11-20T07:27:29.811955309Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"3tc541eg"}}
+{"time":"2024-11-20T07:27:29.812053171Z","level":"INFO","msg":"sender: started","stream_id":"3tc541eg"}
+{"time":"2024-11-20T07:27:29.812116813Z","level":"INFO","msg":"handler: started","stream_id":{"value":"3tc541eg"}}
+{"time":"2024-11-20T07:27:30.170384973Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-20T07:27:39.821410153Z","level":"INFO","msg":"stream: closing","id":"3tc541eg"}
+{"time":"2024-11-20T07:27:39.821454514Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-20T07:27:39.823381125Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-20T07:27:43.337149384Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-20T07:27:43.615552902Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"3tc541eg"}}
+{"time":"2024-11-20T07:27:43.615594443Z","level":"INFO","msg":"sender: closed","stream_id":"3tc541eg"}
+{"time":"2024-11-20T07:27:43.615586443Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"3tc541eg"}}
+{"time":"2024-11-20T07:27:43.615653124Z","level":"INFO","msg":"stream: closed","id":"3tc541eg"}
