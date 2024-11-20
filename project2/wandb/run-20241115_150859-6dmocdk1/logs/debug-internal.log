@@ -1,0 +1,11 @@
+{"time":"2024-11-15T15:08:59.232691723Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-15T15:08:59.232706103Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/project2/wandb/run-20241115_150859-6dmocdk1/logs/debug-core.log"}
+{"time":"2024-11-15T15:08:59.338550013Z","level":"INFO","msg":"created new stream","id":"6dmocdk1"}
+{"time":"2024-11-15T15:08:59.338602354Z","level":"INFO","msg":"stream: started","id":"6dmocdk1"}
+{"time":"2024-11-15T15:08:59.338715117Z","level":"INFO","msg":"sender: started","stream_id":"6dmocdk1"}
+{"time":"2024-11-15T15:08:59.338666855Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"6dmocdk1"}}
+{"time":"2024-11-15T15:08:59.338769118Z","level":"INFO","msg":"handler: started","stream_id":{"value":"6dmocdk1"}}
+{"time":"2024-11-15T15:08:59.678715976Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T15:17:50.802242113Z","level":"INFO","msg":"stream: closing","id":"6dmocdk1"}
+{"time":"2024-11-15T15:17:50.802272564Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T15:17:50.803156885Z","level":"INFO","msg":"Stopped system monitor"}

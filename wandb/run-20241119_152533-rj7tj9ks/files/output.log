@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 462, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 416, in train
+    reward = agent.calculate_reward(state, next_state, done,step)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 135, in calculate_reward
+    if self.visit_table[position]==1:
+       ^^^^^^^^^^^^^^^^
+AttributeError: 'A2CAgent' object has no attribute 'visit_table'

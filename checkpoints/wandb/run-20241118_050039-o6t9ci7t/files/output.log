@@ -1,0 +1,24 @@
+  0%|                                                                                                                                                                                                                             | 0/10000 [00:00<?, ?it/s]/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_agent.py:76: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:278.)
+  state_tensor = torch.FloatTensor(channels).unsqueeze(0).to(self.device)
+  0%|                                                                                                                                                                                                                             | 0/10000 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 181, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 172, in main
+    trainer.train()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 127, in train
+    episode_reward, episode_length, bees_saved, loss = self.train_episode()
+                                                       ^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 65, in train_episode
+    loss = self.agent.optimize_model()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_agent.py", line 144, in optimize_model
+    current_q_values = self.policy_net(state_batch).gather(1, action_batch.unsqueeze(1))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DQN.forward() missing 1 required positional argument: 'hit_points'

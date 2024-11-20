@@ -1,0 +1,26 @@
+Episode 100: Total Reward: 214.59999999999877, Loss: 217.412109375, Epsilon: 0.4988
+Episode 200: Total Reward: 223.04999999999933, Loss: 342.65521240234375, Epsilon: 0.4975
+Episode 300: Total Reward: 217.84999999999803, Loss: 159.07479858398438, Epsilon: 0.4960
+Episode 400: Total Reward: 145.54999999999978, Loss: 61.92509460449219, Epsilon: 0.4944
+Episode 500: Total Reward: 316.89999999999804, Loss: 391.1942443847656, Epsilon: 0.4927
+Episode 600: Total Reward: 120.84999999999998, Loss: 147.28372192382812, Epsilon: 0.4912
+Episode 700: Total Reward: 295.1499999999969, Loss: 129.67086791992188, Epsilon: 0.4897
+Episode 800: Total Reward: 194.5999999999977, Loss: 68.43771362304688, Epsilon: 0.4882
+Episode 900: Total Reward: 337.5999999999992, Loss: 58.132728576660156, Epsilon: 0.4865
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_5.py", line 543, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_5.py", line 422, in main
+    save_checkpoint(agent, episode, loss_value, total_reward, checkpoint_path)
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_5.py", line 313, in save_checkpoint
+    torch.save(checkpoint, filepath)
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/serialization.py", line 849, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/serialization.py", line 716, in _open_zipfile_writer
+    return container(name_or_buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/serialization.py", line 687, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(self.name))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Parent directory project2/checkpoint5 does not exist.

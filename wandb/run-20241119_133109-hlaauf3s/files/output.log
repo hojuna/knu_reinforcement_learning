@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 476, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 427, in train
+    agent.update(reward, done)
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 325, in update
+    self.learn()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 344, in learn
+    valid_actions_batch = torch.stack([self.get_valid_actions(s) for s in self.raw_states])
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: stack expects a non-empty TensorList

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 469, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 434, in train
+    agent.save(episode)
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 360, in save
+    }, f"{self.save_dir}/a2c_checkpoint_{episode}.pth")
+          ^^^^^^^^^^^^^
+AttributeError: 'A2CAgent' object has no attribute 'save_dir'

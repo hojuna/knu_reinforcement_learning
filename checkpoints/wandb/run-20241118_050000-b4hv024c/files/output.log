@@ -1,0 +1,16 @@
+  0%|                                                                                                                                                                                                                             | 0/10000 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 181, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 172, in main
+    trainer.train()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 127, in train
+    episode_reward, episode_length, bees_saved, loss = self.train_episode()
+                                                       ^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 65, in train_episode
+    loss = self.agent.optimize_model()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_agent.py", line 127, in optimize_model
+    batch_state, batch_action, batch_reward, batch_next_state, batch_done = zip(*transitions)
+                                                                            ^^^^^^^^^^^^^^^^^
+TypeError: 'Experience' object is not iterable

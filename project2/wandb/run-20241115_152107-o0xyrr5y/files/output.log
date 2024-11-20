@@ -1,0 +1,26 @@
+Episode 100: Total Reward: -89.79999999999984, Loss: 0.04139786213636398, Epsilon: 0.4968
+Episode 200: Total Reward: -89.69999999999975, Loss: 0.010293017141520977, Epsilon: 0.4932
+Episode 300: Total Reward: -87.85000000000008, Loss: 0.012720822356641293, Epsilon: 0.4908
+Episode 400: Total Reward: -85.80000000000008, Loss: 36.43073272705078, Epsilon: 0.4886
+Episode 500: Total Reward: -54.24999999999999, Loss: 0.010519571602344513, Epsilon: 0.4866
+Episode 600: Total Reward: -76.30000000000015, Loss: 0.335324764251709, Epsilon: 0.4848
+Episode 700: Total Reward: -60.650000000000006, Loss: 18.348569869995117, Epsilon: 0.4834
+Episode 800: Total Reward: -83.14999999999996, Loss: 0.0647626519203186, Epsilon: 0.4815
+Episode 900: Total Reward: -86.64999999999992, Loss: 0.05581450089812279, Epsilon: 0.4798
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_4.py", line 543, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_4.py", line 422, in main
+    save_checkpoint(agent, episode, loss_value, total_reward, checkpoint_path)
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_4.py", line 313, in save_checkpoint
+    torch.save(checkpoint, filepath)
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/serialization.py", line 849, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/serialization.py", line 716, in _open_zipfile_writer
+    return container(name_or_buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/serialization.py", line 687, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(self.name))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Parent directory project2/checkpoint4 does not exist.

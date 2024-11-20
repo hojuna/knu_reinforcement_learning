@@ -1,0 +1,27 @@
+Episode 0, Avg Reward: 520.30, Best Reward: 520.30, remain_bees: 43, step: 1200
+Episode 10, Avg Reward: 274.11, Best Reward: 560.50, remain_bees: 44, step: 355
+Episode 20, Avg Reward: 488.45, Best Reward: 901.80, remain_bees: 42, step: 217
+Episode 30, Avg Reward: 347.46, Best Reward: 901.80, remain_bees: 46, step: 1200
+Episode 40, Avg Reward: 130.36, Best Reward: 901.80, remain_bees: 46, step: 85
+Episode 50, Avg Reward: 355.80, Best Reward: 901.80, remain_bees: 47, step: 1200
+Episode 60, Avg Reward: 271.62, Best Reward: 901.80, remain_bees: 46, step: 365
+Episode 70, Avg Reward: 261.70, Best Reward: 901.80, remain_bees: 46, step: 234
+Episode 80, Avg Reward: 257.20, Best Reward: 901.80, remain_bees: 47, step: 81
+Episode 90, Avg Reward: 274.34, Best Reward: 901.80, remain_bees: 46, step: 1200
+Episode 100, Avg Reward: 272.34, Best Reward: 901.80, remain_bees: 43, step: 1200
+Episode 110, Avg Reward: 237.62, Best Reward: 901.80, remain_bees: 46, step: 110
+Episode 120, Avg Reward: 249.31, Best Reward: 901.80, remain_bees: 46, step: 1200
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 477, in <module>
+    best_reward = episode_reward
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 420, in train
+    self.dones.clear()
+                 ^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 293, in act
+    first_visit_reward=0
+                   ^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 87, in preprocess_state
+    self.value_coef = 0.5
+                ^^^^^^^^^^
+KeyboardInterrupt

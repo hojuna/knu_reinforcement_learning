@@ -1,0 +1,17 @@
+{"time":"2024-11-12T14:21:32.184243625Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T14:21:32.184256365Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/wandb/run-20241112_142132-nslvi9ah/logs/debug-core.log"}
+{"time":"2024-11-12T14:21:32.288944638Z","level":"INFO","msg":"created new stream","id":"nslvi9ah"}
+{"time":"2024-11-12T14:21:32.288962448Z","level":"INFO","msg":"stream: started","id":"nslvi9ah"}
+{"time":"2024-11-12T14:21:32.288986609Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"nslvi9ah"}}
+{"time":"2024-11-12T14:21:32.289021739Z","level":"INFO","msg":"handler: started","stream_id":{"value":"nslvi9ah"}}
+{"time":"2024-11-12T14:21:32.289104241Z","level":"INFO","msg":"sender: started","stream_id":"nslvi9ah"}
+{"time":"2024-11-12T14:21:32.641051786Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-12T15:11:36.228917227Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-12T15:11:36.229672833Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-12T15:11:37.229276646Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading dueling_dqn_checkpoint_episode_1000.pth","runtime_seconds":0.827309099,"progress":"1.8MB/3.7MB"},{"desc":"saving job artifact","runtime_seconds":0.524392212},{"desc":"uploading config.yaml","runtime_seconds":0.281372507,"progress":"887B/887B"},{"desc":"uploading output.log","runtime_seconds":0.281361827,"progress":"97.3KB/97.3KB"}],"total_operations":4}}
+{"time":"2024-11-12T15:11:43.436098229Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-12T15:11:44.78455476Z","level":"INFO","msg":"stream: closing","id":"nslvi9ah"}
+{"time":"2024-11-12T15:11:44.784582191Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"nslvi9ah"}}
+{"time":"2024-11-12T15:11:44.784605852Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"nslvi9ah"}}
+{"time":"2024-11-12T15:11:44.784644084Z","level":"INFO","msg":"sender: closed","stream_id":"nslvi9ah"}
+{"time":"2024-11-12T15:11:44.784711097Z","level":"INFO","msg":"stream: closed","id":"nslvi9ah"}

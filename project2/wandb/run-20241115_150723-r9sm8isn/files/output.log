@@ -1,0 +1,11 @@
+Episode 100: Total Reward: 178.8499999999981, Loss: 22.87293243408203, Epsilon: 0.4988
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_2.py", line 543, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_2.py", line 413, in main
+    loss = agent.optimize_model()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_2.py", line 167, in optimize_model
+    next_hit_points_batch = torch.from_numpy(np.stack([s[1] for s in next_state_batch])).to(self.device)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

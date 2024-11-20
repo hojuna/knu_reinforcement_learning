@@ -1,0 +1,8 @@
+Episode 5 - Reward: 34.90, Length: 166, Bees Saved: 3, Loss: 18.9401, Epsilon: 0.9951:   0%|                                                                                                                                       | 6/10000 [00:30<14:08:29,  5.09s/it]
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 95, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 61, in main
+    agent.update_target_network()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'GridSurvivorRLAgent' object has no attribute 'update_target_network'

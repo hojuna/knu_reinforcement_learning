@@ -1,0 +1,29 @@
+  0%|                                                                                                                                                                                                                                         | 0/10000 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 196, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 183, in main
+    trainer.train()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 127, in train
+    episode_reward, episode_length, bees_saved, loss = self.train_episode()
+                                                       ^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 59, in train_episode
+    next_state, reward, done, _, _ = self.env.step(action)
+                                     ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/gymnasium/core.py", line 550, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/gymnasium/core.py", line 550, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/knu_rl_env/grid_survivor/env.py", line 227, in step
+    self._move_object(obj, 100, 'stand')
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/knu_rl_env/grid_survivor/env.py", line 204, in _move_object
+    self._place_object(obj, max_tries, positions, weights)
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/knu_rl_env/grid_survivor/env.py", line 168, in _place_object
+    if self.grid.get(*pos) is not None:
+       ^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/minigrid/core/grid.py", line 75, in get
+    assert 0 <= i < self.width
+           ^^^^^^^^^^^^^^^^^^^
+AssertionError

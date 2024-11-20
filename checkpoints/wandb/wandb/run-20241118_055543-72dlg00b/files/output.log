@@ -1,0 +1,25 @@
+Episode 8 - Reward: 30.00, Length: 71, Bees Saved: 2, Loss: 17.0229, Epsilon: 0.9955:   0%|                                                                                                                                         | 9/10000 [00:28<8:39:17,  3.12s/it]
+Warning: Invalid action 2 attempted. Ending episode.
+Warning: Invalid action 2 attempted. Ending episode.
+Warning: Invalid action 2 attempted. Ending episode.
+Warning: Invalid action 2 attempted. Ending episode.
+Warning: Invalid action 2 attempted. Ending episode.
+Warning: Invalid action 2 attempted. Ending episode.
+Warning: Invalid action 2 attempted. Ending episode.
+Warning: Invalid action 2 attempted. Ending episode.
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 95, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 56, in main
+    loss = agent.optimize_model()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_agent.py", line 175, in optimize_model
+    state_batch_tensors = [self.process_state(t.state) for t in transitions]
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_agent.py", line 175, in <listcomp>
+    state_batch_tensors = [self.process_state(t.state) for t in transitions]
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_agent.py", line 98, in process_state
+    state_tensor = torch.from_numpy(channels).unsqueeze(0).to(self.device)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

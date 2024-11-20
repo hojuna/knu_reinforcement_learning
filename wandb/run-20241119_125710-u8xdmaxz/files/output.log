@@ -1,0 +1,16 @@
+Episode 0, Avg Reward: 362.10, Best Reward: 362.10
+Episode 10, Avg Reward: 215.86, Best Reward: 362.10
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v1/a2c_test.py", line 411, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v1/a2c_test.py", line 359, in train
+    reward = agent.calculate_reward(state, next_state, done,step)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v1/a2c_test.py", line 206, in calculate_reward
+    position, direction = self.extract_agent_info(state['grid'])
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v1/a2c_test.py", line 157, in extract_agent_info
+    positions = np.argwhere(np.isin(grid, list(direction_symbols.keys())))
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

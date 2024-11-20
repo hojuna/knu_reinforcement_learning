@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN2.py", line 543, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN2.py", line 438, in main
+    log_grid(next_state['grid'], episode)
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN2.py", line 298, in log_grid
+    plt.savefig(f"project2/savefig/grid_episode_{episode}.png")
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/matplotlib/pyplot.py", line 1228, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/matplotlib/figure.py", line 3395, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/matplotlib/backend_bases.py", line 2204, in print_figure
+    result = print_method(
+             ^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/matplotlib/backend_bases.py", line 2054, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+                                                                 ^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/matplotlib/backends/backend_agg.py", line 496, in print_png
+    self._print_pil(filename_or_obj, "png", pil_kwargs, metadata)
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/matplotlib/backends/backend_agg.py", line 445, in _print_pil
+    mpl.image.imsave(
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/matplotlib/image.py", line 1676, in imsave
+    image.save(fname, **pil_kwargs)
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/PIL/Image.py", line 2600, in save
+    fp = builtins.open(filename, "w+b")
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/project2/savefig/grid_episode_100.png'

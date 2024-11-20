@@ -1,0 +1,84 @@
+Episode 0, Avg Reward: 370.90, Best Reward: 370.90, remain_bees: 45, step: 697
+Episode 10, Avg Reward: 179.66, Best Reward: 370.90, remain_bees: 49, step: 99
+Episode 20, Avg Reward: 253.35, Best Reward: 410.60, remain_bees: 49, step: 130
+Episode 30, Avg Reward: 240.14, Best Reward: 421.80, remain_bees: 46, step: 309
+Episode 40, Avg Reward: 208.06, Best Reward: 450.80, remain_bees: 48, step: 150
+Episode 50, Avg Reward: 14.60, Best Reward: 450.80, remain_bees: 47, step: 174
+Episode 60, Avg Reward: 155.76, Best Reward: 450.80, remain_bees: 47, step: 1200
+Episode 70, Avg Reward: -0.38, Best Reward: 450.80, remain_bees: 47, step: 1200
+Episode 80, Avg Reward: -68.91, Best Reward: 450.80, remain_bees: 50, step: 1200
+Episode 90, Avg Reward: -98.17, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 100, Avg Reward: -107.97, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 110, Avg Reward: -78.04, Best Reward: 450.80, remain_bees: 47, step: 1200
+Episode 120, Avg Reward: -8.79, Best Reward: 450.80, remain_bees: 48, step: 1200
+Episode 130, Avg Reward: -38.41, Best Reward: 450.80, remain_bees: 47, step: 1200
+Episode 140, Avg Reward: -67.90, Best Reward: 450.80, remain_bees: 46, step: 1200
+Episode 150, Avg Reward: -34.51, Best Reward: 450.80, remain_bees: 48, step: 937
+Episode 160, Avg Reward: -158.98, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 170, Avg Reward: -128.94, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 180, Avg Reward: -128.92, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 190, Avg Reward: -128.86, Best Reward: 450.80, remain_bees: 48, step: 1200
+Episode 200, Avg Reward: -158.86, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 210, Avg Reward: -128.75, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 220, Avg Reward: -138.99, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 230, Avg Reward: -98.95, Best Reward: 450.80, remain_bees: 47, step: 1200
+Episode 240, Avg Reward: -118.81, Best Reward: 450.80, remain_bees: 50, step: 1200
+Episode 250, Avg Reward: -128.88, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 260, Avg Reward: -139.05, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 270, Avg Reward: -159.99, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 280, Avg Reward: -98.75, Best Reward: 450.80, remain_bees: 48, step: 1200
+Episode 290, Avg Reward: -138.86, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 300, Avg Reward: -118.92, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 310, Avg Reward: -59.21, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 320, Avg Reward: -148.84, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 330, Avg Reward: -129.47, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 340, Avg Reward: -158.99, Best Reward: 450.80, remain_bees: 50, step: 1200
+Episode 350, Avg Reward: -149.41, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 360, Avg Reward: -139.39, Best Reward: 450.80, remain_bees: 50, step: 1200
+Episode 370, Avg Reward: -138.91, Best Reward: 450.80, remain_bees: 50, step: 1200
+Episode 380, Avg Reward: -129.02, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 390, Avg Reward: -168.94, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 400, Avg Reward: -159.25, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 410, Avg Reward: -138.86, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 420, Avg Reward: -119.34, Best Reward: 450.80, remain_bees: 48, step: 1200
+Episode 430, Avg Reward: -119.01, Best Reward: 450.80, remain_bees: 48, step: 1200
+Episode 440, Avg Reward: -149.44, Best Reward: 450.80, remain_bees: 50, step: 1200
+Episode 450, Avg Reward: -148.72, Best Reward: 450.80, remain_bees: 50, step: 1200
+Episode 460, Avg Reward: -118.84, Best Reward: 450.80, remain_bees: 48, step: 1200
+Episode 470, Avg Reward: -98.96, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 480, Avg Reward: -128.89, Best Reward: 450.80, remain_bees: 50, step: 1200
+Episode 490, Avg Reward: -119.28, Best Reward: 450.80, remain_bees: 48, step: 1200
+Episode 500, Avg Reward: -99.01, Best Reward: 450.80, remain_bees: 48, step: 1200
+Episode 510, Avg Reward: -169.00, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 520, Avg Reward: -128.97, Best Reward: 450.80, remain_bees: 48, step: 1200
+Episode 530, Avg Reward: -129.09, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 540, Avg Reward: -168.78, Best Reward: 450.80, remain_bees: 50, step: 1200
+Episode 550, Avg Reward: -149.85, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 560, Avg Reward: -149.09, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 570, Avg Reward: -89.28, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 580, Avg Reward: -179.43, Best Reward: 450.80, remain_bees: 50, step: 1200
+Episode 590, Avg Reward: -118.85, Best Reward: 450.80, remain_bees: 48, step: 1200
+Episode 600, Avg Reward: -149.02, Best Reward: 450.80, remain_bees: 48, step: 1200
+Episode 610, Avg Reward: -108.75, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 620, Avg Reward: -98.72, Best Reward: 450.80, remain_bees: 48, step: 1200
+Episode 630, Avg Reward: -138.82, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 640, Avg Reward: -129.37, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 650, Avg Reward: -158.93, Best Reward: 450.80, remain_bees: 50, step: 1200
+Episode 660, Avg Reward: -68.85, Best Reward: 450.80, remain_bees: 47, step: 1200
+Episode 670, Avg Reward: -89.25, Best Reward: 450.80, remain_bees: 47, step: 1200
+Episode 680, Avg Reward: -169.54, Best Reward: 450.80, remain_bees: 49, step: 1200
+Episode 690, Avg Reward: -168.75, Best Reward: 450.80, remain_bees: 49, step: 1200
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v1/a2c_test.py", line 412, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v1/a2c_test.py", line 355, in train
+    action = agent.act(state)
+             ^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v1/a2c_test.py", line 247, in act
+    state_tensor = self.preprocess_state(state)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v1/a2c_test.py", line 86, in preprocess_state
+    grid_tensor[i, j, cell_types[cell]] = 1
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

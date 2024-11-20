@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 104, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 42, in main
+    agent = DQNAgent(env, config)
+            ^^^^^^^^
+NameError: name 'DQNAgent' is not defined

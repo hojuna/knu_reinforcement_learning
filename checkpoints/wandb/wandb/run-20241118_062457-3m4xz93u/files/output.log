@@ -1,0 +1,17 @@
+Episode 1 - Reward: 14.90, Length: 61, Bees Saved: 1, Loss: 29.3429, Epsilon: 0.9989:   0%|                                                                                                                                        | 2/10000 [00:11<15:27:40,  5.57s/it]
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 95, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 56, in main
+    loss = agent.optimize_model()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_agent.py", line 178, in optimize_model
+    next_state_batch_tensors = [self.process_state(t.next_state) for t in transitions]
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_agent.py", line 178, in <listcomp>
+    next_state_batch_tensors = [self.process_state(t.next_state) for t in transitions]
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_agent.py", line 102, in process_state
+    hit_points_tensor = torch.FloatTensor([hit_points/100.0]).to(self.device)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

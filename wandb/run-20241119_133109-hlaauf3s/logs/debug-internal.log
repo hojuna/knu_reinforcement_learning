@@ -1,0 +1,16 @@
+{"time":"2024-11-19T13:31:09.597291421Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-19T13:31:09.597309571Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241119_133109-hlaauf3s/logs/debug-core.log"}
+{"time":"2024-11-19T13:31:09.703919869Z","level":"INFO","msg":"created new stream","id":"hlaauf3s"}
+{"time":"2024-11-19T13:31:09.70396634Z","level":"INFO","msg":"stream: started","id":"hlaauf3s"}
+{"time":"2024-11-19T13:31:09.704111603Z","level":"INFO","msg":"sender: started","stream_id":"hlaauf3s"}
+{"time":"2024-11-19T13:31:09.704021032Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"hlaauf3s"}}
+{"time":"2024-11-19T13:31:09.704075053Z","level":"INFO","msg":"handler: started","stream_id":{"value":"hlaauf3s"}}
+{"time":"2024-11-19T13:31:10.064795707Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-19T13:31:14.330284058Z","level":"INFO","msg":"stream: closing","id":"hlaauf3s"}
+{"time":"2024-11-19T13:31:14.330314558Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-19T13:31:14.332919192Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-19T13:31:15.514705379Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-19T13:31:15.806613939Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"hlaauf3s"}}
+{"time":"2024-11-19T13:31:15.80665872Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"hlaauf3s"}}
+{"time":"2024-11-19T13:31:15.80667885Z","level":"INFO","msg":"sender: closed","stream_id":"hlaauf3s"}
+{"time":"2024-11-19T13:31:15.806753802Z","level":"INFO","msg":"stream: closed","id":"hlaauf3s"}

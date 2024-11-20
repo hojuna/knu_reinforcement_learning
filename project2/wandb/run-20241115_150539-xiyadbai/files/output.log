@@ -1,0 +1,15 @@
+Episode 100: Total Reward: -54.25, Loss: 190.37811279296875, Epsilon: 0.4985
+Episode 200: Total Reward: 211.3499999999995, Loss: 68.94635772705078, Epsilon: 0.4969
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_1.py", line 543, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_1.py", line 391, in main
+    action = agent.act(state_input, epsilon)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_1.py", line 144, in act
+    return self.select_action(state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/knu_DQN5_1.py", line 122, in select_action
+    grid_tensor = torch.from_numpy(np.array(grid, dtype=np.float32)).unsqueeze(0).to(self.device)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

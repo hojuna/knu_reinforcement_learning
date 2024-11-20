@@ -1,0 +1,16 @@
+{"time":"2024-11-18T05:32:57.095772415Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-18T05:32:57.095786085Z","level":"INFO","msg":"created symlink","path":"checkpoints/wandb/run-20241118_053257-lplv7l39/logs/debug-core.log"}
+{"time":"2024-11-18T05:32:57.202382445Z","level":"INFO","msg":"created new stream","id":"lplv7l39"}
+{"time":"2024-11-18T05:32:57.202422416Z","level":"INFO","msg":"stream: started","id":"lplv7l39"}
+{"time":"2024-11-18T05:32:57.202534029Z","level":"INFO","msg":"sender: started","stream_id":"lplv7l39"}
+{"time":"2024-11-18T05:32:57.202472628Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"lplv7l39"}}
+{"time":"2024-11-18T05:32:57.202538549Z","level":"INFO","msg":"handler: started","stream_id":{"value":"lplv7l39"}}
+{"time":"2024-11-18T05:32:57.611931513Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-18T05:32:57.882246622Z","level":"INFO","msg":"stream: closing","id":"lplv7l39"}
+{"time":"2024-11-18T05:32:57.882314004Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-18T05:32:57.882997731Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-18T05:32:59.064854472Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-18T05:32:59.388523265Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"lplv7l39"}}
+{"time":"2024-11-18T05:32:59.388565026Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"lplv7l39"}}
+{"time":"2024-11-18T05:32:59.388608357Z","level":"INFO","msg":"sender: closed","stream_id":"lplv7l39"}
+{"time":"2024-11-18T05:32:59.388659338Z","level":"INFO","msg":"stream: closed","id":"lplv7l39"}

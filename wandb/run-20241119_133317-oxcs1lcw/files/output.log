@@ -1,0 +1,15 @@
+Episode 0, Avg Reward: 297.70, Best Reward: 297.70, remain_bees: 45, step: 1200
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 477, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v2/a2c_test.py", line 421, in train
+    next_state, reward, done, _ , _= env.step(action)
+                                     ^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/gymnasium/core.py", line 551, in step
+    return self.observation(observation), reward, terminated, truncated, info
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/knu_rl_env/grid_survivor/env.py", line 311, in observation
+    obj = _OBJ_ID_TO_SYM.get(obj, _SYM_EMTPY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

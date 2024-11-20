@@ -1,0 +1,9 @@
+  0%|                                                                                                                                                                                                                                         | 0/10000 [00:00<?, ?it/s]
+Warning: Invalid action 2 attempted. Ending episode.
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 95, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py", line 79, in main
+    'epsilon': agent.epsilon
+               ^^^^^^^^^^^^^
+AttributeError: 'GridSurvivorRLAgent' object has no attribute 'epsilon'

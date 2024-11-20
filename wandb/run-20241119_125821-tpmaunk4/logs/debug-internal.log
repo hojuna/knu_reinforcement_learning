@@ -1,0 +1,11 @@
+{"time":"2024-11-19T12:58:21.524949214Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-19T12:58:21.524961584Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241119_125821-tpmaunk4/logs/debug-core.log"}
+{"time":"2024-11-19T12:58:21.631232291Z","level":"INFO","msg":"created new stream","id":"tpmaunk4"}
+{"time":"2024-11-19T12:58:21.631271752Z","level":"INFO","msg":"stream: started","id":"tpmaunk4"}
+{"time":"2024-11-19T12:58:21.631331864Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"tpmaunk4"}}
+{"time":"2024-11-19T12:58:21.631391866Z","level":"INFO","msg":"sender: started","stream_id":"tpmaunk4"}
+{"time":"2024-11-19T12:58:21.631450508Z","level":"INFO","msg":"handler: started","stream_id":{"value":"tpmaunk4"}}
+{"time":"2024-11-19T12:58:21.997734046Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-19T13:00:34.947234456Z","level":"INFO","msg":"stream: closing","id":"tpmaunk4"}
+{"time":"2024-11-19T13:00:34.947273507Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-19T13:00:34.948210499Z","level":"INFO","msg":"Stopped system monitor"}

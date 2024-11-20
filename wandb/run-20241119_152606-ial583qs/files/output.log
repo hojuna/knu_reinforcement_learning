@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 464, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 421, in train
+    agent.update(reward, done)
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 311, in update
+    self.learn()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 279, in learn
+    action_probs, state_values = self.network(states, safety_preds)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 63, in forward
+    combined_features = torch.cat([features, safety_pred])
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Sizes of tensors must match except in dimension 0. Expected size 128 but got size 1 for tensor number 1 in the list.

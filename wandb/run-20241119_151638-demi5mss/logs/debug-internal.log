@@ -1,0 +1,16 @@
+{"time":"2024-11-19T15:16:38.490650347Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-19T15:16:38.490667797Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241119_151638-demi5mss/logs/debug-core.log"}
+{"time":"2024-11-19T15:16:38.594962602Z","level":"INFO","msg":"created new stream","id":"demi5mss"}
+{"time":"2024-11-19T15:16:38.594980752Z","level":"INFO","msg":"stream: started","id":"demi5mss"}
+{"time":"2024-11-19T15:16:38.595106915Z","level":"INFO","msg":"sender: started","stream_id":"demi5mss"}
+{"time":"2024-11-19T15:16:38.595039664Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"demi5mss"}}
+{"time":"2024-11-19T15:16:38.595179347Z","level":"INFO","msg":"handler: started","stream_id":{"value":"demi5mss"}}
+{"time":"2024-11-19T15:16:38.947089733Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-19T15:16:39.142293866Z","level":"INFO","msg":"stream: closing","id":"demi5mss"}
+{"time":"2024-11-19T15:16:39.142343267Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-19T15:16:39.143310431Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-19T15:16:40.732628747Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-19T15:16:40.993183127Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"demi5mss"}}
+{"time":"2024-11-19T15:16:40.993226028Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"demi5mss"}}
+{"time":"2024-11-19T15:16:40.993260619Z","level":"INFO","msg":"sender: closed","stream_id":"demi5mss"}
+{"time":"2024-11-19T15:16:40.99330561Z","level":"INFO","msg":"stream: closed","id":"demi5mss"}

@@ -1,0 +1,11 @@
+{"time":"2024-11-15T15:10:22.024961161Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-15T15:10:22.024973742Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/project2/wandb/run-20241115_151022-u27y3uh2/logs/debug-core.log"}
+{"time":"2024-11-15T15:10:22.128749645Z","level":"INFO","msg":"created new stream","id":"u27y3uh2"}
+{"time":"2024-11-15T15:10:22.128768956Z","level":"INFO","msg":"stream: started","id":"u27y3uh2"}
+{"time":"2024-11-15T15:10:22.128828087Z","level":"INFO","msg":"sender: started","stream_id":"u27y3uh2"}
+{"time":"2024-11-15T15:10:22.128825397Z","level":"INFO","msg":"handler: started","stream_id":{"value":"u27y3uh2"}}
+{"time":"2024-11-15T15:10:22.128804297Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"u27y3uh2"}}
+{"time":"2024-11-15T15:10:22.467786967Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T15:18:11.976940186Z","level":"INFO","msg":"stream: closing","id":"u27y3uh2"}
+{"time":"2024-11-15T15:18:11.976981527Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T15:18:11.977837518Z","level":"INFO","msg":"Stopped system monitor"}

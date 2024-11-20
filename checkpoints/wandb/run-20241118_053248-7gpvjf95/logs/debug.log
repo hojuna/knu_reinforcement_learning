@@ -1,0 +1,26 @@
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_setup.py:_flush():79] Current SDK version is 0.18.6
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_setup.py:_flush():79] Configure stats pid to 1029221
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_setup.py:_flush():79] Loading settings from /home/comoz/.config/wandb/settings
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_setup.py:_flush():79] Loading settings from /home/comoz/main_project/knu_reinforcement_learning/wandb/settings
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'project2/DQN/dqn_cnn_3/DQN_cnn_run.py', 'program_abspath': '/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py', 'program': '/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/dqn_cnn_3/DQN_cnn_run.py'}
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_init.py:_log_setup():533] Logging user logs to checkpoints/wandb/run-20241118_053248-7gpvjf95/logs/debug.log
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_init.py:_log_setup():534] Logging internal logs to checkpoints/wandb/run-20241118_053248-7gpvjf95/logs/debug-internal.log
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_init.py:init():619] calling init triggers
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_init.py:init():626] wandb.init called with sweep_config: {}
+config: {'input_size': 35, 'num_episodes': 10000, 'batch_size': 64, 'eval_interval': 100, 'save_interval': 500, 'print_interval': 50, 'checkpoint_dir': 'checkpoints', 'use_wandb': True, 'memory_capacity': 100000, 'per_alpha': 0.6, 'per_beta': 0.4, 'episode_buffer_capacity': 1000, 'gamma': 0.99, 'lr': 0.0001, 'weight_decay': 0.01, 'target_update': 1000, 'epsilon_start': 1.0, 'epsilon_end': 0.01, 'epsilon_decay': 200000}
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_init.py:init():669] starting backend
+2024-11-18 05:32:48,936 INFO    MainThread:1029221 [wandb_init.py:init():673] sending inform_init request
+2024-11-18 05:32:48,937 INFO    MainThread:1029221 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-11-18 05:32:48,937 INFO    MainThread:1029221 [wandb_init.py:init():686] backend started and connected
+2024-11-18 05:32:48,938 INFO    MainThread:1029221 [wandb_init.py:init():781] updated telemetry
+2024-11-18 05:32:48,943 INFO    MainThread:1029221 [wandb_init.py:init():814] communicating run to backend with 90.0 second timeout
+2024-11-18 05:32:49,457 INFO    MainThread:1029221 [wandb_init.py:init():867] starting run threads in backend
+2024-11-18 05:32:49,518 INFO    MainThread:1029221 [wandb_run.py:_console_start():2451] atexit reg
+2024-11-18 05:32:49,519 INFO    MainThread:1029221 [wandb_run.py:_redirect():2299] redirect: wrap_raw
+2024-11-18 05:32:49,519 INFO    MainThread:1029221 [wandb_run.py:_redirect():2364] Wrapping output streams.
+2024-11-18 05:32:49,519 INFO    MainThread:1029221 [wandb_run.py:_redirect():2389] Redirects installed.
+2024-11-18 05:32:49,520 INFO    MainThread:1029221 [wandb_init.py:init():911] run started, returning control to user process
+2024-11-18 05:32:49,742 WARNING MsgRouterThr:1029221 [router.py:message_loop():75] message_loop has been closed

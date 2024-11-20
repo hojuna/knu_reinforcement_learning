@@ -1,0 +1,21 @@
+Episode 0, Avg Reward: 271.90, Best Reward: 271.90, remain_bees: 47, step: 192
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 469, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 419, in train
+    next_state, reward, done, _ , _= env.step(action)
+                                     ^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/gymnasium/core.py", line 550, in step
+    observation, reward, terminated, truncated, info = self.env.step(action)
+                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/gymnasium/core.py", line 551, in step
+    return self.observation(observation), reward, terminated, truncated, info
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/minigrid/wrappers.py", line 412, in observation
+    full_grid = env.grid.encode()
+                ^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/minigrid/core/grid.py", line 263, in encode
+    array[i, j, 2] = 0
+    ~~~~~^^^^^^^^^
+KeyboardInterrupt

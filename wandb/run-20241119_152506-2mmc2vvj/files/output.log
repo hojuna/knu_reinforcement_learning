@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 449, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 403, in train
+    reward = agent.calculate_reward(state, next_state, done,step)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 106, in calculate_reward
+    if 'B'==self.find_forward_obj(next_state):
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v3/a2c_test.py", line 183, in find_forward_obj
+    position, direction = self.extract_agent_info(grid)
+                          ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'A2CAgent' object has no attribute 'extract_agent_info'

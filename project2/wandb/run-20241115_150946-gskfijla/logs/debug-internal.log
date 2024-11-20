@@ -1,0 +1,16 @@
+{"time":"2024-11-15T15:09:46.65830392Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-15T15:09:46.658317511Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/project2/wandb/run-20241115_150946-gskfijla/logs/debug-core.log"}
+{"time":"2024-11-15T15:09:46.76462113Z","level":"INFO","msg":"created new stream","id":"gskfijla"}
+{"time":"2024-11-15T15:09:46.764654311Z","level":"INFO","msg":"stream: started","id":"gskfijla"}
+{"time":"2024-11-15T15:09:46.764692872Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"gskfijla"}}
+{"time":"2024-11-15T15:09:46.764741763Z","level":"INFO","msg":"sender: started","stream_id":"gskfijla"}
+{"time":"2024-11-15T15:09:46.764744593Z","level":"INFO","msg":"handler: started","stream_id":{"value":"gskfijla"}}
+{"time":"2024-11-15T15:09:47.059243872Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T15:18:02.650322511Z","level":"INFO","msg":"stream: closing","id":"gskfijla"}
+{"time":"2024-11-15T15:18:02.650366622Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T15:18:02.651365906Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T15:18:05.470701964Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T15:18:05.723943506Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"gskfijla"}}
+{"time":"2024-11-15T15:18:05.723982697Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"gskfijla"}}
+{"time":"2024-11-15T15:18:05.724020318Z","level":"INFO","msg":"sender: closed","stream_id":"gskfijla"}
+{"time":"2024-11-15T15:18:05.724353766Z","level":"INFO","msg":"stream: closed","id":"gskfijla"}
