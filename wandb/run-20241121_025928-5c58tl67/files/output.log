@@ -1,0 +1,20 @@
+Episode 1: Total Reward: 411.0000000000009, Loss: 0.5349793434143066, Epsilon: 0.8411
+Episode 2: Total Reward: 236.5000000000002, Loss: 0.6338809132575989, Epsilon: 0.7767
+Episode 3: Total Reward: 151.2000000000008, Loss: 0.7907302975654602, Epsilon: 0.7371
+Episode 4: Total Reward: 342.6000000000007, Loss: 0.8813033103942871, Epsilon: 0.6671
+Episode 5: Total Reward: 64.1, Loss: 1.40028715133667, Epsilon: 0.6473
+Episode 6: Total Reward: 251.20000000000024, Loss: 1.8217864036560059, Epsilon: 0.5995
+Episode 7: Total Reward: -45.599999999999966, Loss: 0.43326377868652344, Epsilon: 0.5680
+Episode 8: Total Reward: 161.10000000000068, Loss: 0.7107813358306885, Epsilon: 0.5462
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 154, in <module>
+    # 10. 실행 부분
+        ^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 98, in main
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/DQN_agnet.py", line 73, in act
+    return self.select_action(state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/DQN_agnet.py", line 61, in select_action
+    agent_direction_tensor = torch.from_numpy(np.array(agent_direction, dtype=np.float32)).unsqueeze(0).to(self.device)
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

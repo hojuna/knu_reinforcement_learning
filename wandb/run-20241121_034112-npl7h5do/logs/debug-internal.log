@@ -1,0 +1,17 @@
+{"time":"2024-11-21T03:41:12.306409791Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T03:41:12.306441762Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_034112-npl7h5do/logs/debug-core.log"}
+{"time":"2024-11-21T03:41:12.414702352Z","level":"INFO","msg":"created new stream","id":"npl7h5do"}
+{"time":"2024-11-21T03:41:12.414873658Z","level":"INFO","msg":"stream: started","id":"npl7h5do"}
+{"time":"2024-11-21T03:41:12.414910199Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"npl7h5do"}}
+{"time":"2024-11-21T03:41:12.414961541Z","level":"INFO","msg":"handler: started","stream_id":{"value":"npl7h5do"}}
+{"time":"2024-11-21T03:41:12.415087405Z","level":"INFO","msg":"sender: started","stream_id":"npl7h5do"}
+{"time":"2024-11-21T03:41:12.744101425Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T03:41:15.05809596Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T03:41:15.058763992Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T03:41:16.017252209Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.741501152},{"desc":"uploading config.yaml","runtime_seconds":0.515045036,"progress":"984B/984B"},{"desc":"uploading output.log","runtime_seconds":0.515024715,"progress":"91B/91B"}],"total_operations":3}}
+{"time":"2024-11-21T03:41:18.12952356Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T03:41:19.4605352Z","level":"INFO","msg":"stream: closing","id":"npl7h5do"}
+{"time":"2024-11-21T03:41:19.460560581Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"npl7h5do"}}
+{"time":"2024-11-21T03:41:19.460582332Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"npl7h5do"}}
+{"time":"2024-11-21T03:41:19.460624413Z","level":"INFO","msg":"sender: closed","stream_id":"npl7h5do"}
+{"time":"2024-11-21T03:41:19.460909052Z","level":"INFO","msg":"stream: closed","id":"npl7h5do"}

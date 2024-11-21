@@ -1,0 +1,1 @@
+{"loss":51.00395881462596,"average_reward":306.6280000000003,"_step":1710,"step":1200,"_runtime":1735.417998062,"remain_bees":43,"_timestamp":1.7321138015439806e+09,"reward":522.899999999996,"_wandb":{"runtime":1738},"best_reward":1409.8999999999796,"visit_table_min":-598,"visit_table_mean":0.02040816326530612}

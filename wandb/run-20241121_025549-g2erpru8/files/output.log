@@ -1,0 +1,24 @@
+Episode 1: Total Reward: 307.1000000000016, Loss: 0.4015447497367859, Epsilon: 0.9998
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 154, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 120, in main
+    loss = agent.optimize_model()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/DQN_agnet.py", line 128, in optimize_model
+    self.memory.update(idx, error)
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/memory.py", line 105, in update
+    self.tree.update(idx, p)
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/memory.py", line 55, in update
+    self._propagate(idx, change)
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/memory.py", line 24, in _propagate
+    self._propagate(parent, change)
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/memory.py", line 24, in _propagate
+    self._propagate(parent, change)
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/memory.py", line 24, in _propagate
+    self._propagate(parent, change)
+  [Previous line repeated 2 more times]
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/memory.py", line 19, in _propagate
+    def _propagate(self, idx, change):
+
+KeyboardInterrupt

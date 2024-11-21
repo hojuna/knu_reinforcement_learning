@@ -1,0 +1,20 @@
+Episode 1: Total Reward: 349.0000, Loss: 3.3451, Epsilon: 0.9178, steps_done: 182, remain_bees: 46
+Episode 2: Total Reward: 333.8000, Loss: 1.2865, Epsilon: 0.8415, steps_done: 366, remain_bees: 46
+Episode 3: Total Reward: 216.4000, Loss: 0.7930, Epsilon: 0.7299, steps_done: 670, remain_bees: 47
+Episode 4: Total Reward: 243.0000, Loss: 0.3705, Epsilon: 0.6609, steps_done: 884, remain_bees: 47
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 157, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 122, in main
+    loss = agent.optimize_model()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/DQN_agnet.py", line 124, in optimize_model
+    self.optimizer.step()
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/optim/optimizer.py", line 472, in wrapper
+    with torch.autograd.profiler.record_function(profile_name):
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/autograd/profiler.py", line 750, in __exit__
+    torch.ops.profiler._record_function_exit._RecordFunction(record)
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/_ops.py", line 939, in __call__
+    def __call__(self, /, *args, **kwargs):
+
+KeyboardInterrupt

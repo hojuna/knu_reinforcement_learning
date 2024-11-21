@@ -1,0 +1,18 @@
+Episode 1: Total Reward: 233.30000000000098, Loss: 0.8668088912963867, Epsilon: 0.9999
+Episode 2: Total Reward: 353.20000000000107, Loss: 0.7308206558227539, Epsilon: 0.9998
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 154, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 98, in main
+    action = agent.act(state_input, epsilon)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/DQN_agnet.py", line 73, in act
+    return self.select_action(state)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/DQN_agnet.py", line 58, in select_action
+    grid, hit_points, agent_direction, agent_position = self.preprocess_state(state)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/DQN_agnet.py", line 190, in preprocess_state
+    grid=state['grid']
+         ~~~~~^^^^^^^^
+TypeError: tuple indices must be integers or slices, not str

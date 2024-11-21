@@ -1,0 +1,51 @@
+_wandb:
+    value:
+        cli_version: 0.18.6
+        m: []
+        python_version: 3.11.10
+        t:
+            "1":
+                - 1
+                - 55
+            "2":
+                - 1
+                - 55
+            "3":
+                - 13
+                - 16
+                - 23
+                - 55
+            "4": 3.11.10
+            "5": 0.18.6
+            "8":
+                - 5
+            "12": 0.18.6
+            "13": linux-x86_64
+alpha:
+    value: 0.6
+batch_size:
+    value: 64
+beta_frames:
+    value: 100000
+beta_start:
+    value: 0.4
+checkpoint_interval:
+    value: 1000
+gamma:
+    value: 0.95
+grid_height:
+    value: 50
+grid_width:
+    value: 50
+learning_rate:
+    value: 0.0005
+memory_capacity:
+    value: 100000
+num_actions:
+    value: 3
+num_channels:
+    value: 5
+num_episodes:
+    value: 40000
+target_update:
+    value: 100

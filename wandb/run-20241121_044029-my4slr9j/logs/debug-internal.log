@@ -1,0 +1,17 @@
+{"time":"2024-11-21T04:40:29.560171406Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T04:40:29.560185416Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_044029-my4slr9j/logs/debug-core.log"}
+{"time":"2024-11-21T04:40:29.667612531Z","level":"INFO","msg":"created new stream","id":"my4slr9j"}
+{"time":"2024-11-21T04:40:29.667652742Z","level":"INFO","msg":"stream: started","id":"my4slr9j"}
+{"time":"2024-11-21T04:40:29.667699534Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"my4slr9j"}}
+{"time":"2024-11-21T04:40:29.667825387Z","level":"INFO","msg":"sender: started","stream_id":"my4slr9j"}
+{"time":"2024-11-21T04:40:29.667770385Z","level":"INFO","msg":"handler: started","stream_id":{"value":"my4slr9j"}}
+{"time":"2024-11-21T04:40:30.644869292Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T08:06:10.312016451Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T08:06:10.312703791Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T08:06:11.312281384Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.504335284},{"desc":"uploading config.yaml","runtime_seconds":0.263703844,"progress":"984B/984B"},{"desc":"uploading output.log","runtime_seconds":0.263686244,"progress":"55B/55B"}],"total_operations":3}}
+{"time":"2024-11-21T08:06:11.555605467Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T08:06:12.951610188Z","level":"INFO","msg":"stream: closing","id":"my4slr9j"}
+{"time":"2024-11-21T08:06:12.951638259Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"my4slr9j"}}
+{"time":"2024-11-21T08:06:12.95166179Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"my4slr9j"}}
+{"time":"2024-11-21T08:06:12.951691881Z","level":"INFO","msg":"sender: closed","stream_id":"my4slr9j"}
+{"time":"2024-11-21T08:06:12.951762653Z","level":"INFO","msg":"stream: closed","id":"my4slr9j"}

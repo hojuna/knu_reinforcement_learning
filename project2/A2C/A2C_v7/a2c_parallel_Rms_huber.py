@@ -227,8 +227,12 @@ class A2CAgent:
         x, y = next_pos
         if not (0 <= x < len(grid) and 0 <= y < len(grid[0])):
             return False
-        if grid[x][y] == 'W' or self.find_forward_obj(grid) == 'K':
+        # if grid[x][y] == 'W' or self.find_forward_obj(grid) == 'K':
+        #     return False
+
+        if self.find_forward_obj(grid) == 'K':
             return False
+
         return True
     
     def get_valid_actions(self, state):
@@ -242,8 +246,8 @@ class A2CAgent:
         next_pos = self._get_next_position(position, direction)
         if not self._is_valid_move(next_pos, grid):
             valid_actions[2] = 0
-        elif self.find_forward_obj(grid) == 'B':
-            valid_actions[2] += 1
+        # elif self.find_forward_obj(grid) == 'B':
+        #     valid_actions[2] += 1
             
         return valid_actions
 

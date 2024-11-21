@@ -1,0 +1,16 @@
+{"time":"2024-11-21T03:08:18.856257925Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T03:08:18.856272506Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_030818-ugpk72l2/logs/debug-core.log"}
+{"time":"2024-11-21T03:08:18.962621904Z","level":"INFO","msg":"created new stream","id":"ugpk72l2"}
+{"time":"2024-11-21T03:08:18.962660895Z","level":"INFO","msg":"stream: started","id":"ugpk72l2"}
+{"time":"2024-11-21T03:08:18.962756868Z","level":"INFO","msg":"sender: started","stream_id":"ugpk72l2"}
+{"time":"2024-11-21T03:08:18.962717697Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"ugpk72l2"}}
+{"time":"2024-11-21T03:08:18.962775009Z","level":"INFO","msg":"handler: started","stream_id":{"value":"ugpk72l2"}}
+{"time":"2024-11-21T03:08:19.307948048Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T03:26:27.704697725Z","level":"INFO","msg":"stream: closing","id":"ugpk72l2"}
+{"time":"2024-11-21T03:26:27.704726296Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T03:26:27.705452299Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T03:26:30.24240792Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T03:26:30.485648694Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"ugpk72l2"}}
+{"time":"2024-11-21T03:26:30.485690686Z","level":"INFO","msg":"sender: closed","stream_id":"ugpk72l2"}
+{"time":"2024-11-21T03:26:30.485687866Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"ugpk72l2"}}
+{"time":"2024-11-21T03:26:30.485795569Z","level":"INFO","msg":"stream: closed","id":"ugpk72l2"}

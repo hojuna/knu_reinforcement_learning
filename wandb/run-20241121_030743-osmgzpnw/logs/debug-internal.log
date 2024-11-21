@@ -1,0 +1,16 @@
+{"time":"2024-11-21T03:07:43.37041265Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T03:07:43.370442521Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_030743-osmgzpnw/logs/debug-core.log"}
+{"time":"2024-11-21T03:07:43.476086559Z","level":"INFO","msg":"created new stream","id":"osmgzpnw"}
+{"time":"2024-11-21T03:07:43.47610839Z","level":"INFO","msg":"stream: started","id":"osmgzpnw"}
+{"time":"2024-11-21T03:07:43.476197963Z","level":"INFO","msg":"sender: started","stream_id":"osmgzpnw"}
+{"time":"2024-11-21T03:07:43.476165312Z","level":"INFO","msg":"handler: started","stream_id":{"value":"osmgzpnw"}}
+{"time":"2024-11-21T03:07:43.476140051Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"osmgzpnw"}}
+{"time":"2024-11-21T03:07:43.813961399Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T03:07:52.119082062Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T03:07:52.118625156Z","level":"INFO","msg":"stream: closing","id":"osmgzpnw"}
+{"time":"2024-11-21T03:07:52.119842217Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T03:07:52.979585957Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T03:07:53.209546189Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"osmgzpnw"}}
+{"time":"2024-11-21T03:07:53.20958454Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"osmgzpnw"}}
+{"time":"2024-11-21T03:07:53.209621852Z","level":"INFO","msg":"sender: closed","stream_id":"osmgzpnw"}
+{"time":"2024-11-21T03:07:53.209657333Z","level":"INFO","msg":"stream: closed","id":"osmgzpnw"}

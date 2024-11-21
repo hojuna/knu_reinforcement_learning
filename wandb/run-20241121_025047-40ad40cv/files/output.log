@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 154, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 86, in main
+    state_input = agent.preprocess_state(grid, hit_points)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: DuelingDQNAgent.preprocess_state() takes 2 positional arguments but 3 were given

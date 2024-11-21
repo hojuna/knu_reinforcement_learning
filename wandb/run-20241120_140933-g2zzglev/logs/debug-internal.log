@@ -1,0 +1,17 @@
+{"time":"2024-11-20T14:09:33.276481484Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-20T14:09:33.276494135Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241120_140933-g2zzglev/logs/debug-core.log"}
+{"time":"2024-11-20T14:09:33.381175044Z","level":"INFO","msg":"created new stream","id":"g2zzglev"}
+{"time":"2024-11-20T14:09:33.381196595Z","level":"INFO","msg":"stream: started","id":"g2zzglev"}
+{"time":"2024-11-20T14:09:33.381291698Z","level":"INFO","msg":"sender: started","stream_id":"g2zzglev"}
+{"time":"2024-11-20T14:09:33.381258797Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"g2zzglev"}}
+{"time":"2024-11-20T14:09:33.381269037Z","level":"INFO","msg":"handler: started","stream_id":{"value":"g2zzglev"}}
+{"time":"2024-11-20T14:09:33.72295394Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-20T14:14:09.9471297Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-20T14:14:09.947638096Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-20T14:14:10.947441418Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.368527062},{"desc":"uploading wandb-summary.json","runtime_seconds":0.171521316,"progress":"297B/297B"},{"desc":"uploading config.yaml","runtime_seconds":0.11347263,"progress":"462B/462B"},{"desc":"uploading output.log","runtime_seconds":0.113460429,"progress":"229B/229B"}],"total_operations":4}}
+{"time":"2024-11-20T14:14:13.395933418Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-20T14:14:14.73473485Z","level":"INFO","msg":"stream: closing","id":"g2zzglev"}
+{"time":"2024-11-20T14:14:14.73475518Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"g2zzglev"}}
+{"time":"2024-11-20T14:14:14.734772881Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"g2zzglev"}}
+{"time":"2024-11-20T14:14:14.734792111Z","level":"INFO","msg":"sender: closed","stream_id":"g2zzglev"}
+{"time":"2024-11-20T14:14:14.734985248Z","level":"INFO","msg":"stream: closed","id":"g2zzglev"}

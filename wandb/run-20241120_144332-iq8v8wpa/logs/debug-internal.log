@@ -1,0 +1,19 @@
+{"time":"2024-11-20T14:43:32.60032984Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-20T14:43:32.60034282Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241120_144332-iq8v8wpa/logs/debug-core.log"}
+{"time":"2024-11-20T14:43:32.70495333Z","level":"INFO","msg":"created new stream","id":"iq8v8wpa"}
+{"time":"2024-11-20T14:43:32.704976841Z","level":"INFO","msg":"stream: started","id":"iq8v8wpa"}
+{"time":"2024-11-20T14:43:32.705084595Z","level":"INFO","msg":"sender: started","stream_id":"iq8v8wpa"}
+{"time":"2024-11-20T14:43:32.705031503Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"iq8v8wpa"}}
+{"time":"2024-11-20T14:43:32.705111166Z","level":"INFO","msg":"handler: started","stream_id":{"value":"iq8v8wpa"}}
+{"time":"2024-11-20T14:43:33.024940144Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-20T16:42:48.265030711Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2024-11-20T17:12:24.823610426Z","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/files/comoz-kangwon-national-university/a2c_v1/iq8v8wpa/file_stream"}
+{"time":"2024-11-20T17:39:42.946171731Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-20T17:39:42.946873225Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-20T17:39:43.946494279Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.577472117}],"total_operations":1}}
+{"time":"2024-11-20T17:39:44.088664349Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-20T17:39:45.431478055Z","level":"INFO","msg":"stream: closing","id":"iq8v8wpa"}
+{"time":"2024-11-20T17:39:45.431506006Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"iq8v8wpa"}}
+{"time":"2024-11-20T17:39:45.431529467Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"iq8v8wpa"}}
+{"time":"2024-11-20T17:39:45.431545978Z","level":"INFO","msg":"sender: closed","stream_id":"iq8v8wpa"}
+{"time":"2024-11-20T17:39:45.431651881Z","level":"INFO","msg":"stream: closed","id":"iq8v8wpa"}

@@ -1,0 +1,112 @@
+Episode 1: Total Reward: 354.0000, Loss: 1.1274, Epsilon: 0.9309, steps_: 152, remain_bees: 46, visit_table: -16
+Episode 2: Total Reward: 148.5000, Loss: 0.7312, Epsilon: 0.8780, steps_: 124, remain_bees: 48, visit_table: -23
+Episode 3: Total Reward: 362.4000, Loss: 1.5874, Epsilon: 0.8352, steps_: 106, remain_bees: 46, visit_table: -18
+Episode 4: Total Reward: 236.0000, Loss: 0.8089, Epsilon: 0.7412, steps_: 255, remain_bees: 47, visit_table: -41
+Episode 5: Total Reward: 319.6000, Loss: 1.5221, Epsilon: 0.6305, steps_: 349, remain_bees: 46, visit_table: -59
+Episode 6: Total Reward: 52.6000, Loss: 0.5838, Epsilon: 0.5859, steps_: 160, remain_bees: 49, visit_table: -29
+Episode 7: Total Reward: 345.1000, Loss: 0.9775, Epsilon: 0.5352, steps_: 199, remain_bees: 46, visit_table: -30
+Episode 8: Total Reward: 139.2000, Loss: 0.3698, Epsilon: 0.4936, steps_: 179, remain_bees: 48, visit_table: -29
+Episode 9: Total Reward: 233.1000, Loss: 0.8282, Epsilon: 0.4415, steps_: 250, remain_bees: 47, visit_table: -82
+Episode 10: Total Reward: 242.1000, Loss: 0.6560, Epsilon: 0.4019, steps_: 213, remain_bees: 47, visit_table: -51
+Episode 11: Total Reward: 236.9000, Loss: 0.3981, Epsilon: 0.3694, steps_: 194, remain_bees: 47, visit_table: -28
+Episode 12: Total Reward: 129.2000, Loss: 0.4512, Epsilon: 0.3292, steps_: 269, remain_bees: 48, visit_table: -98
+Episode 13: Total Reward: 240.5000, Loss: 0.5832, Epsilon: 0.3003, steps_: 219, remain_bees: 47, visit_table: -59
+Episode 14: Total Reward: 301.3000, Loss: 0.5933, Epsilon: 0.2552, steps_: 397, remain_bees: 46, visit_table: -67
+Episode 15: Total Reward: 256.9000, Loss: 1.0816, Epsilon: 0.2448, steps_: 104, remain_bees: 47, visit_table: -19
+Episode 16: Total Reward: 183.4000, Loss: 0.5954, Epsilon: 0.2031, steps_: 482, remain_bees: 47, visit_table: -130
+Episode 17: Total Reward: 168.3000, Loss: 0.5143, Epsilon: 0.1652, steps_: 568, remain_bees: 47, visit_table: -121
+Episode 18: Total Reward: 119.8000, Loss: 0.3941, Epsilon: 0.1262, steps_: 827, remain_bees: 47, visit_table: -291
+Episode 19: Total Reward: 245.5000, Loss: 0.3484, Epsilon: 0.0919, steps_: 1195, remain_bees: 45, visit_table: -296
+Episode 20: Total Reward: 118.0000, Loss: 0.2202, Epsilon: 0.0777, steps_: 831, remain_bees: 47, visit_table: -161
+Episode 21: Total Reward: -34.4000, Loss: 0.3059, Epsilon: 0.0652, steps_: 1200, remain_bees: 48, visit_table: -406
+Episode 22: Total Reward: 20.6000, Loss: 0.2827, Epsilon: 0.0631, steps_: 302, remain_bees: 49, visit_table: -236
+Episode 23: Total Reward: -48.4000, Loss: 0.1937, Epsilon: 0.0621, steps_: 154, remain_bees: 50, visit_table: -61
+Episode 24: Total Reward: -155.8000, Loss: 0.1254, Epsilon: 0.0587, steps_: 661, remain_bees: 50, visit_table: -134
+Episode 25: Total Reward: -6.1000, Loss: 0.1979, Epsilon: 0.0570, steps_: 443, remain_bees: 49, visit_table: -327
+Episode 26: Total Reward: 160.6000, Loss: 0.1278, Epsilon: 0.0538, steps_: 1200, remain_bees: 46, visit_table: -372
+Episode 27: Total Reward: 53.4000, Loss: 0.2992, Epsilon: 0.0536, steps_: 120, remain_bees: 49, visit_table: -40
+Episode 28: Total Reward: -40.9000, Loss: 0.5504, Epsilon: 0.0527, steps_: 576, remain_bees: 49, visit_table: -167
+Episode 29: Total Reward: 145.5000, Loss: 0.1525, Epsilon: 0.0519, steps_: 690, remain_bees: 47, visit_table: -229
+Episode 30: Total Reward: 51.2000, Loss: 0.1195, Epsilon: 0.0514, steps_: 663, remain_bees: 48, visit_table: -147
+Episode 31: Total Reward: 103.0000, Loss: 0.0360, Epsilon: 0.0509, steps_: 844, remain_bees: 47, visit_table: -311
+Episode 32: Total Reward: 245.8000, Loss: 0.2972, Epsilon: 0.0508, steps_: 146, remain_bees: 47, visit_table: -25
+Episode 33: Total Reward: -25.9000, Loss: 0.3774, Epsilon: 0.0508, steps_: 36, remain_bees: 50, visit_table: -16
+Episode 34: Total Reward: -68.5000, Loss: 0.1382, Epsilon: 0.0506, steps_: 733, remain_bees: 49, visit_table: -311
+Episode 35: Total Reward: 139.5000, Loss: 0.1738, Epsilon: 0.0504, steps_: 725, remain_bees: 47, visit_table: -153
+Episode 36: Total Reward: 199.4000, Loss: 0.0772, Epsilon: 0.0503, steps_: 368, remain_bees: 47, visit_table: -113
+Episode 37: Total Reward: 50.0000, Loss: 0.1759, Epsilon: 0.0503, steps_: 161, remain_bees: 49, visit_table: -91
+Episode 38: Total Reward: 203.7000, Loss: 0.1451, Epsilon: 0.0502, steps_: 859, remain_bees: 46, visit_table: -273
+Episode 39: Total Reward: -58.9000, Loss: 0.1096, Epsilon: 0.0502, steps_: 205, remain_bees: 50, visit_table: -92
+Episode 40: Total Reward: 57.6000, Loss: 0.1121, Epsilon: 0.0502, steps_: 95, remain_bees: 49, visit_table: -37
+Episode 41: Total Reward: 161.9000, Loss: 0.1521, Epsilon: 0.0501, steps_: 606, remain_bees: 47, visit_table: -132
+Episode 42: Total Reward: 414.5000, Loss: 0.3658, Epsilon: 0.0501, steps_: 341, remain_bees: 45, visit_table: -120
+Episode 43: Total Reward: 312.3000, Loss: 0.1534, Epsilon: 0.0501, steps_: 326, remain_bees: 46, visit_table: -130
+Episode 44: Total Reward: 27.9000, Loss: 0.1476, Epsilon: 0.0501, steps_: 779, remain_bees: 48, visit_table: -199
+Episode 45: Total Reward: 118.7000, Loss: 0.1378, Epsilon: 0.0500, steps_: 825, remain_bees: 47, visit_table: -331
+Episode 46: Total Reward: 246.4000, Loss: 0.2408, Epsilon: 0.0500, steps_: 692, remain_bees: 46, visit_table: -324
+Episode 47: Total Reward: 202.0000, Loss: 0.2513, Epsilon: 0.0500, steps_: 378, remain_bees: 47, visit_table: -130
+Episode 48: Total Reward: -45.4000, Loss: 0.1795, Epsilon: 0.0500, steps_: 86, remain_bees: 50, visit_table: -45
+Episode 49: Total Reward: 219.5000, Loss: 0.3058, Epsilon: 0.0500, steps_: 799, remain_bees: 46, visit_table: -114
+Episode 50: Total Reward: 307.9000, Loss: 0.0710, Epsilon: 0.0500, steps_: 352, remain_bees: 46, visit_table: -91
+Episode 51: Total Reward: 55.6000, Loss: 0.5243, Epsilon: 0.0500, steps_: 138, remain_bees: 49, visit_table: -37
+Episode 52: Total Reward: 69.4000, Loss: 0.3625, Epsilon: 0.0500, steps_: 519, remain_bees: 48, visit_table: -284
+Episode 53: Total Reward: 119.1000, Loss: 0.2087, Epsilon: 0.0500, steps_: 310, remain_bees: 48, visit_table: -220
+Episode 54: Total Reward: 171.7000, Loss: 0.1519, Epsilon: 0.0500, steps_: 55, remain_bees: 48, visit_table: -13
+Episode 55: Total Reward: -63.0000, Loss: 0.2276, Epsilon: 0.0500, steps_: 182, remain_bees: 50, visit_table: -69
+Episode 56: Total Reward: 137.8000, Loss: 0.2012, Epsilon: 0.0500, steps_: 709, remain_bees: 47, visit_table: -146
+Episode 57: Total Reward: -34.5000, Loss: 0.1666, Epsilon: 0.0500, steps_: 29, remain_bees: 50, visit_table: -11
+Episode 58: Total Reward: -70.4000, Loss: 0.1516, Epsilon: 0.0500, steps_: 262, remain_bees: 50, visit_table: -102
+Episode 59: Total Reward: 90.5000, Loss: 0.3649, Epsilon: 0.0500, steps_: 440, remain_bees: 48, visit_table: -129
+Episode 60: Total Reward: 56.2000, Loss: 0.4413, Epsilon: 0.0500, steps_: 104, remain_bees: 49, visit_table: -43
+Episode 61: Total Reward: 278.8000, Loss: 0.5040, Epsilon: 0.0500, steps_: 521, remain_bees: 46, visit_table: -376
+Episode 62: Total Reward: 257.1000, Loss: 0.2693, Epsilon: 0.0500, steps_: 77, remain_bees: 47, visit_table: -18
+Episode 63: Total Reward: -34.3000, Loss: 0.0959, Epsilon: 0.0500, steps_: 1200, remain_bees: 48, visit_table: -306
+Episode 64: Total Reward: 64.3000, Loss: 0.1949, Epsilon: 0.0500, steps_: 586, remain_bees: 48, visit_table: -242
+Episode 65: Total Reward: 159.9000, Loss: 0.2025, Epsilon: 0.0500, steps_: 66, remain_bees: 48, visit_table: -24
+Episode 66: Total Reward: 19.1000, Loss: 0.2078, Epsilon: 0.0500, steps_: 321, remain_bees: 49, visit_table: -99
+Episode 67: Total Reward: 67.2000, Loss: 0.0999, Epsilon: 0.0500, steps_: 510, remain_bees: 48, visit_table: -110
+Episode 68: Total Reward: 52.5000, Loss: 0.1084, Epsilon: 0.0500, steps_: 100, remain_bees: 49, visit_table: -22
+Episode 69: Total Reward: 409.1000, Loss: 0.1758, Epsilon: 0.0500, steps_: 299, remain_bees: 45, visit_table: -83
+Episode 70: Total Reward: 58.6000, Loss: 0.0793, Epsilon: 0.0500, steps_: 68, remain_bees: 49, visit_table: -18
+Episode 71: Total Reward: -155.3000, Loss: 0.3309, Epsilon: 0.0500, steps_: 650, remain_bees: 50, visit_table: -210
+Episode 72: Total Reward: 95.1000, Loss: 0.2591, Epsilon: 0.0500, steps_: 896, remain_bees: 47, visit_table: -166
+Episode 73: Total Reward: 131.1000, Loss: 0.2330, Epsilon: 0.0500, steps_: 745, remain_bees: 47, visit_table: -170
+Episode 74: Total Reward: -78.2000, Loss: 0.0979, Epsilon: 0.0500, steps_: 306, remain_bees: 50, visit_table: -168
+Episode 75: Total Reward: 370.2000, Loss: 0.3322, Epsilon: 0.0500, steps_: 512, remain_bees: 45, visit_table: -197
+Episode 76: Total Reward: 251.4000, Loss: 0.1617, Epsilon: 0.0500, steps_: 662, remain_bees: 46, visit_table: -182
+Episode 77: Total Reward: 58.2000, Loss: 0.0886, Epsilon: 0.0500, steps_: 95, remain_bees: 49, visit_table: -34
+Episode 78: Total Reward: 410.8000, Loss: 0.2228, Epsilon: 0.0500, steps_: 335, remain_bees: 45, visit_table: -99
+Episode 79: Total Reward: 312.9000, Loss: 0.1343, Epsilon: 0.0500, steps_: 755, remain_bees: 45, visit_table: -409
+Episode 80: Total Reward: -45.8000, Loss: 0.2112, Epsilon: 0.0500, steps_: 1200, remain_bees: 48, visit_table: -260
+Episode 81: Total Reward: 202.0000, Loss: 0.0848, Epsilon: 0.0500, steps_: 415, remain_bees: 47, visit_table: -63
+Episode 82: Total Reward: 131.4000, Loss: 0.2739, Epsilon: 0.0500, steps_: 233, remain_bees: 48, visit_table: -133
+Episode 83: Total Reward: 144.4000, Loss: 0.0754, Epsilon: 0.0500, steps_: 194, remain_bees: 48, visit_table: -44
+Episode 84: Total Reward: 241.2000, Loss: 0.0509, Epsilon: 0.0500, steps_: 132, remain_bees: 47, visit_table: -51
+Episode 85: Total Reward: -2.6000, Loss: 0.2524, Epsilon: 0.0500, steps_: 428, remain_bees: 49, visit_table: -148
+Episode 86: Total Reward: 428.2000, Loss: 0.1092, Epsilon: 0.0500, steps_: 227, remain_bees: 45, visit_table: -100
+Episode 87: Total Reward: 230.5000, Loss: 0.1770, Epsilon: 0.0500, steps_: 264, remain_bees: 47, visit_table: -87
+Episode 88: Total Reward: 213.7000, Loss: 0.1791, Epsilon: 0.0500, steps_: 840, remain_bees: 46, visit_table: -162
+Episode 89: Total Reward: 69.8000, Loss: 0.2042, Epsilon: 0.0500, steps_: 576, remain_bees: 48, visit_table: -159
+Episode 90: Total Reward: 69.0000, Loss: 0.1574, Epsilon: 0.0500, steps_: 36, remain_bees: 49, visit_table: -17
+Episode 91: Total Reward: 151.1000, Loss: 0.1905, Epsilon: 0.0500, steps_: 153, remain_bees: 48, visit_table: -107
+Episode 92: Total Reward: 206.9000, Loss: 0.1278, Epsilon: 0.0500, steps_: 376, remain_bees: 47, visit_table: -176
+Episode 93: Total Reward: 155.0000, Loss: 0.1575, Epsilon: 0.0500, steps_: 110, remain_bees: 48, visit_table: -38
+Episode 94: Total Reward: 137.3000, Loss: 0.2165, Epsilon: 0.0500, steps_: 733, remain_bees: 47, visit_table: -199
+Episode 95: Total Reward: -107.3000, Loss: 0.1333, Epsilon: 0.0500, steps_: 446, remain_bees: 50, visit_table: -297
+Episode 96: Total Reward: -38.2000, Loss: 0.1498, Epsilon: 0.0500, steps_: 100, remain_bees: 50, visit_table: -69
+Episode 97: Total Reward: 59.8000, Loss: 0.0779, Epsilon: 0.0500, steps_: 1200, remain_bees: 47, visit_table: -251
+Episode 98: Total Reward: -48.6000, Loss: 0.0712, Epsilon: 0.0500, steps_: 125, remain_bees: 50, visit_table: -75
+Episode 99: Total Reward: 150.3000, Loss: 0.0602, Epsilon: 0.0500, steps_: 642, remain_bees: 47, visit_table: -473
+Episode 100: Total Reward: 59.1000, Loss: 0.2179, Epsilon: 0.0500, steps_: 87, remain_bees: 49, visit_table: -34
+Episode 101: Total Reward: 92.9000, Loss: 0.5192, Epsilon: 0.0500, steps_: 424, remain_bees: 48, visit_table: -130
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 173, in <module>
+    if __name__ == "__main__":
+        ^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 133, in main
+    # 모델 최적화
+          ^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/DQN_agnet.py", line 130, in optimize_model
+    return loss.item()
+           ^^^^^^^^^^^
+KeyboardInterrupt

@@ -1,0 +1,40 @@
+Episode 1: Total Reward: 238.5000, Loss: 0.2958, Epsilon: 0.6881, steps_done: 797, remain_bees: 46, visit_table: -100
+Episode 2: Total Reward: 154.0000, Loss: 0.2712, Epsilon: 0.6497, steps_done: 921, remain_bees: 48, visit_table: -20
+Episode 3: Total Reward: 157.4000, Loss: 0.6563, Epsilon: 0.6253, steps_done: 1004, remain_bees: 48, visit_table: -7
+Episode 4: Total Reward: 234.4000, Loss: 0.2695, Epsilon: 0.5628, steps_done: 1234, remain_bees: 47, visit_table: -50
+Episode 5: Total Reward: 153.4000, Loss: 0.3472, Epsilon: 0.5313, steps_done: 1361, remain_bees: 48, visit_table: -25
+Episode 6: Total Reward: 60.9000, Loss: 1.3281, Epsilon: 0.5180, steps_done: 1417, remain_bees: 49, visit_table: -9
+Episode 7: Total Reward: 256.0000, Loss: 1.0820, Epsilon: 0.4918, steps_done: 1532, remain_bees: 47, visit_table: -28
+Episode 8: Total Reward: 153.0000, Loss: 1.4852, Epsilon: 0.4603, steps_done: 1680, remain_bees: 48, visit_table: -23
+Episode 9: Total Reward: 142.7000, Loss: 0.3327, Epsilon: 0.4196, steps_done: 1889, remain_bees: 48, visit_table: -45
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 157, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 122, in main
+    loss = agent.optimize_model()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/DQN_agnet.py", line 124, in optimize_model
+    self.optimizer.step()
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/optim/optimizer.py", line 487, in wrapper
+    out = func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/optim/optimizer.py", line 91, in _use_grad
+    ret = func(self, *args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/optim/adam.py", line 223, in step
+    adam(
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/optim/optimizer.py", line 154, in maybe_fallback
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/optim/adam.py", line 784, in adam
+    func(
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/optim/adam.py", line 592, in _multi_tensor_adam
+    bias_correction1 = [
+                       ^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/optim/adam.py", line 593, in <listcomp>
+    1 - beta1 ** _get_value(step) for step in device_state_steps
+                 ^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/torch/optim/optimizer.py", line 106, in _get_value
+    return x.item() if isinstance(x, torch.Tensor) else x
+           ^^^^^^^^
+KeyboardInterrupt

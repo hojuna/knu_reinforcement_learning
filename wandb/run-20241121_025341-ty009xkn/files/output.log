@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 154, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 106, in main
+    movement_reward = agent.calculate_adjusted_reward(state, next_state, done, agent.steps_done)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DuelingDQNAgent' object has no attribute 'calculate_adjusted_reward'

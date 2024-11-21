@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 154, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 106, in main
+    movement_reward = agent.calculate_reward(state, next_state, done, agent.steps_done)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/DQN_agnet.py", line 222, in calculate_reward
+    if 'B'==self.find_forward_obj(next_state):
+            ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DuelingDQNAgent' object has no attribute 'find_forward_obj'

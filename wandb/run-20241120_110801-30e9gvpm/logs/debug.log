@@ -23,3 +23,10 @@ config: {}
 2024-11-20 11:08:02,453 INFO    MainThread:1335574 [wandb_run.py:_redirect():2364] Wrapping output streams.
 2024-11-20 11:08:02,453 INFO    MainThread:1335574 [wandb_run.py:_redirect():2389] Redirects installed.
 2024-11-20 11:08:02,454 INFO    MainThread:1335574 [wandb_init.py:init():911] run started, returning control to user process
+2024-11-20 13:47:27,637 INFO    MainThread:1335574 [wandb_run.py:_finish():2146] finishing run comoz-kangwon-national-university/a2c_v1/30e9gvpm
+2024-11-20 13:47:27,637 INFO    MainThread:1335574 [wandb_run.py:_atexit_cleanup():2414] got exitcode: 0
+2024-11-20 13:47:27,637 INFO    MainThread:1335574 [wandb_run.py:_restore():2396] restore
+2024-11-20 13:47:27,637 INFO    MainThread:1335574 [wandb_run.py:_restore():2402] restore done
+2024-11-20 13:47:32,067 INFO    MainThread:1335574 [wandb_run.py:_footer_history_summary_info():3963] rendering history
+2024-11-20 13:47:32,068 INFO    MainThread:1335574 [wandb_run.py:_footer_history_summary_info():3995] rendering summary
+2024-11-20 13:47:32,071 INFO    MainThread:1335574 [wandb_run.py:_footer_sync_info():3922] logging synced files

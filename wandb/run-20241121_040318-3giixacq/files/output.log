@@ -1,0 +1,12 @@
+Episode 1: Total Reward: 56.5000, Loss: 1.1289, Epsilon: 0.9935, steps_: 133, remain_bees: 49, visit_table: -17
+Episode 2: Total Reward: 157.4000, Loss: 0.6883, Epsilon: 0.9872, steps_: 128, remain_bees: 48, visit_table: -24
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 174, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 134, in main
+    loss = agent.optimize_model()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/DQN_agnet.py", line 114, in optimize_model
+    abs_errors = td_errors.abs().detach().cpu().numpy()  # 우선순위 업데이트를 위해 절대값 사용
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

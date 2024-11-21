@@ -1,0 +1,16 @@
+Episode 1: Total Reward: 146.30000000000032, Loss: 0.7334235310554504, Epsilon: 0.9999
+Episode 2: Total Reward: 51.899999999999885, Loss: 0.34027373790740967, Epsilon: 0.9998
+Episode 3: Total Reward: 266.00000000000307, Loss: 0.40689557790756226, Epsilon: 0.9995
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 154, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/main.py", line 101, in main
+    next_state, reward, done, _, _ = env.step(action)
+                                     ^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/gymnasium/core.py", line 551, in step
+    return self.observation(observation), reward, terminated, truncated, info
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/miniconda3/envs/KNU_RL/lib/python3.11/site-packages/knu_rl_env/grid_survivor/env.py", line 311, in observation
+    obj = _OBJ_ID_TO_SYM.get(obj, _SYM_EMTPY)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

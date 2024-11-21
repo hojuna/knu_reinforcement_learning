@@ -1,0 +1,16 @@
+{"time":"2024-11-21T02:55:49.309900672Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T02:55:49.309932614Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_025549-g2erpru8/logs/debug-core.log"}
+{"time":"2024-11-21T02:55:49.417273158Z","level":"INFO","msg":"created new stream","id":"g2erpru8"}
+{"time":"2024-11-21T02:55:49.41731381Z","level":"INFO","msg":"stream: started","id":"g2erpru8"}
+{"time":"2024-11-21T02:55:49.417426004Z","level":"INFO","msg":"sender: started","stream_id":"g2erpru8"}
+{"time":"2024-11-21T02:55:49.417368262Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"g2erpru8"}}
+{"time":"2024-11-21T02:55:49.417460265Z","level":"INFO","msg":"handler: started","stream_id":{"value":"g2erpru8"}}
+{"time":"2024-11-21T02:55:49.710365963Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T02:56:05.408112906Z","level":"INFO","msg":"stream: closing","id":"g2erpru8"}
+{"time":"2024-11-21T02:56:05.408142337Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T02:56:05.408937005Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T02:56:07.923298428Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T02:56:08.181735858Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"g2erpru8"}}
+{"time":"2024-11-21T02:56:08.18178896Z","level":"INFO","msg":"sender: closed","stream_id":"g2erpru8"}
+{"time":"2024-11-21T02:56:08.18178569Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"g2erpru8"}}
+{"time":"2024-11-21T02:56:08.181948775Z","level":"INFO","msg":"stream: closed","id":"g2erpru8"}

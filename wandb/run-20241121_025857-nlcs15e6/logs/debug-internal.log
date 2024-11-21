@@ -1,0 +1,16 @@
+{"time":"2024-11-21T02:58:57.140067347Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T02:58:57.140084047Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_025857-nlcs15e6/logs/debug-core.log"}
+{"time":"2024-11-21T02:58:57.246553006Z","level":"INFO","msg":"created new stream","id":"nlcs15e6"}
+{"time":"2024-11-21T02:58:57.246594388Z","level":"INFO","msg":"stream: started","id":"nlcs15e6"}
+{"time":"2024-11-21T02:58:57.246679211Z","level":"INFO","msg":"sender: started","stream_id":"nlcs15e6"}
+{"time":"2024-11-21T02:58:57.24665215Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"nlcs15e6"}}
+{"time":"2024-11-21T02:58:57.246732902Z","level":"INFO","msg":"handler: started","stream_id":{"value":"nlcs15e6"}}
+{"time":"2024-11-21T02:58:57.55724397Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T02:59:23.986600584Z","level":"INFO","msg":"stream: closing","id":"nlcs15e6"}
+{"time":"2024-11-21T02:59:23.986626145Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T02:59:23.987125693Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T02:59:24.988948484Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T02:59:25.285767747Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"nlcs15e6"}}
+{"time":"2024-11-21T02:59:25.285873601Z","level":"INFO","msg":"sender: closed","stream_id":"nlcs15e6"}
+{"time":"2024-11-21T02:59:25.28585415Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"nlcs15e6"}}
+{"time":"2024-11-21T02:59:25.286011596Z","level":"INFO","msg":"stream: closed","id":"nlcs15e6"}
