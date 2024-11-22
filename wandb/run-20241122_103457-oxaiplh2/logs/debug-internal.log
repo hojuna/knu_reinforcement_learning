@@ -1,0 +1,11 @@
+{"time":"2024-11-22T10:34:57.355424055Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-22T10:34:57.355445806Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241122_103457-oxaiplh2/logs/debug-core.log"}
+{"time":"2024-11-22T10:34:57.462024377Z","level":"INFO","msg":"created new stream","id":"oxaiplh2"}
+{"time":"2024-11-22T10:34:57.462063769Z","level":"INFO","msg":"stream: started","id":"oxaiplh2"}
+{"time":"2024-11-22T10:34:57.462365429Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"oxaiplh2"}}
+{"time":"2024-11-22T10:34:57.462449042Z","level":"INFO","msg":"sender: started","stream_id":"oxaiplh2"}
+{"time":"2024-11-22T10:34:57.462454652Z","level":"INFO","msg":"handler: started","stream_id":{"value":"oxaiplh2"}}
+{"time":"2024-11-22T10:34:57.775582966Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T10:46:05.342791914Z","level":"INFO","msg":"stream: closing","id":"oxaiplh2"}
+{"time":"2024-11-22T10:46:05.342832105Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T10:46:05.343580671Z","level":"INFO","msg":"Stopped system monitor"}

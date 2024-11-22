@@ -1,0 +1,12 @@
+Episode 0, Avg Reward: 265.69, Best Reward: 265.69, remain_bees: 46, step: 421, visit_table_min: -30.0
+Episode 10, Avg Reward: 233.56, Best Reward: 508.96, remain_bees: 46, step: 174, visit_table_min: -22.0
+Episode 20, Avg Reward: 401.92, Best Reward: 870.47, remain_bees: 42, step: 216, visit_table_min: -30.0
+Episode 30, Avg Reward: 549.92, Best Reward: 1148.26, remain_bees: 40, step: 192, visit_table_min: -27.0
+Episode 40, Avg Reward: 465.58, Best Reward: 1293.73, remain_bees: 46, step: 220, visit_table_min: -25.0
+Episode 50, Avg Reward: 493.37, Best Reward: 1722.08, remain_bees: 46, step: 371, visit_table_min: -30.0
+Episode 60, Avg Reward: 448.08, Best Reward: 1722.08, remain_bees: 46, step: 158, visit_table_min: -20.0
+Episode 70, Avg Reward: 415.99, Best Reward: 1722.08, remain_bees: 44, step: 526, visit_table_min: -22.0
+Episode 80, Avg Reward: 459.81, Best Reward: 2344.65, remain_bees: 46, step: 344, visit_table_min: -25.0
+Episode 90, Avg Reward: 311.06, Best Reward: 2344.65, remain_bees: 46, step: 282, visit_table_min: -29.0
+Episode 100, Avg Reward: 211.29, Best Reward: 2344.65, remain_bees: 47, step: 254, visit_table_min: -26.0
+Episode 110, Avg Reward: 381.75, Best Reward: 2344.65, remain_bees: 46, step: 320, visit_table_min: -30.0

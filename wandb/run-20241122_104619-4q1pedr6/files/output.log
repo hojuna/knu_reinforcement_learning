@@ -1,0 +1,18 @@
+Episode 0, Avg Reward: 173.06, Best Reward: 173.06, remain_bees: 47, step: 117, visit_table_min: -12.0
+Episode 10, Avg Reward: 161.69, Best Reward: 474.98, remain_bees: 46, step: 126, visit_table_min: -6.0
+Episode 20, Avg Reward: 154.58, Best Reward: 474.98, remain_bees: 46, step: 106, visit_table_min: -8.0
+Episode 30, Avg Reward: 292.22, Best Reward: 627.26, remain_bees: 46, step: 169, visit_table_min: -5.0
+Episode 40, Avg Reward: 305.02, Best Reward: 1017.05, remain_bees: 45, step: 126, visit_table_min: -6.0
+Episode 50, Avg Reward: 372.50, Best Reward: 1017.05, remain_bees: 41, step: 232, visit_table_min: -5.0
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v9/a2c_Rms_huber.py", line 100, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v9/a2c_Rms_huber.py", line 42, in train
+    reward = agent.calculate_reward(state, next_state, done,step,action)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v9/A2Cagent.py", line 350, in calculate_reward
+    dist = self.get_path_distance(next_state['grid'], position, bee_pos)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v9/A2Cagent.py", line None, in get_path_distance
+KeyboardInterrupt

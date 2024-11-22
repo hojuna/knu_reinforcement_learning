@@ -23,3 +23,10 @@ config: {'learning_rate': 0.0005, 'gamma': 0.95, 'batch_size': 64, 'memory_capac
 2024-11-22 05:05:20,436 INFO    MainThread:1469128 [wandb_run.py:_redirect():2364] Wrapping output streams.
 2024-11-22 05:05:20,436 INFO    MainThread:1469128 [wandb_run.py:_redirect():2389] Redirects installed.
 2024-11-22 05:05:20,437 INFO    MainThread:1469128 [wandb_init.py:init():911] run started, returning control to user process
+2024-11-22 11:27:29,039 INFO    MainThread:1469128 [wandb_run.py:_finish():2146] finishing run comoz-kangwon-national-university/dqn_parallel/1uee8zc0
+2024-11-22 11:27:29,039 INFO    MainThread:1469128 [wandb_run.py:_atexit_cleanup():2414] got exitcode: 0
+2024-11-22 11:27:29,039 INFO    MainThread:1469128 [wandb_run.py:_restore():2396] restore
+2024-11-22 11:27:29,039 INFO    MainThread:1469128 [wandb_run.py:_restore():2402] restore done
+2024-11-22 11:27:31,820 INFO    MainThread:1469128 [wandb_run.py:_footer_history_summary_info():3963] rendering history
+2024-11-22 11:27:31,821 INFO    MainThread:1469128 [wandb_run.py:_footer_history_summary_info():3995] rendering summary
+2024-11-22 11:27:31,827 INFO    MainThread:1469128 [wandb_run.py:_footer_sync_info():3922] logging synced files

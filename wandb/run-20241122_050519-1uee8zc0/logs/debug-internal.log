@@ -6,3 +6,13 @@
 {"time":"2024-11-22T05:05:19.983775309Z","level":"INFO","msg":"handler: started","stream_id":{"value":"1uee8zc0"}}
 {"time":"2024-11-22T05:05:19.983723327Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"1uee8zc0"}}
 {"time":"2024-11-22T05:05:20.376894264Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T09:35:06.136016248Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/comoz-kangwon-national-university/dqn_parallel/1uee8zc0/file_stream"}
+{"time":"2024-11-22T11:27:29.040097694Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T11:27:29.040902693Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T11:27:30.040575703Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.546272801}],"total_operations":1}}
+{"time":"2024-11-22T11:27:30.559847681Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-22T11:27:31.827829717Z","level":"INFO","msg":"stream: closing","id":"1uee8zc0"}
+{"time":"2024-11-22T11:27:31.827868788Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"1uee8zc0"}}
+{"time":"2024-11-22T11:27:31.827894358Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"1uee8zc0"}}
+{"time":"2024-11-22T11:27:31.827999471Z","level":"INFO","msg":"sender: closed","stream_id":"1uee8zc0"}
+{"time":"2024-11-22T11:27:31.828058942Z","level":"INFO","msg":"stream: closed","id":"1uee8zc0"}

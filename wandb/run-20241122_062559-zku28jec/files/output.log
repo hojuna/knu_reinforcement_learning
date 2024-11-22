@@ -17,3 +17,26 @@ Episode 150, Avg Reward: 334.99, Best Reward: 1460.40, remain_bees: 42, step: 31
 Episode 160, Avg Reward: 133.62, Best Reward: 1460.40, remain_bees: 45, step: 215, visit_table_min: -88.0
 Episode 170, Avg Reward: 166.49, Best Reward: 1460.40, remain_bees: 46, step: 686, visit_table_min: -592.0
 Episode 180, Avg Reward: 197.13, Best Reward: 1460.40, remain_bees: 44, step: 691, visit_table_min: -525.0
+Episode 190, Avg Reward: 229.65, Best Reward: 1460.40, remain_bees: 44, step: 987, visit_table_min: -589.0
+Episode 200, Avg Reward: 329.90, Best Reward: 1460.40, remain_bees: 46, step: 108, visit_table_min: -27.0
+Episode 210, Avg Reward: 351.89, Best Reward: 1460.40, remain_bees: 39, step: 172, visit_table_min: -10.0
+Episode 220, Avg Reward: 241.90, Best Reward: 1460.40, remain_bees: 46, step: 106, visit_table_min: -10.0
+Episode 230, Avg Reward: 482.22, Best Reward: 1460.40, remain_bees: 46, step: 1200, visit_table_min: -1092.0
+Episode 240, Avg Reward: 510.87, Best Reward: 1460.40, remain_bees: 46, step: 297, visit_table_min: -198.0
+Episode 250, Avg Reward: 429.27, Best Reward: 1460.40, remain_bees: 46, step: 1200, visit_table_min: -1052.0
+Episode 260, Avg Reward: 498.16, Best Reward: 1460.40, remain_bees: 46, step: 1200, visit_table_min: -1146.0
+Episode 270, Avg Reward: 566.60, Best Reward: 1460.40, remain_bees: 46, step: 1200, visit_table_min: -1127.0
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v5/a2c_Rms_huber.py", line 678, in <module>
+    reward_history = train(env, agent, num_episodes, save_interval)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v5/a2c_Rms_huber.py", line 620, in train
+    reward = agent.calculate_reward(state, next_state, done,step)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v5/a2c_Rms_huber.py", line 377, in calculate_reward
+    dist = self.get_path_distance(state['grid'], prev_position, bee_pos)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v5/a2c_Rms_huber.py", line 437, in get_path_distance
+    if (x, y) == tuple(goal):
+                 ^^^^^^^^^^^
+KeyboardInterrupt

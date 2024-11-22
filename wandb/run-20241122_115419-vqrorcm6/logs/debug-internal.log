@@ -1,0 +1,16 @@
+{"time":"2024-11-22T11:54:19.684429337Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-22T11:54:19.684442617Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241122_115419-vqrorcm6/logs/debug-core.log"}
+{"time":"2024-11-22T11:54:19.789396838Z","level":"INFO","msg":"created new stream","id":"vqrorcm6"}
+{"time":"2024-11-22T11:54:19.789418259Z","level":"INFO","msg":"stream: started","id":"vqrorcm6"}
+{"time":"2024-11-22T11:54:19.789478181Z","level":"INFO","msg":"handler: started","stream_id":{"value":"vqrorcm6"}}
+{"time":"2024-11-22T11:54:19.789537132Z","level":"INFO","msg":"sender: started","stream_id":"vqrorcm6"}
+{"time":"2024-11-22T11:54:19.78946592Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"vqrorcm6"}}
+{"time":"2024-11-22T11:54:20.089420125Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T11:57:33.838269375Z","level":"INFO","msg":"stream: closing","id":"vqrorcm6"}
+{"time":"2024-11-22T11:57:33.838297136Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T11:57:33.839605263Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T11:57:34.717178801Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-22T11:57:35.048010199Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"vqrorcm6"}}
+{"time":"2024-11-22T11:57:35.048066231Z","level":"INFO","msg":"sender: closed","stream_id":"vqrorcm6"}
+{"time":"2024-11-22T11:57:35.048054011Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"vqrorcm6"}}
+{"time":"2024-11-22T11:57:35.048241516Z","level":"INFO","msg":"stream: closed","id":"vqrorcm6"}

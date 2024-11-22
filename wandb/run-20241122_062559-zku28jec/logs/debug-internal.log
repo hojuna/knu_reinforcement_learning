@@ -7,3 +7,11 @@
 {"time":"2024-11-22T06:26:00.064264705Z","level":"INFO","msg":"handler: started","stream_id":{"value":"zku28jec"}}
 {"time":"2024-11-22T06:26:00.424575193Z","level":"INFO","msg":"Starting system monitor"}
 {"time":"2024-11-22T07:52:01.257180951Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/comoz-kangwon-national-university/a2c_v1/zku28jec/file_stream"}
+{"time":"2024-11-22T11:19:31.446310341Z","level":"INFO","msg":"stream: closing","id":"zku28jec"}
+{"time":"2024-11-22T11:19:31.446366862Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T11:19:31.447209464Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T11:19:32.526908719Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-22T11:19:32.756714317Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"zku28jec"}}
+{"time":"2024-11-22T11:19:32.756765458Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"zku28jec"}}
+{"time":"2024-11-22T11:19:32.756800308Z","level":"INFO","msg":"sender: closed","stream_id":"zku28jec"}
+{"time":"2024-11-22T11:19:32.756855509Z","level":"INFO","msg":"stream: closed","id":"zku28jec"}
