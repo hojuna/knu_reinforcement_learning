@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/LSTM_DQN_/main.py", line 148, in <module>
+    main()
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/LSTM_DQN_/main.py", line 47, in main
+    agent = DuelingDQNAgent(
+            ^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/LSTM_DQN_/DQN_agnet.py", line 31, in __init__
+    self.epsilon = config["epsilon"]
+                   ~~~~~~^^^^^^^^^^^
+KeyError: 'epsilon'

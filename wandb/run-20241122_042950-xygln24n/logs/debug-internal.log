@@ -1,0 +1,18 @@
+{"time":"2024-11-22T04:29:50.902796072Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-22T04:29:50.902824753Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241122_042950-xygln24n/logs/debug-core.log"}
+{"time":"2024-11-22T04:29:51.007066751Z","level":"INFO","msg":"created new stream","id":"xygln24n"}
+{"time":"2024-11-22T04:29:51.00736064Z","level":"INFO","msg":"sender: started","stream_id":"xygln24n"}
+{"time":"2024-11-22T04:29:51.007379721Z","level":"INFO","msg":"stream: started","id":"xygln24n"}
+{"time":"2024-11-22T04:29:51.007375961Z","level":"INFO","msg":"handler: started","stream_id":{"value":"xygln24n"}}
+{"time":"2024-11-22T04:29:51.007402672Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"xygln24n"}}
+{"time":"2024-11-22T04:29:51.392560154Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T04:32:37.161527265Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/comoz-kangwon-national-university/dqn_parallel/xygln24n/file_stream"}
+{"time":"2024-11-22T05:06:16.078813594Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T05:06:16.079431747Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T05:06:17.079230762Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.478467656},{"desc":"uploading config.yaml","runtime_seconds":0.219544868,"progress":"1.0KB/1.0KB"},{"desc":"uploading output.log","runtime_seconds":0.219534288,"progress":"55B/55B"}],"total_operations":3}}
+{"time":"2024-11-22T05:06:17.325076017Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-22T05:06:18.596303554Z","level":"INFO","msg":"stream: closing","id":"xygln24n"}
+{"time":"2024-11-22T05:06:18.596320674Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"xygln24n"}}
+{"time":"2024-11-22T05:06:18.596336185Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"xygln24n"}}
+{"time":"2024-11-22T05:06:18.596395787Z","level":"INFO","msg":"sender: closed","stream_id":"xygln24n"}
+{"time":"2024-11-22T05:06:18.596403697Z","level":"INFO","msg":"stream: closed","id":"xygln24n"}

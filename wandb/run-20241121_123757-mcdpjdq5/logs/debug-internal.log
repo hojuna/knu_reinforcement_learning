@@ -1,0 +1,17 @@
+{"time":"2024-11-21T12:37:57.742464733Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T12:37:57.742480344Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_123757-mcdpjdq5/logs/debug-core.log"}
+{"time":"2024-11-21T12:37:57.850028072Z","level":"INFO","msg":"created new stream","id":"mcdpjdq5"}
+{"time":"2024-11-21T12:37:57.850071143Z","level":"INFO","msg":"stream: started","id":"mcdpjdq5"}
+{"time":"2024-11-21T12:37:57.850179967Z","level":"INFO","msg":"sender: started","stream_id":"mcdpjdq5"}
+{"time":"2024-11-21T12:37:57.850124675Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"mcdpjdq5"}}
+{"time":"2024-11-21T12:37:57.850247439Z","level":"INFO","msg":"handler: started","stream_id":{"value":"mcdpjdq5"}}
+{"time":"2024-11-21T12:37:58.238154748Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T12:51:35.562769202Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T12:51:35.563536199Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T12:51:36.563181668Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.55731865},{"desc":"uploading output.log","runtime_seconds":0.314586682,"progress":"55B/55B"},{"desc":"uploading config.yaml","runtime_seconds":0.314571651,"progress":"1.0KB/1.0KB"}],"total_operations":3}}
+{"time":"2024-11-21T12:51:36.74896688Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T12:51:38.103091116Z","level":"INFO","msg":"stream: closing","id":"mcdpjdq5"}
+{"time":"2024-11-21T12:51:38.103123768Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"mcdpjdq5"}}
+{"time":"2024-11-21T12:51:38.103149359Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"mcdpjdq5"}}
+{"time":"2024-11-21T12:51:38.10318029Z","level":"INFO","msg":"sender: closed","stream_id":"mcdpjdq5"}
+{"time":"2024-11-21T12:51:38.103332765Z","level":"INFO","msg":"stream: closed","id":"mcdpjdq5"}

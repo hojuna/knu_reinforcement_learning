@@ -29,7 +29,7 @@ class DuelingDQN(nn.Module):
         self.activation = nn.LeakyReLU(negative_slope=0.01)
         
         # 드롭아웃
-        self.dropout = nn.Dropout(p=0.5)
+        # self.dropout = nn.Dropout(p=0.5)
         
         # 완전 연결 레이어 설정
 
@@ -53,12 +53,12 @@ class DuelingDQN(nn.Module):
         
         # 가치 스트림
         value = self.activation(self.fc_value(x))
-        value = self.dropout(value)
+        # value = self.dropout(value)
         value = self.value(value)
         
         # 우선순위 스트림
         advantage = self.activation(self.fc_advantage(x))
-        advantage = self.dropout(advantage)
+        # advantage = self.dropout(advantage)
         advantage = self.advantage(advantage)
         
         # 최종 Q-값 계산

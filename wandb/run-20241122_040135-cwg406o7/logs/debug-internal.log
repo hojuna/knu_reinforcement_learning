@@ -1,0 +1,17 @@
+{"time":"2024-11-22T04:01:35.365764872Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-22T04:01:35.365793993Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241122_040135-cwg406o7/logs/debug-core.log"}
+{"time":"2024-11-22T04:01:35.473569416Z","level":"INFO","msg":"created new stream","id":"cwg406o7"}
+{"time":"2024-11-22T04:01:35.473992731Z","level":"INFO","msg":"stream: started","id":"cwg406o7"}
+{"time":"2024-11-22T04:01:35.474127415Z","level":"INFO","msg":"sender: started","stream_id":"cwg406o7"}
+{"time":"2024-11-22T04:01:35.474064043Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"cwg406o7"}}
+{"time":"2024-11-22T04:01:35.474120325Z","level":"INFO","msg":"handler: started","stream_id":{"value":"cwg406o7"}}
+{"time":"2024-11-22T04:01:35.910800873Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T05:03:57.847778926Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T05:03:57.848513973Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T05:03:58.847951399Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.385611752},{"desc":"uploading config.yaml","runtime_seconds":0.147075851,"progress":"1009B/1009B"},{"desc":"uploading output.log","runtime_seconds":0.147057801,"progress":"55B/55B"}],"total_operations":3}}
+{"time":"2024-11-22T05:03:59.150662986Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-22T05:04:00.475959229Z","level":"INFO","msg":"stream: closing","id":"cwg406o7"}
+{"time":"2024-11-22T05:04:00.47598451Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"cwg406o7"}}
+{"time":"2024-11-22T05:04:00.47600648Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"cwg406o7"}}
+{"time":"2024-11-22T05:04:00.476113834Z","level":"INFO","msg":"sender: closed","stream_id":"cwg406o7"}
+{"time":"2024-11-22T05:04:00.476168166Z","level":"INFO","msg":"stream: closed","id":"cwg406o7"}

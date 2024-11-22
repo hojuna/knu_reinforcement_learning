@@ -1,0 +1,17 @@
+{"time":"2024-11-21T11:00:08.394703122Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T11:00:08.394718783Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_110008-upwxgpql/logs/debug-core.log"}
+{"time":"2024-11-21T11:00:08.501908093Z","level":"INFO","msg":"created new stream","id":"upwxgpql"}
+{"time":"2024-11-21T11:00:08.501960905Z","level":"INFO","msg":"stream: started","id":"upwxgpql"}
+{"time":"2024-11-21T11:00:08.502073208Z","level":"INFO","msg":"sender: started","stream_id":"upwxgpql"}
+{"time":"2024-11-21T11:00:08.502090698Z","level":"INFO","msg":"handler: started","stream_id":{"value":"upwxgpql"}}
+{"time":"2024-11-21T11:00:08.501994846Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"upwxgpql"}}
+{"time":"2024-11-21T11:00:08.987497307Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T11:00:14.958679145Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T11:00:14.959367595Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T11:00:15.958999072Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.181186057,"progress":"24B/24B"},{"desc":"saving job artifact","runtime_seconds":0.163249762}],"total_operations":2}}
+{"time":"2024-11-21T11:00:16.744541374Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T11:00:18.046797945Z","level":"INFO","msg":"stream: closing","id":"upwxgpql"}
+{"time":"2024-11-21T11:00:18.046836467Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"upwxgpql"}}
+{"time":"2024-11-21T11:00:18.046859557Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"upwxgpql"}}
+{"time":"2024-11-21T11:00:18.046878968Z","level":"INFO","msg":"sender: closed","stream_id":"upwxgpql"}
+{"time":"2024-11-21T11:00:18.04694437Z","level":"INFO","msg":"stream: closed","id":"upwxgpql"}

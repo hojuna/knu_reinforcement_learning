@@ -1,0 +1,17 @@
+{"time":"2024-11-21T12:19:07.864609657Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T12:19:07.864635948Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_121907-jl6ub3sp/logs/debug-core.log"}
+{"time":"2024-11-21T12:19:07.971711887Z","level":"INFO","msg":"created new stream","id":"jl6ub3sp"}
+{"time":"2024-11-21T12:19:07.971741958Z","level":"INFO","msg":"stream: started","id":"jl6ub3sp"}
+{"time":"2024-11-21T12:19:07.971814911Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"jl6ub3sp"}}
+{"time":"2024-11-21T12:19:07.971895574Z","level":"INFO","msg":"sender: started","stream_id":"jl6ub3sp"}
+{"time":"2024-11-21T12:19:07.971827731Z","level":"INFO","msg":"handler: started","stream_id":{"value":"jl6ub3sp"}}
+{"time":"2024-11-21T12:19:08.295877269Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T12:23:45.7185346Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T12:23:45.719212504Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T12:23:46.719015495Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.323895537},{"desc":"uploading config.yaml","runtime_seconds":0.055234983,"progress":"1.0KB/1.0KB"},{"desc":"uploading output.log","runtime_seconds":0.055224552,"progress":"55B/55B"}],"total_operations":3}}
+{"time":"2024-11-21T12:23:47.285987876Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T12:23:48.558645478Z","level":"INFO","msg":"stream: closing","id":"jl6ub3sp"}
+{"time":"2024-11-21T12:23:48.558672039Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"jl6ub3sp"}}
+{"time":"2024-11-21T12:23:48.55869448Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"jl6ub3sp"}}
+{"time":"2024-11-21T12:23:48.558721471Z","level":"INFO","msg":"sender: closed","stream_id":"jl6ub3sp"}
+{"time":"2024-11-21T12:23:48.558811224Z","level":"INFO","msg":"stream: closed","id":"jl6ub3sp"}

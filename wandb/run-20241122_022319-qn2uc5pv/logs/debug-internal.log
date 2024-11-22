@@ -1,0 +1,20 @@
+{"time":"2024-11-22T02:23:19.920758946Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-22T02:23:19.920772277Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241122_022319-qn2uc5pv/logs/debug-core.log"}
+{"time":"2024-11-22T02:23:20.024972808Z","level":"INFO","msg":"created new stream","id":"qn2uc5pv"}
+{"time":"2024-11-22T02:23:20.024994168Z","level":"INFO","msg":"stream: started","id":"qn2uc5pv"}
+{"time":"2024-11-22T02:23:20.025132623Z","level":"INFO","msg":"sender: started","stream_id":"qn2uc5pv"}
+{"time":"2024-11-22T02:23:20.025063221Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"qn2uc5pv"}}
+{"time":"2024-11-22T02:23:20.025117063Z","level":"INFO","msg":"handler: started","stream_id":{"value":"qn2uc5pv"}}
+{"time":"2024-11-22T02:23:20.343714818Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T03:21:21.097206211Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/comoz-kangwon-national-university/dqn_parallel/qn2uc5pv/file_stream"}
+{"time":"2024-11-22T03:29:35.419880538Z","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2024-11-22T03:50:08.371331179Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/comoz-kangwon-national-university/dqn_parallel/qn2uc5pv/file_stream"}
+{"time":"2024-11-22T04:00:50.727592493Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T04:00:50.728258006Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T04:00:51.723476961Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.590145646},{"desc":"uploading config.yaml","runtime_seconds":0.333880968,"progress":"1009B/1009B"}],"total_operations":2}}
+{"time":"2024-11-22T04:00:51.890018562Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-22T04:00:53.211277501Z","level":"INFO","msg":"stream: closing","id":"qn2uc5pv"}
+{"time":"2024-11-22T04:00:53.211306592Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"qn2uc5pv"}}
+{"time":"2024-11-22T04:00:53.211330263Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"qn2uc5pv"}}
+{"time":"2024-11-22T04:00:53.211363984Z","level":"INFO","msg":"sender: closed","stream_id":"qn2uc5pv"}
+{"time":"2024-11-22T04:00:53.211499079Z","level":"INFO","msg":"stream: closed","id":"qn2uc5pv"}

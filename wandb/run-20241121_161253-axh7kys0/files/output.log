@@ -1,0 +1,3 @@
+Episode 1: Total Reward: 63.3237, Loss: None, Epsilon: 0.9802, Steps: 102, v_min: -54, remain_bees: 48
+Episode 2: Total Reward: -205.0279, Loss: None, Epsilon: 0.9347, Steps: 240, v_min: -87, remain_bees: 50
+Training interrupted. Saving model...

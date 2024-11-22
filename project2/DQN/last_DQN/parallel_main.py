@@ -74,15 +74,15 @@ def worker(rank, config, shared_policy_net, shared_target_net, lock, device, sto
                 # ε 값 계산
                 epsilon = epsilon_end + (epsilon_start - epsilon_end) * math.exp(-1. * agent.steps_done / epsilon_decay)
                 agent.steps_done += 1
-
+                agent.epsilon = epsilon
                 # 행동 선택
-                action = agent.act(state_input, epsilon)
+                action = agent.act(state_input)
 
                 # 행동 수행
                 next_state, reward, done, _, _ = env.step(action)
 
-                if agent.visit_table.min() < -100:
-                    done = True
+                # if agent.visit_table.min() < -100:
+                #     done = True
 
                 if step >= 1200:
                     done = True
@@ -91,7 +91,10 @@ def worker(rank, config, shared_policy_net, shared_target_net, lock, device, sto
                 movement_reward = agent.calculate_reward(state, next_state, done, agent.steps_done)
                 total_reward += movement_reward
 
+                movement_reward += agent.visit_table_update(state, next_state)
+
                 step += 1
+
 
                 # 상태 전처리
                 next_state_input = agent.preprocess_state(next_state)
@@ -118,6 +121,9 @@ def worker(rank, config, shared_policy_net, shared_target_net, lock, device, sto
                 # 공유된 네트워크로부터 파라미터 로드
                 agent.policy_net.load_state_dict(shared_policy_net.state_dict())
                 agent.target_net.load_state_dict(shared_target_net.state_dict())
+
+            if episode % config['checkpoint_interval'] == 0:
+                agent.save_model(f'/home/comoz/main_project/knu_reinforcement_learning/project2/DQN/last_DQN/saved_model/dueling_dqn_checkpoint_{episode}.pth')
 
             remain_bees =  np.sum(next_state['grid'] == 'B')
             visit_min = agent.visit_table.min()
@@ -160,9 +166,10 @@ def main():
             "target_update": 100,
             "checkpoint_interval": 1000,
             "num_episodes": 40000,
-            "num_processes": 2,    # 사용할 프로세스 수
+            "num_processes": 3,    # 사용할 프로세스 수
             "num_episodes_per_process": 10000,  # 프로세스당 에피소드 수
-            "sync_interval": 10    # 동기화 주기
+            "sync_interval": 10,    # 동기화 주기
+            "epsilon": 0.01
         }
     )
 
@@ -217,7 +224,7 @@ def main():
 
     try:
         for rank in range(config['num_processes']):
-            device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+            device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
             p = mp.Process(target=worker, args=(rank, config, shared_policy_net, shared_target_net, lock, device, stop_event, return_dict))
             p.start()
             processes.append(p)

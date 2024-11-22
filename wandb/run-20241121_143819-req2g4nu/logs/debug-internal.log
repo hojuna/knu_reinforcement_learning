@@ -1,0 +1,17 @@
+{"time":"2024-11-21T14:38:19.740967957Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T14:38:19.740997988Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_143819-req2g4nu/logs/debug-core.log"}
+{"time":"2024-11-21T14:38:19.846099504Z","level":"INFO","msg":"created new stream","id":"req2g4nu"}
+{"time":"2024-11-21T14:38:19.846136335Z","level":"INFO","msg":"stream: started","id":"req2g4nu"}
+{"time":"2024-11-21T14:38:19.846214378Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"req2g4nu"}}
+{"time":"2024-11-21T14:38:19.846306361Z","level":"INFO","msg":"sender: started","stream_id":"req2g4nu"}
+{"time":"2024-11-21T14:38:19.846251729Z","level":"INFO","msg":"handler: started","stream_id":{"value":"req2g4nu"}}
+{"time":"2024-11-21T14:38:20.246482341Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T15:11:35.777663921Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T15:11:35.778380056Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T15:11:36.778286178Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.485113993},{"desc":"uploading config.yaml","runtime_seconds":0.223597928,"progress":"1.0KB/1.0KB"},{"desc":"uploading output.log","runtime_seconds":0.223578688,"progress":"55B/55B"}],"total_operations":3}}
+{"time":"2024-11-21T15:11:37.019811075Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T15:11:38.25965509Z","level":"INFO","msg":"stream: closing","id":"req2g4nu"}
+{"time":"2024-11-21T15:11:38.259685911Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"req2g4nu"}}
+{"time":"2024-11-21T15:11:38.259709112Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"req2g4nu"}}
+{"time":"2024-11-21T15:11:38.259743473Z","level":"INFO","msg":"sender: closed","stream_id":"req2g4nu"}
+{"time":"2024-11-21T15:11:38.259824706Z","level":"INFO","msg":"stream: closed","id":"req2g4nu"}

@@ -1,0 +1,17 @@
+{"time":"2024-11-21T16:14:32.782819321Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T16:14:32.782853802Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_161432-96tg77ph/logs/debug-core.log"}
+{"time":"2024-11-21T16:14:32.890955296Z","level":"INFO","msg":"created new stream","id":"96tg77ph"}
+{"time":"2024-11-21T16:14:32.890996297Z","level":"INFO","msg":"stream: started","id":"96tg77ph"}
+{"time":"2024-11-21T16:14:32.891058169Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"96tg77ph"}}
+{"time":"2024-11-21T16:14:32.891093001Z","level":"INFO","msg":"handler: started","stream_id":{"value":"96tg77ph"}}
+{"time":"2024-11-21T16:14:32.891153903Z","level":"INFO","msg":"sender: started","stream_id":"96tg77ph"}
+{"time":"2024-11-21T16:14:33.228223158Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T16:23:26.334259419Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T16:23:26.335010074Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T16:23:27.334692304Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.551532914},{"desc":"uploading wandb-summary.json","runtime_seconds":0.524251756,"progress":"236B/236B"},{"desc":"uploading config.yaml","runtime_seconds":0.300724842,"progress":"941B/941B"},{"desc":"uploading output.log","runtime_seconds":0.300710822,"progress":"1.1KB/1.1KB"}],"total_operations":4}}
+{"time":"2024-11-21T16:23:30.034884044Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T16:23:31.376977477Z","level":"INFO","msg":"stream: closing","id":"96tg77ph"}
+{"time":"2024-11-21T16:23:31.377004918Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"96tg77ph"}}
+{"time":"2024-11-21T16:23:31.377027678Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"96tg77ph"}}
+{"time":"2024-11-21T16:23:31.377061449Z","level":"INFO","msg":"sender: closed","stream_id":"96tg77ph"}
+{"time":"2024-11-21T16:23:31.377150862Z","level":"INFO","msg":"stream: closed","id":"96tg77ph"}

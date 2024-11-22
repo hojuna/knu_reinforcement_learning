@@ -1,0 +1,17 @@
+{"time":"2024-11-21T12:24:02.853803226Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T12:24:02.853816127Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_122402-kdpsxqsz/logs/debug-core.log"}
+{"time":"2024-11-21T12:24:02.960083689Z","level":"INFO","msg":"created new stream","id":"kdpsxqsz"}
+{"time":"2024-11-21T12:24:02.960123551Z","level":"INFO","msg":"stream: started","id":"kdpsxqsz"}
+{"time":"2024-11-21T12:24:02.960168192Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"kdpsxqsz"}}
+{"time":"2024-11-21T12:24:02.960229904Z","level":"INFO","msg":"sender: started","stream_id":"kdpsxqsz"}
+{"time":"2024-11-21T12:24:02.960277576Z","level":"INFO","msg":"handler: started","stream_id":{"value":"kdpsxqsz"}}
+{"time":"2024-11-21T12:24:03.604949459Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T12:37:33.956346467Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T12:37:33.957025821Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T12:37:34.91813319Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.530544231},{"desc":"uploading config.yaml","runtime_seconds":0.290933649,"progress":"1.0KB/1.0KB"},{"desc":"uploading output.log","runtime_seconds":0.290917088,"progress":"55B/55B"}],"total_operations":3}}
+{"time":"2024-11-21T12:37:35.116401191Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T12:37:36.365723606Z","level":"INFO","msg":"stream: closing","id":"kdpsxqsz"}
+{"time":"2024-11-21T12:37:36.365750897Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"kdpsxqsz"}}
+{"time":"2024-11-21T12:37:36.365776658Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"kdpsxqsz"}}
+{"time":"2024-11-21T12:37:36.36581951Z","level":"INFO","msg":"sender: closed","stream_id":"kdpsxqsz"}
+{"time":"2024-11-21T12:37:36.365898122Z","level":"INFO","msg":"stream: closed","id":"kdpsxqsz"}

@@ -29,7 +29,7 @@ class DuelingDQNAgent(GridSurvivorAgent):
         self.beta_start = config["beta_start"]
         self.beta_frames = config["beta_frames"]
         self.visit_table = np.zeros((grid_height, grid_width), dtype=np.int32)
-        
+        self.epsilon = config["epsilon"]
 
     def reset_visit_table(self):
         self.visit_table = np.zeros((35,35), dtype=np.int32)
@@ -66,8 +66,8 @@ class DuelingDQNAgent(GridSurvivorAgent):
             action = q_values.argmax(dim=1).item()
         return action
 
-    def act(self, state, epsilon):
-        if random.random() < epsilon:
+    def act(self, state):
+        if random.random() < self.epsilon:
             return random.randint(0, self.num_actions - 1)
         else:
             return self.select_action(state)
@@ -205,13 +205,49 @@ class DuelingDQNAgent(GridSurvivorAgent):
         return grid_encoded, hit_points_normalized, agent_dir_encoded, agent_pos_vector
 
 
-    def calculate_reward(self,state, next_state, done, step):
+    def get_path_distance(self, grid, start, goal):
+            """BFS를 사용하여 실제 이동 가능한 최단 경로 거리를 계산"""
+            if tuple(start) == tuple(goal):
+                return 0
+            
+            rows, cols = grid.shape
+            queue = [(start, 0)]  # (위치, 거리)
+            visited = {tuple(start)}
+            
+            # 이동 가능한 방향 (상하좌우)
+            directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+            
+            while queue:
+                (x, y), dist = queue.pop(0)
+                
+                # 현재 위치가 목표지점이면 거리 반환
+                if (x, y) == tuple(goal):
+                    return dist
+                
+                # 4방향 탐색
+                for dx, dy in directions:
+                    next_x, next_y = x + dx, y + dy
+                    
+                    # 그리드 범위 체크
+                    if 0 <= next_x < rows and 0 <= next_y < cols:
+                        next_pos = (next_x, next_y)
+                        # 방문하지 않았고 벽이 아닌 경우
+                        if next_pos not in visited and grid[next_x, next_y] != '#':
+                            visited.add(next_pos)
+                            queue.append((next_pos, dist + 1))  
+            # 경로가 없는 경우
+            return float('inf')
+
+    def calculate_reward(self, state, next_state, done, step):
         total_reward = 0
 
-        base_reward = -0.1
+        # base_reward = -0.1
+        base_reward=0
 
         # survival_reward = 0.01 * (step / 100)
         survival_reward=0
+
+        first_visit_reward=0
 
         previous_bees = np.sum(state['grid'] == 'B')
         current_bees = np.sum(next_state['grid'] == 'B')
@@ -222,43 +258,97 @@ class DuelingDQNAgent(GridSurvivorAgent):
         # if 'B'==self.find_forward_obj(next_state):
         #     bee_reward+=5
 
-
-        previous_hornet = np.sum(state['grid'] == 'H')
-        current_hornet = np.sum(next_state['grid'] == 'H')
-        rescued_hornet = previous_hornet - current_hornet
-        if state['hit_points']>=40:
-            hornet_penalty = rescued_hornet * -5
-        else:
-            hornet_penalty = rescued_hornet * -10
+        hornet_penalty=0
+        # previous_hornet = np.sum(state['grid'] == 'H')
+        # current_hornet = np.sum(next_state['grid'] == 'H')
+        # rescued_hornet = previous_hornet - current_hornet
+        # if state['hit_points']>=40:
+        #     hornet_penalty = rescued_hornet * -5
+        # else:
+        #     hornet_penalty = rescued_hornet * -10
 
 
         health_reward = 0
         # health_diff = next_state['hit_points'] - state['hit_points']
         # health_reward = health_diff * 0.1
 
+    
+
 
         early_termination = 0
 
-        if current_bees != 0 and done:
-            early_termination-=20
+        if done:
+            if current_bees != 0:  # 벌이 남았는데 죽은 경우
+                early_termination -= 200  # 벌 구출 보상(100)의 2배
+            
+            if next_state['hit_points'] <= 0:  # 체력이 0 이하로 떨어져 죽은 경우
+                early_termination -= 150  # 추가 패널티
+            
+            if self.visit_table.min() < -100:  # 같은 자리를 너무 많이 방문해서 죽은 경우
+                early_termination -= 100  # 탐색 실패에 대한 패널티
 
-
+        # 체력 관련 보상/패널티 추가
+        health_diff = next_state['hit_points'] - state['hit_points']
+        if health_diff < 0:  # 체력이 감소했을 때
+            health_reward = health_diff * 2  # 체력 감소에 대한 페널티 강화
+        
         position, direction = self.extract_agent_info(state['grid'])
         next_position, next_direction = self.extract_agent_info(next_state['grid'])
-        collision_penalty = -0.1 if position == next_position  else 0
         
-        first_visit_reward=0
-        if self.visit_table[position]==1:
-            first_visit_reward=1
-            self.visit_table[position]=0
-        else:
-            self.visit_table[position]-=1
-
+        # collision_penalty = -0.1 if position == next_position and self else 0
+        collision_penalty = 0
+        
+        # 벌과의 거리에 따른 보상 계산
         bee_distance_reward = 0
-        # if 'B' in next_state['grid']:
-        #     min_distance = self.min_distance(next_state, next_position, 'B')
-        #     if min_distance is not None:
-        #         bee_distance_reward += 0.1 / (min_distance + 1e-6)
+        position, _ = self.extract_agent_info(next_state['grid'])
+        
+        if 'B' in next_state['grid']:
+            bee_positions = np.argwhere(next_state['grid'] == 'B')
+            if len(bee_positions) > 0:
+                # 실제 경로 거리 계산
+                path_distances = []
+                for bee_pos in bee_positions:
+                    dist = self.get_path_distance(next_state['grid'], position, bee_pos)
+                    if dist != float('inf'):  # 도달 가능한 경우만 고려
+                        path_distances.append(dist)
+                
+                if path_distances:  # 도달 가능한 벌이 있는 경우
+                    # 가장 가까운 3마리의 벌에 대한 보상 계산
+                    closest_distances = sorted(path_distances)[:3]
+                    
+                    for dist in closest_distances:
+                        if dist <= 1:  # 바로 옆에 있는 벌
+                            bee_distance_reward += 1.5
+                        elif dist <= 3:  # 가까운 거리의 벌
+                            bee_distance_reward += 0.5 / (dist + 1)
+                        else:  # 먼 거리의 벌
+                            bee_distance_reward += 0.1 / (dist + 1)
+                
+                    # 이전 상태와의 거리 변화 계산
+                    if 'B' in state['grid']:
+                        prev_position, _ = self.extract_agent_info(state['grid'])
+                        prev_bee_positions = np.argwhere(state['grid'] == 'B')
+                        
+                        prev_path_distances = []
+                        for bee_pos in prev_bee_positions:
+                            dist = self.get_path_distance(state['grid'], prev_position, bee_pos)
+                            if dist != float('inf'):
+                                prev_path_distances.append(dist)
+                        
+                        if prev_path_distances:
+                            prev_min_dist = min(prev_path_distances)
+                            curr_min_dist = min(path_distances)
+                            
+                            # 실제 경로 거리가 줄어들었다면 추가 보상
+                            if curr_min_dist < prev_min_dist:
+                                bee_distance_reward += 0.25
+
+        # 벌의 수에 따른 가중치 적용
+        num_bees = len(np.argwhere(next_state['grid'] == 'B'))
+
+        if num_bees > 0:
+            # 벌이 적게 남을수록 각 벌에 대한 보상을 증가
+            bee_distance_reward *= (1 + (50 - num_bees) / 50)
 
         hornet_distance_penalty = 0
         # if 'H' in next_state['grid']:
@@ -274,8 +364,8 @@ class DuelingDQNAgent(GridSurvivorAgent):
         #         killerbee_distance_penalty -= 1 / (min_distance + 1e-6)
 
 
-        if 0 == current_bees and done:
-            total_reward += 500 / (step + 1e-6)
+        # if 0 == current_bees and done:
+        #     total_reward += 500 / (step + 1e-6)
 
         total_reward = (base_reward + survival_reward + bee_reward + hornet_penalty + 
                     health_reward + early_termination + collision_penalty + 
@@ -284,4 +374,13 @@ class DuelingDQNAgent(GridSurvivorAgent):
 
         return total_reward
         
-        
+    def visit_table_update(self,state,next_state):
+        position, _ = self.extract_agent_info(state['grid'])
+        next_position, _ = self.extract_agent_info(next_state['grid'])
+
+        collision_penalty=0
+        if position == next_position:   
+            self.visit_table[position]-=1
+            collision_penalty=self.visit_table[position]/10
+
+        return collision_penalty        

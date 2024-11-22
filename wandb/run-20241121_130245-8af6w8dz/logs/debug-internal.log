@@ -1,0 +1,18 @@
+{"time":"2024-11-21T13:02:45.316109511Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T13:02:45.316127141Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_130245-8af6w8dz/logs/debug-core.log"}
+{"time":"2024-11-21T13:02:45.423217932Z","level":"INFO","msg":"created new stream","id":"8af6w8dz"}
+{"time":"2024-11-21T13:02:45.42327712Z","level":"INFO","msg":"stream: started","id":"8af6w8dz"}
+{"time":"2024-11-21T13:02:45.423325349Z","level":"INFO","msg":"handler: started","stream_id":{"value":"8af6w8dz"}}
+{"time":"2024-11-21T13:02:45.42329406Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"8af6w8dz"}}
+{"time":"2024-11-21T13:02:45.423367298Z","level":"INFO","msg":"sender: started","stream_id":"8af6w8dz"}
+{"time":"2024-11-21T13:02:45.907872313Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T14:23:06.854406623Z","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/files/comoz-kangwon-national-university/dqn_parallel/8af6w8dz/file_stream"}
+{"time":"2024-11-21T14:30:35.650283786Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T14:30:35.651043132Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T14:30:36.650598318Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.545290617},{"desc":"uploading config.yaml","runtime_seconds":0.281188041,"progress":"1.0KB/1.0KB"},{"desc":"uploading output.log","runtime_seconds":0.281177821,"progress":"55B/55B"}],"total_operations":3}}
+{"time":"2024-11-21T14:30:36.817890909Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T14:30:38.162639903Z","level":"INFO","msg":"stream: closing","id":"8af6w8dz"}
+{"time":"2024-11-21T14:30:38.162684355Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"8af6w8dz"}}
+{"time":"2024-11-21T14:30:38.162709586Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"8af6w8dz"}}
+{"time":"2024-11-21T14:30:38.162734857Z","level":"INFO","msg":"sender: closed","stream_id":"8af6w8dz"}
+{"time":"2024-11-21T14:30:38.162804609Z","level":"INFO","msg":"stream: closed","id":"8af6w8dz"}

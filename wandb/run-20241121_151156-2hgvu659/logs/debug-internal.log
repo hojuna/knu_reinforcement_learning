@@ -1,0 +1,19 @@
+{"time":"2024-11-21T15:11:56.550485085Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T15:11:56.550515616Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_151156-2hgvu659/logs/debug-core.log"}
+{"time":"2024-11-21T15:11:56.658861521Z","level":"INFO","msg":"created new stream","id":"2hgvu659"}
+{"time":"2024-11-21T15:11:56.658928484Z","level":"INFO","msg":"stream: started","id":"2hgvu659"}
+{"time":"2024-11-21T15:11:56.659020307Z","level":"INFO","msg":"sender: started","stream_id":"2hgvu659"}
+{"time":"2024-11-21T15:11:56.658950835Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"2hgvu659"}}
+{"time":"2024-11-21T15:11:56.659074789Z","level":"INFO","msg":"handler: started","stream_id":{"value":"2hgvu659"}}
+{"time":"2024-11-21T15:11:57.084466029Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T19:00:27.877321295Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/comoz-kangwon-national-university/dqn_parallel/2hgvu659/file_stream"}
+{"time":"2024-11-21T23:05:52.286796097Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/comoz-kangwon-national-university/dqn_parallel/2hgvu659/file_stream"}
+{"time":"2024-11-22T02:20:46.204743479Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T02:20:46.205475096Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T02:20:47.205189371Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.56027656}],"total_operations":1}}
+{"time":"2024-11-22T02:20:47.307070514Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-22T02:20:48.724372296Z","level":"INFO","msg":"stream: closing","id":"2hgvu659"}
+{"time":"2024-11-22T02:20:48.724400047Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"2hgvu659"}}
+{"time":"2024-11-22T02:20:48.724423718Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"2hgvu659"}}
+{"time":"2024-11-22T02:20:48.724468079Z","level":"INFO","msg":"sender: closed","stream_id":"2hgvu659"}
+{"time":"2024-11-22T02:20:48.724556082Z","level":"INFO","msg":"stream: closed","id":"2hgvu659"}

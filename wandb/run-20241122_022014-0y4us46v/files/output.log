@@ -1,0 +1,8 @@
+Episode 1: Total Reward: 217.5959, Loss: None, Epsilon: 0.8955, Steps: 559, v_min: -116, remain_bees: 46
+Episode 2: Total Reward: 307.9475, Loss: None, Epsilon: 0.8623, Steps: 191, v_min: -73, remain_bees: 47
+Episode 3: Total Reward: 394.5266, Loss: None, Epsilon: 0.8279, Steps: 206, v_min: -55, remain_bees: 45
+Episode 4: Total Reward: 284.7212, Loss: None, Epsilon: 0.7985, Steps: 183, v_min: -41, remain_bees: 46
+Episode 5: Total Reward: 188.4415, Loss: 10.812499046325684, Epsilon: 0.7680, Steps: 197, v_min: -103, remain_bees: 47
+Episode 6: Total Reward: 290.5355, Loss: 9.725264549255371, Epsilon: 0.7436, Steps: 164, v_min: -49, remain_bees: 46
+Episode 7: Total Reward: 58.2164, Loss: 9.69708251953125, Epsilon: 0.7331, Steps: 72, v_min: -21, remain_bees: 48
+Training interrupted. Saving model...

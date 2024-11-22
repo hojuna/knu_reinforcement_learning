@@ -1,0 +1,17 @@
+{"time":"2024-11-21T12:58:13.511458902Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T12:58:13.511475952Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_125813-cznsdx0o/logs/debug-core.log"}
+{"time":"2024-11-21T12:58:13.619059226Z","level":"INFO","msg":"created new stream","id":"cznsdx0o"}
+{"time":"2024-11-21T12:58:13.619103488Z","level":"INFO","msg":"stream: started","id":"cznsdx0o"}
+{"time":"2024-11-21T12:58:13.61915763Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"cznsdx0o"}}
+{"time":"2024-11-21T12:58:13.619223872Z","level":"INFO","msg":"handler: started","stream_id":{"value":"cznsdx0o"}}
+{"time":"2024-11-21T12:58:13.619304205Z","level":"INFO","msg":"sender: started","stream_id":"cznsdx0o"}
+{"time":"2024-11-21T12:58:14.031711447Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T13:02:18.227755494Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T13:02:18.229107716Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T13:02:19.227981683Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.54366739},{"desc":"uploading config.yaml","runtime_seconds":0.305738459,"progress":"1.0KB/1.0KB"}],"total_operations":2}}
+{"time":"2024-11-21T13:02:19.449785336Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T13:02:20.780578668Z","level":"INFO","msg":"stream: closing","id":"cznsdx0o"}
+{"time":"2024-11-21T13:02:20.780605697Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"cznsdx0o"}}
+{"time":"2024-11-21T13:02:20.780627536Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"cznsdx0o"}}
+{"time":"2024-11-21T13:02:20.780668215Z","level":"INFO","msg":"sender: closed","stream_id":"cznsdx0o"}
+{"time":"2024-11-21T13:02:20.780744033Z","level":"INFO","msg":"stream: closed","id":"cznsdx0o"}

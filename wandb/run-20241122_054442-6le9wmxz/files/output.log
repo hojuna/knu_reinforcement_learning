@@ -1,0 +1,20 @@
+Episode 0, Avg Reward: 59.63, Best Reward: 59.63, remain_bees: 47, step: 134, visit_table_min: -12.0
+Episode 10, Avg Reward: 248.18, Best Reward: 596.37, remain_bees: 46, step: 281, visit_table_min: -24.0
+Episode 20, Avg Reward: 153.48, Best Reward: 596.37, remain_bees: 47, step: 247, visit_table_min: -19.0
+Episode 30, Avg Reward: 328.27, Best Reward: 691.08, remain_bees: 45, step: 233, visit_table_min: -17.0
+Episode 40, Avg Reward: 217.78, Best Reward: 757.94, remain_bees: 46, step: 526, visit_table_min: -273.0
+Episode 50, Avg Reward: 244.09, Best Reward: 757.94, remain_bees: 46, step: 435, visit_table_min: -342.0
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v5/a2c_Rms_huber.py", line 667, in <module>
+    state,_ = env.reset()
+                     ^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v5/a2c_Rms_huber.py", line 609, in train
+    step=0
+
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v5/a2c_Rms_huber.py", line 354, in calculate_reward
+    dist = self.get_path_distance(next_state['grid'], position, bee_pos)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v5/a2c_Rms_huber.py", line 437, in get_path_distance
+    if (x, y) == tuple(goal):
+                 ^^^^^^^^^^^
+KeyboardInterrupt

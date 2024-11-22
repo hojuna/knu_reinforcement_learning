@@ -1,0 +1,9 @@
+{"time":"2024-11-22T06:25:59.958732647Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-22T06:25:59.958748568Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241122_062559-zku28jec/logs/debug-core.log"}
+{"time":"2024-11-22T06:26:00.064071989Z","level":"INFO","msg":"created new stream","id":"zku28jec"}
+{"time":"2024-11-22T06:26:00.064115Z","level":"INFO","msg":"stream: started","id":"zku28jec"}
+{"time":"2024-11-22T06:26:00.064205583Z","level":"INFO","msg":"sender: started","stream_id":"zku28jec"}
+{"time":"2024-11-22T06:26:00.064160722Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"zku28jec"}}
+{"time":"2024-11-22T06:26:00.064264705Z","level":"INFO","msg":"handler: started","stream_id":{"value":"zku28jec"}}
+{"time":"2024-11-22T06:26:00.424575193Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T07:52:01.257180951Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/comoz-kangwon-national-university/a2c_v1/zku28jec/file_stream"}

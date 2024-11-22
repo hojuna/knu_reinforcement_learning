@@ -106,7 +106,7 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
             eta_min=5e-5        # 1e-5 → 5e-5 (최소값 살짝 높임)
         )
         
-        # 하이퍼파라미터
+        # 하이퍼���라미터
         self.gamma = 0.99
         self.entropy_coef = 0.01
         self.value_coef = 0.5
@@ -123,7 +123,10 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         self.save_dir = save_dir
 
         self.visit_table = np.ones((35,35))
-        
+    
+    def visit_table_reset(self):
+        self.visit_table = np.ones((35,35))
+
     def preprocess_state(self,state):
         # 위치와 방향 분리
         cell_types = {'E':0, 'W':1, 'B':2, 'H':3, 'K':4, 'A':5}  # 6차원
@@ -143,7 +146,7 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
                 cell = grid[i][j]
                 if cell.startswith('A'):  # 에이전트 셀
                     grid_tensor[i, j, 5] = 1  # A 표시
-                    direction_tensor[directions[cell[1]]] = 1  # 방향 표시
+                    direction_tensor[directions[cell[1]]] = 1  # 방향 ��시
                     agent_pos = (i, j)
                 else:
                     grid_tensor[i, j, cell_types[cell]] = 1
@@ -242,11 +245,9 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         x, y = position
         # FORWARD 액션이 유효한지 확인
         next_pos = self._get_next_position(position, direction)
-        if not self._is_valid_move(next_pos, grid):
+        if not self._is_valid_move(next_pos, grid) and self.visit_table[position] > -10:
             valid_actions[2] = 0  # FORWARD 불가능
-        elif self.find_forward_obj(grid) == 'B':
-            valid_actions[2] += 1  # FORWARD 가능
-        
+
         return valid_actions
     
     def _get_next_position(self, position, direction):
@@ -275,10 +276,11 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         
         return True
 
-    def calculate_reward(self,state, next_state, done, step):
+    def calculate_reward(self, state, next_state, done, step):
         total_reward = 0
 
-        base_reward = -0.1
+        # base_reward = -0.1
+        base_reward=0
 
         # survival_reward = 0.01 * (step / 100)
         survival_reward=0
@@ -289,44 +291,107 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
 
         bee_reward = rescued_bees * 100
 
-        if 'B'==self.find_forward_obj(next_state):
-            bee_reward+=5
+        # if 'B'==self.find_forward_obj(next_state):
+        #     bee_reward+=5
 
-
-        previous_hornet = np.sum(state['grid'] == 'H')
-        current_hornet = np.sum(next_state['grid'] == 'H')
-        rescued_hornet = previous_hornet - current_hornet
-        if state['hit_points']>=40:
-            hornet_penalty = rescued_hornet * -5
-        else:
-            hornet_penalty = rescued_hornet * -10
+        hornet_penalty=0
+        # previous_hornet = np.sum(state['grid'] == 'H')
+        # current_hornet = np.sum(next_state['grid'] == 'H')
+        # rescued_hornet = previous_hornet - current_hornet
+        # if state['hit_points']>=40:
+        #     hornet_penalty = rescued_hornet * -5
+        # else:
+        #     hornet_penalty = rescued_hornet * -10
 
 
         health_reward = 0
         # health_diff = next_state['hit_points'] - state['hit_points']
         # health_reward = health_diff * 0.1
 
+    
+
 
         early_termination = 0
 
-        if current_bees != 0 and done:
-            early_termination-=20
+        if done:
+            if current_bees != 0:  # 벌이 남았는데 죽은 경우
+                early_termination -= 200  # 벌 구출 보상(100)의 2배
+            
+            if next_state['hit_points'] <= 0:  # 체력이 0 이하로 떨어져 죽은 경우
+                early_termination -= 150  # 추가 패널티
+            
+            if self.visit_table.min() < -100:  # 같은 자리를 너무 많이 방문해서 죽은 경우
+                early_termination -= 100  # 탐색 실패에 대한 패널티
 
-
+        # 체력 관련 보상/패널티 추가
+        health_diff = next_state['hit_points'] - state['hit_points']
+        if health_diff < 0:  # 체력이 감소했을 때
+            health_reward = health_diff * 2  # 체력 감소에 대한 페널티 강화
+        
         position, direction = self.extract_agent_info(state['grid'])
         next_position, next_direction = self.extract_agent_info(next_state['grid'])
-        collision_penalty = -0.1 if position == next_position  else 0
         
-        first_visit_reward=0
-        if self.visit_table[position]==1:
-            first_visit_reward=1
-            self.visit_table[position]=0
+        # collision_penalty = -0.1 if position == next_position and self else 0
+        collision_penalty = 0
+        
+        # if position == next_position:
+        #     self.visit_table[position]-=1
+        #     collision_penalty=self.visit_table[position]/100
 
+        first_visit_reward=0
+        # self.visit_table[position]-=1
+
+        # 벌과의 거리에 따른 보상 계산
         bee_distance_reward = 0
-        # if 'B' in next_state['grid']:
-        #     min_distance = self.min_distance(next_state, next_position, 'B')
-        #     if min_distance is not None:
-        #         bee_distance_reward += 0.1 / (min_distance + 1e-6)
+        position, _ = self.extract_agent_info(next_state['grid'])
+        
+        if 'B' in next_state['grid']:
+            bee_positions = np.argwhere(next_state['grid'] == 'B')
+            if len(bee_positions) > 0:
+                # 실제 경로 거리 계산
+                path_distances = []
+                for bee_pos in bee_positions:
+                    dist = self.get_path_distance(next_state['grid'], position, bee_pos)
+                    if dist != float('inf'):  # 도달 가능한 경우만 고려
+                        path_distances.append(dist)
+                
+                if path_distances:  # 도달 가능한 벌이 있는 경우
+                    # 가장 가까운 3마리의 벌에 대한 보상 계산
+                    closest_distances = sorted(path_distances)[:3]
+                    
+                    for dist in closest_distances:
+                        if dist <= 1:  # 바로 옆에 있는 벌
+                            bee_distance_reward += 1.5
+                        elif dist <= 3:  # 가까운 거리의 벌
+                            bee_distance_reward += 0.5 / (dist + 1)
+                        else:  # 먼 거리의 벌
+                            bee_distance_reward += 0.1 / (dist + 1)
+                
+                    # 이전 상태와의 거리 ��화 계산
+                    if 'B' in state['grid']:
+                        prev_position, _ = self.extract_agent_info(state['grid'])
+                        prev_bee_positions = np.argwhere(state['grid'] == 'B')
+                        
+                        prev_path_distances = []
+                        for bee_pos in prev_bee_positions:
+                            dist = self.get_path_distance(state['grid'], prev_position, bee_pos)
+                            if dist != float('inf'):
+                                prev_path_distances.append(dist)
+                        
+                        if prev_path_distances:
+                            prev_min_dist = min(prev_path_distances)
+                            curr_min_dist = min(path_distances)
+                            
+                            # 실제 경로 거리가 줄어들었다면 추가 보상
+                            if curr_min_dist < prev_min_dist:
+                                bee_distance_reward += 0.25
+
+        # 벌의 수에 따른 가중치 적용
+        num_bees = len(np.argwhere(next_state['grid'] == 'B'))
+
+        if num_bees > 0:
+            # 벌이 적게 남을수록 각 벌에 대한 보상을 증가
+            bee_distance_reward *= (1 + (50 - num_bees) / 50)
 
         hornet_distance_penalty = 0
         # if 'H' in next_state['grid']:
@@ -342,8 +407,8 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         #         killerbee_distance_penalty -= 1 / (min_distance + 1e-6)
 
 
-        if 0 == current_bees and done:
-            total_reward += 500 / (step + 1e-6)
+        # if 0 == current_bees and done:
+        #     total_reward += 500 / (step + 1e-6)
 
         total_reward = (base_reward + survival_reward + bee_reward + hornet_penalty + 
                     health_reward + early_termination + collision_penalty + 
@@ -351,6 +416,54 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
                     killerbee_distance_penalty+first_visit_reward)
 
         return total_reward
+        
+
+    def get_path_distance(self, grid, start, goal):
+        """BFS를 사용하여 실제 이동 가능한 최단 경로 거리를 계산"""
+        if tuple(start) == tuple(goal):
+            return 0
+        
+        rows, cols = grid.shape
+        queue = [(start, 0)]  # (위치, 거리)
+        visited = {tuple(start)}
+        
+        # 이동 가능한 방향 (상하좌우)
+        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        
+        while queue:
+            (x, y), dist = queue.pop(0)
+            
+            # 현재 위치가 목표지점이면 거리 반환
+            if (x, y) == tuple(goal):
+                return dist
+            
+            # 4방향 탐색
+            for dx, dy in directions:
+                next_x, next_y = x + dx, y + dy
+                
+                # 그리드 범위 체크
+                if 0 <= next_x < rows and 0 <= next_y < cols:
+                    next_pos = (next_x, next_y)
+                    # 방문하지 않았고 벽이 아닌 경우
+                    if next_pos not in visited and grid[next_x, next_y] != '#':
+                        visited.add(next_pos)
+                        queue.append((next_pos, dist + 1))
+        
+        # 경로가 없는 경우
+        return float('inf')
+
+
+
+    def visit_table_update(self,state,next_state):
+        position, _ = self.extract_agent_info(state['grid'])
+        next_position, _ = self.extract_agent_info(next_state['grid'])
+
+        collision_penalty=0
+        if position == next_position:   
+            self.visit_table[position]-=1
+            collision_penalty=self.visit_table[position]/10
+
+        return collision_penalty
     
     def act(self, state):
         """행동 선택"""
@@ -400,7 +513,10 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         for r, d in zip(reversed(self.rewards), reversed(self.dones)):
             R = r + self.gamma * R * (1-d)
             returns.insert(0, R)
+        
+        # 값 클리핑 추가
         returns = torch.tensor(returns).to(self.device)
+        returns = torch.clamp(returns, -100, 100)  # 극단적인 리턴값 제한
         
         # 배치 데이터 준비
         states = torch.stack(self.states)
@@ -409,36 +525,46 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         
         # 각 상태에 대한 유효 행동 마스크 준비
         valid_actions_batch = torch.stack([self.get_valid_actions(s) for s in self.raw_states])
-
-          # 네트워크 통과
+        
+        # 네트워크 통과
         action_probs, state_values = self.network(states)
         
-        # 마스킹 적용
+        # 마스킹 적용 및 수치 안정성 개선
         masked_probs = action_probs * valid_actions_batch
         masked_probs = masked_probs / (masked_probs.sum(dim=1, keepdim=True) + 1e-8)
         
-        # Advantage 계산
+        # Advantage 계산 및 정규화
         advantages = returns - values.squeeze()
+        advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
+        advantages = torch.clamp(advantages, -10, 10)  # advantage 클리핑
         
         # 정책 손실 계산 (마스킹된 확률 사용)
         dist = Categorical(masked_probs)
-        policy_loss = -(dist.log_prob(actions) * advantages.detach()).mean()
+        log_probs = dist.log_prob(actions)
+        log_probs = torch.clamp(log_probs, -10, 2)  # log_prob 클리핑
+        policy_loss = -(log_probs * advantages.detach()).mean()
         
-        # 가치 손실 계산
-        # value_loss = F.mse_loss(values.squeeze(), returns)
-        value_loss = F.huber_loss(values.squeeze(), returns, delta=1.0)
+        # 가치 손실 계산 (Huber loss 사용)
+        value_loss = F.smooth_l1_loss(values.squeeze(), returns)
         
-        # 엔트로피 보너스
-        entropy_loss = -self.entropy_coef * dist.entropy().mean()
+        # 엔트로피 보너스 (클리핑 추가)
+        entropy = dist.entropy()
+        entropy = torch.clamp(entropy, -10, 2)
+        entropy_loss = -self.entropy_coef * entropy.mean()
         
         # 전체 손실
         total_loss = policy_loss + self.value_coef * value_loss + entropy_loss
         
+        # 손실값이 너무 크면 학습 스킵
+        if total_loss.item() > 1000:
+            return total_loss.item()
+        
         # 역전파 및 최적화
         self.optimizer.zero_grad()
         total_loss.backward()
+        torch.nn.utils.clip_grad_norm_(self.network.parameters(), 0.5)  # 그래디언트 클리핑 강화
         self.optimizer.step()
-        self.scheduler.step()  # 스케줄러 업데이트
+        self.scheduler.step()
         
         return total_loss.item()
     
@@ -482,6 +608,7 @@ def train(env, agent, num_episodes, save_interval=100):
         done = False
         step=0
         max_step = 1200
+        agent.visit_table_reset()
 
         while not done and step<max_step:
             # 행동 선택 및 환경과 상호작용
@@ -492,6 +619,8 @@ def train(env, agent, num_episodes, save_interval=100):
             # 보상 계산 및 업데이트
             reward = agent.calculate_reward(state, next_state, done,step)
             episode_reward += reward
+
+            reward += agent.visit_table_update(state, next_state)
 
             if step >= max_step:
                 done=True
@@ -512,13 +641,14 @@ def train(env, agent, num_episodes, save_interval=100):
             agent.save('best')
 
         remain_bees = np.sum(next_state['grid'] == 'B')
+        visit_table_min = agent.visit_table.min()
 
-        wandb.log({"episode_reward": episode_reward, "best_reward": best_reward,"step":step,"episode":episode,"remain_bees":remain_bees,"loss":loss})
+        wandb.log({"episode_reward": episode_reward, "best_reward": best_reward,"step":step,"episode":episode,"remain_bees":remain_bees,"loss":loss,"visit_table_min":visit_table_min})
         
         # 진행상황 출력
         if episode % 10 == 0:
             avg_reward = np.mean(reward_history[-10:])
-            print(f"Episode {episode}, Avg Reward: {avg_reward:.2f}, Best Reward: {best_reward:.2f}, remain_bees: {remain_bees}, step: {step}")
+            print(f"Episode {episode}, Avg Reward: {avg_reward:.2f}, Best Reward: {best_reward:.2f}, remain_bees: {remain_bees}, step: {step}, visit_table_min: {visit_table_min}")
     
     return reward_history
 

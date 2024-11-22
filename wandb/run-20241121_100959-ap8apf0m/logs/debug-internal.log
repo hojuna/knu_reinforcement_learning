@@ -1,0 +1,17 @@
+{"time":"2024-11-21T10:09:59.097513411Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-21T10:09:59.097526871Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241121_100959-ap8apf0m/logs/debug-core.log"}
+{"time":"2024-11-21T10:09:59.202355717Z","level":"INFO","msg":"created new stream","id":"ap8apf0m"}
+{"time":"2024-11-21T10:09:59.202406758Z","level":"INFO","msg":"stream: started","id":"ap8apf0m"}
+{"time":"2024-11-21T10:09:59.202437449Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"ap8apf0m"}}
+{"time":"2024-11-21T10:09:59.202577343Z","level":"INFO","msg":"sender: started","stream_id":"ap8apf0m"}
+{"time":"2024-11-21T10:09:59.202501811Z","level":"INFO","msg":"handler: started","stream_id":{"value":"ap8apf0m"}}
+{"time":"2024-11-21T10:09:59.609332854Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-21T10:10:05.418180683Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-21T10:10:05.418998887Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-21T10:10:06.378853926Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2024-11-21T10:10:06.397098132Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-21T10:10:07.668135542Z","level":"INFO","msg":"stream: closing","id":"ap8apf0m"}
+{"time":"2024-11-21T10:10:07.668149443Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"ap8apf0m"}}
+{"time":"2024-11-21T10:10:07.668161393Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"ap8apf0m"}}
+{"time":"2024-11-21T10:10:07.668210225Z","level":"INFO","msg":"sender: closed","stream_id":"ap8apf0m"}
+{"time":"2024-11-21T10:10:07.668257816Z","level":"INFO","msg":"stream: closed","id":"ap8apf0m"}

@@ -1,0 +1,17 @@
+{"time":"2024-11-22T04:30:45.591613575Z","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-22T04:30:45.591630235Z","level":"INFO","msg":"created symlink","path":"/home/comoz/main_project/knu_reinforcement_learning/wandb/run-20241122_043045-vgsinkmm/logs/debug-core.log"}
+{"time":"2024-11-22T04:30:45.695705163Z","level":"INFO","msg":"created new stream","id":"vgsinkmm"}
+{"time":"2024-11-22T04:30:45.695725074Z","level":"INFO","msg":"stream: started","id":"vgsinkmm"}
+{"time":"2024-11-22T04:30:45.695806007Z","level":"INFO","msg":"sender: started","stream_id":"vgsinkmm"}
+{"time":"2024-11-22T04:30:45.695790316Z","level":"INFO","msg":"handler: started","stream_id":{"value":"vgsinkmm"}}
+{"time":"2024-11-22T04:30:45.695753765Z","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"vgsinkmm"}}
+{"time":"2024-11-22T04:30:45.982865805Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T05:06:24.515680188Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T05:06:24.516453086Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T05:06:25.516015017Z","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.557570044},{"desc":"uploading config.yaml","runtime_seconds":0.303880335,"progress":"941B/941B"},{"desc":"uploading output.log","runtime_seconds":0.303870675,"progress":"1.6KB/1.6KB"}],"total_operations":3}}
+{"time":"2024-11-22T05:06:25.679763999Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-22T05:06:26.976207736Z","level":"INFO","msg":"stream: closing","id":"vgsinkmm"}
+{"time":"2024-11-22T05:06:26.976225647Z","level":"INFO","msg":"handler: closed","stream_id":{"value":"vgsinkmm"}}
+{"time":"2024-11-22T05:06:26.976241487Z","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"vgsinkmm"}}
+{"time":"2024-11-22T05:06:26.976284069Z","level":"INFO","msg":"sender: closed","stream_id":"vgsinkmm"}
+{"time":"2024-11-22T05:06:26.9763255Z","level":"INFO","msg":"stream: closed","id":"vgsinkmm"}

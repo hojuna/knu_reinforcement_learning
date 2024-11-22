@@ -1,0 +1,13 @@
+Episode 0, Avg Reward: 4100.06, Best Reward: 4100.06, remain_bees: 47, step: 1200, visit_table_min: -908.0
+Traceback (most recent call last):
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v5/a2c_Rms_huber.py", line 669, in <module>
+    # 최종 모델 저장
+                  ^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v5/a2c_Rms_huber.py", line 611, in train
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v5/a2c_Rms_huber.py", line 379, in calculate_reward
+    prev_path_distances.append(dist)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v5/a2c_Rms_huber.py", line 436, in get_path_distance
+    # 현재 위치가 목표지점이면 거리 반환
+               ^^^^^^^^^
+KeyboardInterrupt
