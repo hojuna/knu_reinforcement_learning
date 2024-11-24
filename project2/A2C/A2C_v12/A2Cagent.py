@@ -13,13 +13,13 @@ from A2CNetwork import A2CNetwork
 
 
 class A2CAgent(): # GridSurvivorAgent 상속 제거
-    def __init__(self, state_size, save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v9/save_model"):
+    def __init__(self, state_size, save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v12/save_model"):
         super().__init__()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         print(f"Using device: {self.device}")  # 디바이스 확인용 출력
         
         # 네트워크와 옵티마이저를 GPU로 이동
-        self.network = A2CNetwork(state_size, 128, 3).to(self.device)
+        self.network = A2CNetwork(state_size, 128, 3).to(self.device).float()
         self.optimizer = optim.RMSprop(
             self.network.parameters(),
             lr=0.00025,
@@ -29,73 +29,122 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
             centered=True
         )
         
-        # numpy 배열들은 CPU에 유지
-        self.visit_table = np.ones((35,35))
-        self.isolation_table = np.zeros((35,35))
+        # Mixed precision 학습을 위한 scaler
+        self.scaler = torch.amp.GradScaler()
         
-        # 경험 저장용 리스트들
-        self.states = []
-        self.actions = []
-        self.rewards = []
-        self.dones = []
-        self.values = []
-        self.raw_states = []
+        # 메모리 최적화를 위한 텐서 사전 할당
+        self.grid_tensor = torch.zeros(35, 35, 6, dtype=torch.float32, device=self.device)
+        self.direction_tensor = torch.zeros(4, dtype=torch.float32, device=self.device)
+        self.visit_table = torch.ones((35, 35), dtype=torch.float32, device=self.device)
+        self.isolation_table = torch.zeros((35, 35), dtype=torch.float32, device=self.device)
         
-        # 하이퍼라미터
+        # 경험 버퍼 초기화 (모든 버퍼 추가)
+        self.max_buffer_size = 1000
+        self.states = deque(maxlen=self.max_buffer_size)
+        self.actions = deque(maxlen=self.max_buffer_size)
+        self.rewards = deque(maxlen=self.max_buffer_size)
+        self.values = deque(maxlen=self.max_buffer_size)
+        self.dones = deque(maxlen=self.max_buffer_size)  # dones 버퍼 추가
+        self.raw_states = deque(maxlen=self.max_buffer_size)
+        
+        # 하이퍼파라미터
         self.gamma = 0.99
         self.entropy_coef = 0.01
         self.value_coef = 0.5
+        self.batch_size = 64
         
-        # 스케줄러도 조정
+        # 학습 스케줄러
         self.scheduler = optim.lr_scheduler.CosineAnnealingLR(
-            self.optimizer,
-            T_max=800,          # 1000 → 800 (더 빠른 주기)
-            eta_min=5e-5        # 1e-5 → 5e-5 (최소값 살짝 높임)
+            self.optimizer, T_max=800, eta_min=5e-5
         )
         
-        # 모델 저장 경로
         self.save_dir = save_dir
-    
+        
+    def preprocess_state(self, state):
+        # 텐서 재사용
+        self.grid_tensor.zero_()
+        self.direction_tensor.zero_()
+        
+        grid = state['grid']
+        grid_size = len(grid)
+        agent_pos = None
+        
+        # 그리드 처리
+        for i in range(grid_size):
+            for j in range(grid_size):
+                cell = grid[i][j]
+                if cell.startswith('A'):
+                    self.grid_tensor[i, j, 5] = 1.0  # float32로 명시
+                    self.direction_tensor['LRUD'.index(cell[1])] = 1.0
+                    agent_pos = (i, j)
+                else:
+                    idx = 'EWBHK'.index(cell) if cell in 'EWBHK' else 0
+                    self.grid_tensor[i, j, idx] = 1.0
+        
+        # 에이전트 위치가 없는 경우 처리
+        if agent_pos is None:
+            agent_pos = (0, 0)
+        
+        # 모든 텐서를 float32로 통일
+        return torch.cat([
+            self.grid_tensor[:grid_size, :grid_size].flatten(),
+            self.direction_tensor,
+            torch.tensor([
+                float(state['hit_points']) / 100.0,
+                float(self.visit_table[agent_pos] + 150) / 150.0
+            ], dtype=torch.float32, device=self.device)
+        ]).float()  # 최종 출력도 float32로 확실히 지정
+
+    def learn(self):
+        if len(self.states) == 0:
+            return 0.0
+            
+        # Mixed precision 학습
+        with torch.cuda.amp.autocast():
+            states = torch.stack(list(self.states))
+            actions = torch.tensor(list(self.actions), device=self.device)
+            returns = torch.tensor(list(self.rewards), device=self.device)
+            returns = torch.clamp(returns, -100, 100)
+            
+            # 배치 처리
+            total_loss = 0
+            for i in range(0, len(states), self.batch_size):
+                batch_states = states[i:i+self.batch_size]
+                batch_actions = actions[i:i+self.batch_size]
+                batch_returns = returns[i:i+self.batch_size]
+                
+                action_probs, state_values = self.network(batch_states)
+                
+                advantages = batch_returns - state_values.squeeze()
+                advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
+                
+                # 손실 계산
+                dist = Categorical(action_probs)
+                log_probs = dist.log_prob(batch_actions)
+                policy_loss = -(log_probs * advantages.detach()).mean()
+                value_loss = F.smooth_l1_loss(state_values.squeeze(), batch_returns)
+                entropy_loss = -self.entropy_coef * dist.entropy().mean()
+                
+                loss = policy_loss + self.value_coef * value_loss + entropy_loss
+                total_loss += loss.item()
+                
+                # 역전파
+                self.optimizer.zero_grad()
+                self.scaler.scale(loss).backward()
+                self.scaler.step(self.optimizer)
+                self.scaler.update()
+            
+            self.scheduler.step()
+            
+        return total_loss / ((len(states) + self.batch_size - 1) // self.batch_size)
+
     def visit_table_reset(self):
         self.visit_table = np.ones((35,35))
         self.isolation_table = np.zeros((35,35))
 
-    def preprocess_state(self, state):
-        # CPU에서 처리하는 것이 더 효율적인 전처리 작업
-        cell_types = {'E':0, 'W':1, 'B':2, 'H':3, 'K':4, 'A':5}
-        directions = {'L':0, 'R':1, 'U':2, 'D':3}
-        grid = state['grid']
-        N = len(grid)
-        
-        # numpy 배열로 처리 (CPU)
-        grid_tensor = np.zeros((N, N, 6))
-        direction_tensor = np.zeros(4)
-        
-        for i in range(N):
-            for j in range(N):
-                cell = grid[i][j]
-                if cell.startswith('A'):
-                    grid_tensor[i, j, 5] = 1
-                    direction_tensor[directions[cell[1]]] = 1
-                else:
-                    grid_tensor[i, j, cell_types[cell]] = 1
-        agent_pos = self.extract_agent_info(grid)[0]
-
-        # 상태 벡터 생성 및 배치 차원 추가
-        state_vector = np.concatenate([
-            grid_tensor.flatten(),
-            direction_tensor,
-            [state['hit_points'] / 100.0],
-            [(self.visit_table[agent_pos] + 150) / 150.0]
-        ])
-        
-        # 배치 차원 추가 (1, feature_size)
-        state_tensor = torch.FloatTensor(state_vector).unsqueeze(0).to(self.device)
-        return state_tensor
-
     def find_forward_obj(self, grid):
         """
-        에이전트의 방향에 따라 앞으로 있는 객체를 탐색하고, 우선순위에 따라 가장 높은 우선순위의 객체를 반환합니다.
+        에이전트의 방향에 따라 앞으로 있는 객체를 탐색하고, 우선순위에 따라 가장 높은 우선순위의 객체를 ��환합니다.
         
         Parameters:
         - grid (2D numpy array): 현재 그리드 상태. 각 셀은 'W', 'B', 'H', 'K', 'AU', 'AD', 'AL', 'AR' 등으로 표시됩니다.
@@ -218,19 +267,23 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
 
 
     def get_valid_actions(self, state):
-        # CPU에서 계산 후 마지막에 GPU로 이동
-        valid_actions = np.ones(3)
+        """유효한 행동 마스크 생성 - GPU 지원"""
         grid = state['grid']
+        valid_actions = torch.ones(3, device=self.device)  # [LEFT, RIGHT, FORWARD]
+        
+        # 에이전트 위치와 방향 파악
         position, direction = self.extract_agent_info(grid)
-        
         if position is None or direction is None:
-            return torch.from_numpy(valid_actions).to(self.device)
+            return valid_actions
         
+        x, y = position
+        # FORWARD 액션이 유효한지 확인
         next_pos = self._get_next_position(position, direction)
-        if not self._is_valid_move(next_pos, grid, state['hit_points'], position):
-            valid_actions[2] = 0
-        
-        return torch.from_numpy(valid_actions).to(self.device)
+
+        if not self._is_valid_move(next_pos, grid,state['hit_points'],position):
+            valid_actions[2] = 0  # FORWARD 불가능
+
+        return valid_actions
     
     def _get_next_position(self, position, direction):
         """주어진 방향으로 한 칸 앞의 위치 반환"""
@@ -430,7 +483,7 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         
 
     def get_path_distance(self, grid, start, goal):
-        """BFS를 사용하여 실제 이동 가능한 최단 경로 거리를 계산"""
+        """BFS를 사용하여 실제 이 가능한 최단 경로 거리를 계산"""
         if tuple(start) == tuple(goal):
             return 0
         
@@ -465,10 +518,10 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
 
     def act(self, state):
 
-        #평가용 act로 내부적으로 visit_table을 업데이트 해줌
+        #평가용 act로 내부적으로 visit_table을 업이트 해줌
 
         position, direction = self.extract_agent_info(state['grid'])
-        self.visit_table[position]-=1
+        # self.visit_table[position]-=1
 
         """행동 선택"""
         state_tensor = self.preprocess_state(state)
@@ -489,14 +542,14 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
             dist = Categorical(masked_probs)
             action = dist.sample()
             
-            next_position = self._get_next_position(position,direction)
-            if self.isolation_table[next_position] > 10 and state['grid'][next_position] == 'E':
-                return 2
+            # next_position = self._get_next_position(position,direction)
+            # if self.isolation_table[next_position] > 10 and state['grid'][next_position] == 'E':
+            #     return 2
 
-            elif self.visit_table[position] < -5 and self._is_valid_wall(position,direction,state['grid']):
-                self.visit_table[position]=0
-                self.isolation_table[position]+=1
-                return 2
+            # elif self.visit_table[position] < -5 and self._is_valid_wall(position,direction,state['grid']):
+            #     self.visit_table[position]=0
+            #     self.isolation_table[position]+=1
+            #     return 2
         
         return action.item()
 
@@ -506,7 +559,7 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
 
         collision_penalty=0
         if position == next_position:   
-            self.visit_table[position]-=1
+            # self.visit_table[position]-=1
             collision_penalty=self.visit_table[position]/10
 
         return collision_penalty
@@ -551,57 +604,6 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
             return loss
         return 0
     
-    def learn(self):
-        if len(self.states) == 0:
-            return 0.0  # 빈 상태 리스트인 경우 early return
-        
-        # 배치 처리를 위한 데이터 준비
-        returns = torch.tensor(self.rewards, device=self.device)
-        returns = torch.clamp(returns, -100, 100)
-        
-        # states는 이미 배치 차원이 있으므로 cat 사용
-        states = torch.cat(self.states, dim=0)
-        actions = torch.stack(self.actions)
-        values = torch.stack(self.values)
-        
-        # valid_actions_batch는 CPU에서 계산 후 한 번에 GPU로
-        valid_actions = [self.get_valid_actions(s).cpu().numpy() for s in self.raw_states]
-        valid_actions_batch = torch.tensor(valid_actions, device=self.device)
-        
-        # 네트워크 연산 (GPU)
-        action_probs, state_values = self.network(states)
-        
-        # 이후 연산들은 모두 GPU에서 수행
-        masked_probs = action_probs * valid_actions_batch
-        masked_probs = masked_probs / (masked_probs.sum(dim=1, keepdim=True) + 1e-8)
-        
-        advantages = returns - values.squeeze()
-        advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
-        advantages = torch.clamp(advantages, -10, 10)
-        
-        dist = Categorical(masked_probs)
-        log_probs = dist.log_prob(actions)
-        log_probs = torch.clamp(log_probs, -10, 2)
-        
-        # Loss 계산 (GPU)
-        policy_loss = -(log_probs * advantages.detach()).mean()
-        value_loss = F.smooth_l1_loss(values.squeeze(), returns)
-        entropy = dist.entropy()
-        entropy = torch.clamp(entropy, -10, 2)
-        entropy_loss = -self.entropy_coef * entropy.mean()
-        
-        total_loss = policy_loss + self.value_coef * value_loss + entropy_loss
-        
-        if total_loss.item() > 1000:
-            return total_loss.item()
-        
-        self.optimizer.zero_grad()
-        total_loss.backward()
-        torch.nn.utils.clip_grad_norm_(self.network.parameters(), 0.5)
-        self.optimizer.step()
-        self.scheduler.step()
-        
-        return total_loss.item()
     
     def reset_episode(self):
         """에피소드 버퍼 초기화"""

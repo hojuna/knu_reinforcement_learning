@@ -19,7 +19,7 @@ def train(env, agent, num_episodes, save_interval=100):
     best_reward = float('-inf')
     reward_history = []
 
-    wandb.init(project="a2c_v1", name="a2c_v2_Rms_huber_v9")
+    wandb.init(project="a2c_v1", name="a2c_v2_Rms_huber_v15")
     config = wandb.config
     config.num_episodes = num_episodes
     config.save_interval = save_interval
@@ -113,7 +113,7 @@ if __name__ == "__main__":
     
     # 임시 테스트용 state_size (실제 환경에 맞게 수정 필요)
     # 에이전트 생성
-    agent = A2CAgent(calculate_state_size(state),save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v9/save_model2")
+    agent = A2CAgent(calculate_state_size(state),save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v15/save_model")
     
     # 학습 설정
     num_episodes = 20000

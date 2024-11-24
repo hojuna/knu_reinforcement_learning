@@ -336,12 +336,12 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         first_visit_reward=0
         # self.visit_table[position]-=1
 
-        # 벌과의 거리에 따른 보상 계산
+        # 킬러 비에 대한 거리 패널티인데 이름 귀찮아서 일단 안바꿈
         bee_distance_reward = 0
         position, _ = self.extract_agent_info(next_state['grid'])
         
-        if 'B' in next_state['grid']:
-            bee_positions = np.argwhere(next_state['grid'] == 'B')
+        if 'K' in next_state['grid']:
+            bee_positions = np.argwhere(next_state['grid'] == 'K')
             if len(bee_positions) > 0:
                 # 실제 경로 거리 계산
                 path_distances = []
@@ -356,11 +356,11 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
                     
                     for dist in closest_distances:
                         if dist <= 1:  # 바로 옆에 있는 벌
-                            bee_distance_reward += 1.5
+                            bee_distance_reward -= 1.5
                         elif dist <= 3:  # 가까운 거리의 벌
-                            bee_distance_reward += 0.5 / (dist + 1)
+                            bee_distance_reward -= 0.5 / (dist + 1)
                         else:  # 먼 거리의 벌
-                            bee_distance_reward += 0.1 / (dist + 1)
+                            bee_distance_reward -= 0.1 / (dist + 1)
                 
                     # 이전 상태와의 거리 화 계산
                     if 'B' in state['grid']:
@@ -378,15 +378,15 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
                             curr_min_dist = min(path_distances)
                             
                             # 실제 경로 거리가 줄어들었다면 추가 보상
-                            if curr_min_dist < prev_min_dist:
+                            if curr_min_dist > prev_min_dist:
                                 bee_distance_reward += 0.25
 
         # 벌의 수에 따른 가중치 적용
         num_bees = len(np.argwhere(next_state['grid'] == 'B'))
 
-        if num_bees > 0:
-            # 벌이 적게 남을수록 각 벌에 대한 보상을 증가
-            bee_distance_reward *= (1 + (50 - num_bees) / 50)
+        # if num_bees > 0:
+        #     # 벌이 적게 남을수록 각 벌에 대한 보상을 증가
+        #     bee_distance_reward *= (1 + (50 - num_bees) / 50)
 
 
         pos=self._get_next_position(position,direction)

@@ -113,11 +113,11 @@ if __name__ == "__main__":
     
     # 임시 테스트용 state_size (실제 환경에 맞게 수정 필요)
     # 에이전트 생성
-    agent = A2CAgent(calculate_state_size(state),save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v9/save_model2")
+    agent = A2CAgent(calculate_state_size(state))
     
     # 학습 설정
     num_episodes = 20000
-    save_interval = 1000
+    save_interval = 10000
     
     # 학습 실행
     reward_history = train(env, agent, num_episodes, save_interval)

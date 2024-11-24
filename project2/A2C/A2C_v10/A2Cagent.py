@@ -13,7 +13,7 @@ from A2CNetwork import A2CNetwork
 
 
 class A2CAgent(): # GridSurvivorAgent 상속 제거
-    def __init__(self, state_size, save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v9/save_model"):
+    def __init__(self, state_size, save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v10/save_model"):
         super().__init__()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         print(f"Using device: {self.device}")  # 디바이스 확인용 출력
@@ -60,38 +60,42 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         self.visit_table = np.ones((35,35))
         self.isolation_table = np.zeros((35,35))
 
-    def preprocess_state(self, state):
-        # CPU에서 처리하는 것이 더 효율적인 전처리 작업
-        cell_types = {'E':0, 'W':1, 'B':2, 'H':3, 'K':4, 'A':5}
-        directions = {'L':0, 'R':1, 'U':2, 'D':3}
+    def preprocess_state(self,state):
+        # 위치와 방향 분리
+        cell_types = {'E':0, 'W':1, 'B':2, 'H':3, 'K':4, 'A':5}  # 6차원
+        directions = {'L':0, 'R':1, 'U':2, 'D':3}  # 추가 방향 정보
         grid = state['grid']
         N = len(grid)
         
-        # numpy 배열로 처리 (CPU)
-        grid_tensor = np.zeros((N, N, 6))
-        direction_tensor = np.zeros(4)
+        # 기본 그리드 정보 (6차원)
+        grid_tensor = torch.zeros(N, N, 6, dtype=torch.float32, device=self.device)  # 6개 셀 타입
+        # 방향 정보 (4차원)
+        direction_tensor = torch.zeros(4, dtype=torch.float32, device=self.device)    # 4개 방향
+        
+        agent_pos = None
         
         for i in range(N):
             for j in range(N):
                 cell = grid[i][j]
-                if cell.startswith('A'):
-                    grid_tensor[i, j, 5] = 1
-                    direction_tensor[directions[cell[1]]] = 1
+                if cell.startswith('A'):  # 에이전트 셀
+                    grid_tensor[i, j, 5] = 1  # A 표시
+                    direction_tensor[directions[cell[1]]] = 1  # 방향 시
+                    agent_pos = (i, j)
                 else:
                     grid_tensor[i, j, cell_types[cell]] = 1
-        agent_pos = self.extract_agent_info(grid)[0]
-
-        # 상태 벡터 생성 및 배치 차원 추가
-        state_vector = np.concatenate([
-            grid_tensor.flatten(),
+        
+        # 1D로 변환
+        grid_flat = grid_tensor.flatten()
+        
+        # 최종 상태 벡터 구성
+        state_vector = torch.cat([
+            grid_flat,
             direction_tensor,
-            [state['hit_points'] / 100.0],
-            [(self.visit_table[agent_pos] + 150) / 150.0]
+            torch.tensor([state['hit_points'] / 100.0], dtype=torch.float32, device=self.device),
+            torch.tensor([(self.visit_table[agent_pos] + 100) / 100.0], dtype=torch.float32, device=self.device)
         ])
         
-        # 배치 차원 추가 (1, feature_size)
-        state_tensor = torch.FloatTensor(state_vector).unsqueeze(0).to(self.device)
-        return state_tensor
+        return state_vector
 
     def find_forward_obj(self, grid):
         """
@@ -218,19 +222,23 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
 
 
     def get_valid_actions(self, state):
-        # CPU에서 계산 후 마지막에 GPU로 이동
-        valid_actions = np.ones(3)
+        """유효한 행동 마스크 생성 - GPU 지원"""
         grid = state['grid']
+        valid_actions = torch.ones(3, device=self.device)  # [LEFT, RIGHT, FORWARD]
+        
+        # 에이전트 위치와 방향 파악
         position, direction = self.extract_agent_info(grid)
-        
         if position is None or direction is None:
-            return torch.from_numpy(valid_actions).to(self.device)
+            return valid_actions
         
+        x, y = position
+        # FORWARD 액션이 유효한지 확인
         next_pos = self._get_next_position(position, direction)
-        if not self._is_valid_move(next_pos, grid, state['hit_points'], position):
-            valid_actions[2] = 0
-        
-        return torch.from_numpy(valid_actions).to(self.device)
+
+        if not self._is_valid_move(next_pos, grid,state['hit_points'],position):
+            valid_actions[2] = 0  # FORWARD 불가능
+
+        return valid_actions
     
     def _get_next_position(self, position, direction):
         """주어진 방향으로 한 칸 앞의 위치 반환"""
@@ -245,32 +253,30 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
             return (x, y+1)
         return position
     
-    def _is_valid_move(self, next_pos, grid,hit_points,position):
-
-
-        """해당 위치로 이동이 가능한지 확인"""
+    def _is_valid_move(self, next_pos, grid, hit_points, position):
         x, y = next_pos
         # 격자 범위 체크
         if not (0 <= x < len(grid) and 0 <= y < len(grid[0])):
             return False
 
+        # 고립 상태 처리
         if self.isolation_table[position] > 5 and grid[x][y] == 'E':
-            #죽을 위험을 감수
-            self.isolation_table[position] =0
+            self.isolation_table[position] = 0
             self.visit_table[position] = 0
             return True
         
-        # 벽 체크
+        # 위험 상황 처리
         if self.find_forward_obj(grid) == 'K' or (hit_points <= 20 and self.find_forward_obj_H(grid) == 'H'):
-            self.visit_table[position] -=1
+            self.visit_table[position] = max(self.visit_table[position] - 1, -100)  # 최소값 제한
             return False
 
+        # 벽 처리
         if grid[x][y] == 'W':
             if self.visit_table[position] < -5:
                 self.visit_table[position] = 0
                 self.isolation_table[position] += 1
                 return True
-            self.visit_table[position] -=1
+            self.visit_table[position] = max(self.visit_table[position] - 1, -100)  # 최소값 제한
             return False
         
         return True
@@ -468,7 +474,7 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         #평가용 act로 내부적으로 visit_table을 업데이트 해줌
 
         position, direction = self.extract_agent_info(state['grid'])
-        self.visit_table[position]-=1
+        # self.visit_table[position]-=1
 
         """행동 선택"""
         state_tensor = self.preprocess_state(state)
@@ -489,14 +495,14 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
             dist = Categorical(masked_probs)
             action = dist.sample()
             
-            next_position = self._get_next_position(position,direction)
-            if self.isolation_table[next_position] > 10 and state['grid'][next_position] == 'E':
-                return 2
+            # next_position = self._get_next_position(position,direction)
+            # if self.isolation_table[next_position] > 10 and state['grid'][next_position] == 'E':
+            #     return 2
 
-            elif self.visit_table[position] < -5 and self._is_valid_wall(position,direction,state['grid']):
-                self.visit_table[position]=0
-                self.isolation_table[position]+=1
-                return 2
+            # elif self.visit_table[position] < -5 and self._is_valid_wall(position,direction,state['grid']):
+            #     self.visit_table[position]=0
+            #     self.isolation_table[position]+=1
+            #     return 2
         
         return action.item()
 
@@ -506,7 +512,7 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
 
         collision_penalty=0
         if position == next_position:   
-            self.visit_table[position]-=1
+            # self.visit_table[position]-=1
             collision_penalty=self.visit_table[position]/10
 
         return collision_penalty
@@ -552,26 +558,22 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         return 0
     
     def learn(self):
-        if len(self.states) == 0:
-            return 0.0  # 빈 상태 리스트인 경우 early return
-        
-        # 배치 처리를 위한 데이터 준비
+        """A2C 학습"""
+        # 텐서들을 GPU로 이동
         returns = torch.tensor(self.rewards, device=self.device)
         returns = torch.clamp(returns, -100, 100)
         
-        # states는 이미 배치 차원이 있으므로 cat 사용
-        states = torch.cat(self.states, dim=0)
-        actions = torch.stack(self.actions)
-        values = torch.stack(self.values)
+        states = torch.stack(self.states)  # 이미 GPU에 있음
+        actions = torch.stack(self.actions).to(self.device)
+        values = torch.stack(self.values)  # 이미 GPU에 있음
         
-        # valid_actions_batch는 CPU에서 계산 후 한 번에 GPU로
-        valid_actions = [self.get_valid_actions(s).cpu().numpy() for s in self.raw_states]
-        valid_actions_batch = torch.tensor(valid_actions, device=self.device)
+        # 유효 행동 마스크를 GPU로 이동
+        valid_actions_batch = torch.stack([self.get_valid_actions(s) for s in self.raw_states])
         
-        # 네트워크 연산 (GPU)
+        # 네트워크 연산 (이미 GPU에서 수행됨)
         action_probs, state_values = self.network(states)
         
-        # 이후 연산들은 모두 GPU에서 수행
+        # GPU에서 연산 수행
         masked_probs = action_probs * valid_actions_batch
         masked_probs = masked_probs / (masked_probs.sum(dim=1, keepdim=True) + 1e-8)
         
@@ -582,10 +584,10 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         dist = Categorical(masked_probs)
         log_probs = dist.log_prob(actions)
         log_probs = torch.clamp(log_probs, -10, 2)
-        
-        # Loss 계산 (GPU)
         policy_loss = -(log_probs * advantages.detach()).mean()
+        
         value_loss = F.smooth_l1_loss(values.squeeze(), returns)
+        
         entropy = dist.entropy()
         entropy = torch.clamp(entropy, -10, 2)
         entropy_loss = -self.entropy_coef * entropy.mean()

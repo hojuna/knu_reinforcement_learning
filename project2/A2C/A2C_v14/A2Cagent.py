@@ -13,7 +13,7 @@ from A2CNetwork import A2CNetwork
 
 
 class A2CAgent(): # GridSurvivorAgent 상속 제거
-    def __init__(self, state_size, save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v9/save_model"):
+    def __init__(self, state_size, save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v14/save_model"):
         super().__init__()
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         print(f"Using device: {self.device}")  # 디바이스 확인용 출력
@@ -340,53 +340,53 @@ class A2CAgent(): # GridSurvivorAgent 상속 제거
         bee_distance_reward = 0
         position, _ = self.extract_agent_info(next_state['grid'])
         
-        if 'B' in next_state['grid']:
-            bee_positions = np.argwhere(next_state['grid'] == 'B')
-            if len(bee_positions) > 0:
-                # 실제 경로 거리 계산
-                path_distances = []
-                for bee_pos in bee_positions:
-                    dist = self.get_path_distance(next_state['grid'], position, bee_pos)
-                    if dist != float('inf'):  # 도달 가능한 경우만 고려
-                        path_distances.append(dist)
+        # if 'B' in next_state['grid']:
+        #     bee_positions = np.argwhere(next_state['grid'] == 'B')
+        #     if len(bee_positions) > 0:
+        #         # 실제 경로 거리 계산
+        #         path_distances = []
+        #         for bee_pos in bee_positions:
+        #             dist = self.get_path_distance(next_state['grid'], position, bee_pos)
+        #             if dist != float('inf'):  # 도달 가능한 경우만 고려
+        #                 path_distances.append(dist)
                 
-                if path_distances:  # 도달 가능한 벌이 있는 경우
-                    # 가장 가까운 3마리의 벌에 대한 보상 계산
-                    closest_distances = sorted(path_distances)[:3]
+        #         if path_distances:  # 도달 가능한 벌이 있는 경우
+        #             # 가장 가까운 3마리의 벌에 대한 보상 계산
+        #             closest_distances = sorted(path_distances)[:3]
                     
-                    for dist in closest_distances:
-                        if dist <= 1:  # 바로 옆에 있는 벌
-                            bee_distance_reward += 1.5
-                        elif dist <= 3:  # 가까운 거리의 벌
-                            bee_distance_reward += 0.5 / (dist + 1)
-                        else:  # 먼 거리의 벌
-                            bee_distance_reward += 0.1 / (dist + 1)
+        #             for dist in closest_distances:
+        #                 if dist <= 1:  # 바로 옆에 있는 벌
+        #                     bee_distance_reward += 1.5
+        #                 elif dist <= 3:  # 가까운 거리의 벌
+        #                     bee_distance_reward += 0.5 / (dist + 1)
+        #                 else:  # 먼 거리의 벌
+        #                     bee_distance_reward += 0.1 / (dist + 1)
                 
-                    # 이전 상태와의 거리 화 계산
-                    if 'B' in state['grid']:
-                        prev_position, _ = self.extract_agent_info(state['grid'])
-                        prev_bee_positions = np.argwhere(state['grid'] == 'B')
+        #             # 이전 상태와의 거리 화 계산
+        #             if 'B' in state['grid']:
+        #                 prev_position, _ = self.extract_agent_info(state['grid'])
+        #                 prev_bee_positions = np.argwhere(state['grid'] == 'B')
                         
-                        prev_path_distances = []
-                        for bee_pos in prev_bee_positions:
-                            dist = self.get_path_distance(state['grid'], prev_position, bee_pos)
-                            if dist != float('inf'):
-                                prev_path_distances.append(dist)
+        #                 prev_path_distances = []
+        #                 for bee_pos in prev_bee_positions:
+        #                     dist = self.get_path_distance(state['grid'], prev_position, bee_pos)
+        #                     if dist != float('inf'):
+        #                         prev_path_distances.append(dist)
                         
-                        if prev_path_distances:
-                            prev_min_dist = min(prev_path_distances)
-                            curr_min_dist = min(path_distances)
+        #                 if prev_path_distances:
+        #                     prev_min_dist = min(prev_path_distances)
+        #                     curr_min_dist = min(path_distances)
                             
-                            # 실제 경로 거리가 줄어들었다면 추가 보상
-                            if curr_min_dist < prev_min_dist:
-                                bee_distance_reward += 0.25
+        #                     # 실제 경로 거리가 줄어들었다면 추가 보상
+        #                     if curr_min_dist < prev_min_dist:
+        #                         bee_distance_reward += 0.25
 
         # 벌의 수에 따른 가중치 적용
         num_bees = len(np.argwhere(next_state['grid'] == 'B'))
 
-        if num_bees > 0:
-            # 벌이 적게 남을수록 각 벌에 대한 보상을 증가
-            bee_distance_reward *= (1 + (50 - num_bees) / 50)
+        # if num_bees > 0:
+        #     # 벌이 적게 남을수록 각 벌에 대한 보상을 증가
+        #     bee_distance_reward *= (1 + (50 - num_bees) / 50)
 
 
         pos=self._get_next_position(position,direction)

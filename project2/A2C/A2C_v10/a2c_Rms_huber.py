@@ -19,7 +19,7 @@ def train(env, agent, num_episodes, save_interval=100):
     best_reward = float('-inf')
     reward_history = []
 
-    wandb.init(project="a2c_v1", name="a2c_v2_Rms_huber_v9")
+    wandb.init(project="a2c_v1", name="a2c_v2_Rms_huber_v10")
     config = wandb.config
     config.num_episodes = num_episodes
     config.save_interval = save_interval
@@ -32,7 +32,7 @@ def train(env, agent, num_episodes, save_interval=100):
         max_step = 1200
         agent.visit_table_reset()
 
-                # 현재 에피소드 시작 전 모델 상태 저장
+        # 현재 에피소드 시작 전 모델 상태 저장
         current_model_state = {
             k: v.cpu().clone() for k, v in agent.network.state_dict().items()
         }
@@ -41,36 +41,32 @@ def train(env, agent, num_episodes, save_interval=100):
             for k, v in agent.optimizer.state_dict().items()
         }
 
-
         while not done and step<max_step:
             # 행동 선택 및 환경과 상호작용
             action = agent.train_act(state)
             next_state, reward, done, _ , _= env.step(action)
             step+=1
             
+            if step >= max_step:
+                done=True
+
+            pos = agent.extract_agent_info(next_state['grid'])[0]
+            if agent.visit_table.min() < -90:
+                done=True
+
             # 보상 계산 및 업데이트
             reward = agent.calculate_reward(state, next_state, done,step,action)
             episode_reward += reward
 
             reward += agent.visit_table_update(state, next_state)
 
-            if step >= max_step:
-                done=True
 
-            pos = agent.extract_agent_info(state['grid'])[0]
-
-            if agent.visit_table[pos] < -150:
-                done = True
                 
             loss = agent.update(reward, done)
             state = next_state
         
         # 성과 기록
         reward_history.append(episode_reward)
-        
-        # 모델 저장
-        if episode % save_interval == 0:
-            agent.save(episode)
         
         # 에피소드가 끝난 후 성능 체크
         if episode_reward > best_reward:
@@ -82,6 +78,15 @@ def train(env, agent, num_episodes, save_interval=100):
                 'optimizer_state_dict': current_optimizer_state,
                 'reward': episode_reward
             }, f"{agent.save_dir}/a2c_best_model.pth")
+
+        # 일반적인 체크포인트 저장
+        if episode % save_interval == 0:
+            agent.save(episode)
+        
+        # # 최고 성능 모델 저장
+        # if episode_reward > best_reward:
+        #     best_reward = episode_reward
+        #     agent.save('best')
 
         remain_bees = np.sum(next_state['grid'] == 'B')
         visit_table_min = agent.visit_table.min()
@@ -101,10 +106,9 @@ def calculate_state_size(state):
     grid_info_size = N * N * 6  # 6가지 셀 타입
     direction_size = 4          # 4가지 방향
     hit_points_size = 1        # 체력 정보
-    
     visit_table_size = 1
-
-    return grid_info_size + direction_size + hit_points_size + visit_table_size 
+    
+    return grid_info_size + direction_size + hit_points_size + visit_table_size
 
 if __name__ == "__main__":
     # 환경 생성
@@ -113,7 +117,7 @@ if __name__ == "__main__":
     
     # 임시 테스트용 state_size (실제 환경에 맞게 수정 필요)
     # 에이전트 생성
-    agent = A2CAgent(calculate_state_size(state),save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v9/save_model2")
+    agent = A2CAgent(calculate_state_size(state),save_dir=f"/home/comoz/main_project/knu_reinforcement_learning/project2/A2C/A2C_v10/save_model2")
     
     # 학습 설정
     num_episodes = 20000
