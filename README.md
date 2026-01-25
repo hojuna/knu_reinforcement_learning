@@ -165,7 +165,7 @@ python PPO_run.py
 
 **업데이트 식**:
 ```
-Q(s,a) ← Q(s,a) + α[r + γ max Q(s',a') - Q(s,a)]
+Q(s,a) ← Q(s,a) + α[r + γ max_a' Q(s',a') - Q(s,a)]
 ```
 
 ### 2. DQN (Deep Q-Network)
